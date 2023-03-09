@@ -5,14 +5,16 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Animator animator;
-
+    public float moveSpd;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        animator.SetFloat("Horizontal", Input.GetAxisRaw("Horizontal"));
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
 
-        Vector3 horizontal = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, 0.0f);
-        transform.position = transform.position + horizontal * Time.deltaTime;
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.magnitude);
+        transform.position = transform.position + movement * Time.deltaTime;
     }
 }
