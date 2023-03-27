@@ -4,33 +4,45 @@ using UnityEngine;
 
 public class PlayerControler : MonoBehaviour
 {
+    public float moveSpd;
+    public Rigidbody2D rb;
     public Animator animator;
-
-    Vector3 movement;
-    Vector3 aim;
+    private Vector2 moveDirection;
+    private Vector2 lastMoveDirection;
 
     // Update is called once per frame
     void Update()
     {
         ProcessInputs();
-        Move();
         Animate();
+    }
+
+    // Physics Calculation
+    void FixedUpdate(){
+        Move();
     }
     
     private void ProcessInputs(){
-        movement = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0.0f);
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
 
-        if(movement.magnitude > 1.0f){
-            movement.Normalize();
+        if((moveX == 0 && moveY == 0) && moveDirection.x != 0 || moveDirection.y != 0){
+            lastMoveDirection = moveDirection;
         }
+
+        moveDirection = new Vector2(moveX, moveY).normalized;
+
     }
 
     private void Move(){
-        transform.position = transform.position + movement * Time.deltaTime;
+        rb.velocity = new Vector2(moveDirection.x * moveSpd, moveDirection.y * moveSpd);
     }
+
     private void Animate(){
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.magnitude);
+        animator.SetFloat("AnimMoveX", moveDirection.x);
+        animator.SetFloat("AnimMoveY", moveDirection.y);
+        animator.SetFloat("AnimMoveMagnitude", moveDirection.magnitude);
+        animator.SetFloat("AnimLastMoveX", lastMoveDirection.x);
+        animator.SetFloat("AnimLastMoveY", lastMoveDirection.y);
     }
 }
