@@ -204,7 +204,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: House A0
+      name: Objects_0
       rect:
         serializedVersion: 2
         x: 0
@@ -218,14 +218,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51b457af892511a60800000000000000
-      internalID: 7642980859614939925
+      spriteID: bf7dd7da26769b944bb342d32b1e9449
+      internalID: -1933395173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: House A1
+      name: Objects_1
       rect:
         serializedVersion: 2
         x: 17
@@ -239,14 +239,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76175ae6f38f29df0800000000000000
-      internalID: -174804484191063705
+      spriteID: 1ef3e5ab9897a20419febb4e42f29c14
+      internalID: -1659772059
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: House B0
+      name: Objects_2
       rect:
         serializedVersion: 2
         x: 34
@@ -260,14 +260,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66364b356d5947d20800000000000000
-      internalID: 3275407576765064038
+      spriteID: 1e99ee4c1a2d8c54c840307c884036fa
+      internalID: 1396482200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: House B1
+      name: Objects_3
       rect:
         serializedVersion: 2
         x: 51
@@ -281,14 +281,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6ba9dbb0591aed90800000000000000
-      internalID: -7067808830664889489
+      spriteID: 1c94b2696b8721444b8e4b9318217df1
+      internalID: -701580786
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tree 0
+      name: Objects_4
       rect:
         serializedVersion: 2
         x: 68
@@ -302,14 +302,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 622713b8006b856d0800000000000000
-      internalID: -3001449038190906842
+      spriteID: cf2df838be6bdaf45a50639e8049117c
+      internalID: 1650462542
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: House A2
+      name: Objects_5
       rect:
         serializedVersion: 2
         x: 0
@@ -323,14 +323,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4667940e39af8c10800000000000000
-      internalID: 2058049638561703503
+      spriteID: aa55f35ad9eb6cc47be9b5eee1f1a550
+      internalID: -297763798
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: House A3
+      name: Objects_6
       rect:
         serializedVersion: 2
         x: 17
@@ -344,14 +344,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99375fe64f341e9d0800000000000000
-      internalID: -2746839580606631015
+      spriteID: 0cc81315c46c7b046a3ba2fb3be11b30
+      internalID: 1649781185
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: House B2
+      name: Objects_7
       rect:
         serializedVersion: 2
         x: 34
@@ -365,14 +365,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c25f6905f3e1e8a40800000000000000
-      internalID: 5372264662783423788
+      spriteID: 28abd56006e9d5043a5029a375ed04c0
+      internalID: -1043572470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: House B3
+      name: Objects_8
       rect:
         serializedVersion: 2
         x: 51
@@ -386,14 +386,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be4b6ac726e7d40a0800000000000000
-      internalID: -6895716492971166485
+      spriteID: 6d1ad0c72e63d004fb640d4f611d74fb
+      internalID: -944834687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tree 1
+      name: Objects_9
       rect:
         serializedVersion: 2
         x: 68
@@ -404,17 +404,21 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -6, y: -3}
+        - {x: -6, y: -7}
+        - {x: 6, y: -7}
+        - {x: 6, y: -3}
       tessellationDetail: 0
       bones: []
-      spriteID: 0b062db5683d11cb0800000000000000
-      internalID: -4894898745955426128
+      spriteID: 9286abb2b9776cf419bc6266ecb541bf
+      internalID: 1140271541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: House A4
+      name: Objects_10
       rect:
         serializedVersion: 2
         x: 0
@@ -428,14 +432,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 86fcb308060013a00800000000000000
-      internalID: 734368628706365288
+      spriteID: 10afc95fef749994187b05491085836a
+      internalID: 406298847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: House A5
+      name: Objects_11
       rect:
         serializedVersion: 2
         x: 17
@@ -449,14 +453,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2f4347219e543870800000000000000
-      internalID: 8661651960862297898
+      spriteID: b053f3b49b0d1174ea8f15acf6ab3d03
+      internalID: 892113215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: House B4
+      name: Objects_12
       rect:
         serializedVersion: 2
         x: 34
@@ -470,14 +474,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b2b2c91f9d6d9520800000000000000
-      internalID: 2710443080846324409
+      spriteID: bc60fadb3e74eff4094a38bf399df38b
+      internalID: -94386129
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: House B5
+      name: Objects_13
       rect:
         serializedVersion: 2
         x: 51
@@ -491,14 +495,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd1aad90c8e47cde0800000000000000
-      internalID: -1312994402987499043
+      spriteID: c2563bd80918d0945b4ed02a29c485a7
+      internalID: -186715289
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tree 2
+      name: Objects_14
       rect:
         serializedVersion: 2
         x: 68
@@ -509,17 +513,21 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -6, y: -3}
+        - {x: -6, y: -8}
+        - {x: 6, y: -8}
+        - {x: 6, y: -3}
       tessellationDetail: 0
       bones: []
-      spriteID: dc9684495e7210770800000000000000
-      internalID: 8575179032478902733
+      spriteID: 2076aaae0796496438997b8d5834f5d1
+      internalID: 212777320
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant 0
+      name: Objects_15
       rect:
         serializedVersion: 2
         x: 0
@@ -533,14 +541,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b546e949a9d86a7c0800000000000000
-      internalID: -4060402318970035109
+      spriteID: 6f51f9921df793e41855ada7899b5d23
+      internalID: -258762014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plant 1
+      name: Objects_16
       rect:
         serializedVersion: 2
         x: 17
@@ -554,14 +562,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d42c58efa7248650800000000000000
-      internalID: 6234151420658722001
+      spriteID: c5225fcd2cdfd3445a741137f8cdc846
+      internalID: 1577871256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower B0
+      name: Objects_17
       rect:
         serializedVersion: 2
         x: 34
@@ -575,14 +583,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4523f180c0febc6d0800000000000000
-      internalID: -2969016694365801900
+      spriteID: faa7a851f0ce06241aea007087708d3b
+      internalID: -837346367
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower B1
+      name: Objects_18
       rect:
         serializedVersion: 2
         x: 51
@@ -596,14 +604,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 721591960f8b22b10800000000000000
-      internalID: 1955328530927145255
+      spriteID: 23b930afc3f16744cb1eaecbc8bc8c24
+      internalID: -1676078570
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tree 3
+      name: Objects_19
       rect:
         serializedVersion: 2
         x: 68
@@ -614,17 +622,21 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -6, y: 8}
+        - {x: -6, y: 7}
+        - {x: 6, y: 7}
+        - {x: 6, y: 8}
       tessellationDetail: 0
       bones: []
-      spriteID: 8f9c02f07e94767d0800000000000000
-      internalID: -2925288176213767688
+      spriteID: 7b3cb9aa09fa9e543b6a638ecde42a5e
+      internalID: 291664992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower A0
+      name: Objects_20
       rect:
         serializedVersion: 2
         x: 0
@@ -638,14 +650,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e4285710cf573bc0800000000000000
-      internalID: -3803466081661082397
+      spriteID: 0b9afe42343f2584d84adf5ed9ef46a5
+      internalID: 237563343
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flower A1
+      name: Objects_21
       rect:
         serializedVersion: 2
         x: 17
@@ -659,14 +671,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1d20474d88233620800000000000000
-      internalID: 2752588384504392991
+      spriteID: 31fd95e5947ab5444a9b03ae84a99346
+      internalID: 1990822354
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Box
+      name: Objects_22
       rect:
         serializedVersion: 2
         x: 34
@@ -680,14 +692,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c3ca0a8d0229f270800000000000000
-      internalID: 8284690431070618562
+      spriteID: 95d73d662b4959c49899dac65fc7c5d5
+      internalID: -1231428177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rock
+      name: Objects_23
       rect:
         serializedVersion: 2
         x: 51
@@ -701,14 +713,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38a1c6e709e241d60800000000000000
-      internalID: 7859958447799540355
+      spriteID: 6b461b9f3d8853643b46b76943686317
+      internalID: 1947646150
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Desk
+      name: Objects_24
       rect:
         serializedVersion: 2
         x: 68
@@ -719,11 +731,15 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 8, y: 2}
+        - {x: -8, y: 2}
+        - {x: -8, y: -8}
+        - {x: 8, y: -8}
       tessellationDetail: 0
       bones: []
-      spriteID: c16d0b1b90e06c050800000000000000
-      internalID: 5820355003221595676
+      spriteID: 116cb846ab647e74896b948a754d128a
+      internalID: 274033296
       vertices: []
       indices: 
       edges: []
@@ -739,31 +755,31 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Box: 8284690431070618562
-      Desk: 5820355003221595676
-      Flower A0: -3803466081661082397
-      Flower A1: 2752588384504392991
-      Flower B0: -2969016694365801900
-      Flower B1: 1955328530927145255
-      House A0: 7642980859614939925
-      House A1: -174804484191063705
-      House A2: 2058049638561703503
-      House A3: -2746839580606631015
-      House A4: 734368628706365288
-      House A5: 8661651960862297898
-      House B0: 3275407576765064038
-      House B1: -7067808830664889489
-      House B2: 5372264662783423788
-      House B3: -6895716492971166485
-      House B4: 2710443080846324409
-      House B5: -1312994402987499043
-      Plant 0: -4060402318970035109
-      Plant 1: 6234151420658722001
-      Rock: 7859958447799540355
-      Tree 0: -3001449038190906842
-      Tree 1: -4894898745955426128
-      Tree 2: 8575179032478902733
-      Tree 3: -2925288176213767688
+      Objects_0: -1933395173
+      Objects_1: -1659772059
+      Objects_10: 406298847
+      Objects_11: 892113215
+      Objects_12: -94386129
+      Objects_13: -186715289
+      Objects_14: 212777320
+      Objects_15: -258762014
+      Objects_16: 1577871256
+      Objects_17: -837346367
+      Objects_18: -1676078570
+      Objects_19: 291664992
+      Objects_2: 1396482200
+      Objects_20: 237563343
+      Objects_21: 1990822354
+      Objects_22: -1231428177
+      Objects_23: 1947646150
+      Objects_24: 274033296
+      Objects_3: -701580786
+      Objects_4: 1650462542
+      Objects_5: -297763798
+      Objects_6: 1649781185
+      Objects_7: -1043572470
+      Objects_8: -944834687
+      Objects_9: 1140271541
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
