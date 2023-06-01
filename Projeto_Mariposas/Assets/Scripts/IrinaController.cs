@@ -9,20 +9,23 @@ public class IrinaController : MonoBehaviour
     private string curState;
     public Rigidbody2D rb;
     private Vector2 moveDirection;
-    private bool moved = false;
-    private float moveX = 0;
-    private float moveY = 0;
+    private bool moved;
+    private float moveX;
+    private float moveY;
     public float  moveSpd;
     private int right_dir = 0, left_dir = 1;
     private int dir = 0, last_dir = 0;
     const string PLAYER_IDLE_R = "Irina_Idle_R";
     const string PLAYER_IDLE_L = "Irina_Idle_L";
-    const string PLAYER_WALK_R = "Irina_Walk_R";
-    const string PLAYER_WALK_L = "Irina_Walk_L";
+    const string PLAYER_WALK_R = "Ira_Walk_R";
+    const string PLAYER_WALK_L = "Ira_Walk_L";
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        moved = false;
+        moveX = 0;
+        moveY = 0;
     }
 
     // Update is called once per frame
@@ -44,10 +47,11 @@ public class IrinaController : MonoBehaviour
 
     }
     private void Move(){
+
         rb.velocity = new Vector2(moveDirection.x * moveSpd, moveDirection.y);
 
-        moveSpd = 2;
         moved = false;
+        moveSpd = 1.5f;
 
         if(moveX > 0){
             moved = true;
