@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControler : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
+    Animator animator;
+    private string curState;
+//    AnimController animController;
+//    [SerializeField] GameObject animCtrl;
     public float moveSpd;
     public Rigidbody2D rb;
-    public Animator animator;
     private Vector2 moveDirection;
 
     private bool moved = false;
@@ -15,7 +18,6 @@ public class PlayerControler : MonoBehaviour
     private float moveY = 0;
     private int right_dir = 0, left_dir = 1, up_dir = 3, down_dir = 4;
     private int dir = 4, last_dir = 4;
-    private string curState;
 
     // Player animations
     const string PLAYER_IDLE_D = "Player_Idle_D";
@@ -33,7 +35,16 @@ public class PlayerControler : MonoBehaviour
     const string PLAYER_WALK_D = "Player_Walk_D";
     const string PLAYER_WALK_U = "Player_Walk_U";
 
-    
+    /*
+    void Awake(){
+        animController = animCtrl.GetComponent<AnimController>();
+    }
+    */
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -146,8 +157,9 @@ public class PlayerControler : MonoBehaviour
         }
     }
     
-    private void ChangeAnimationState(string newState){
+    public void ChangeAnimationState(string newState){
 
+        // Stop an animaiton from interrupting itself
         if(curState == newState){
             return;
         }
