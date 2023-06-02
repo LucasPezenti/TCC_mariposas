@@ -15,8 +15,8 @@ public class IrinaController : MonoBehaviour
     public float  moveSpd;
     private int right_dir = 0, left_dir = 1;
     private int dir = 0, last_dir = 0;
-    const string PLAYER_IDLE_R = "Irina_Idle_R";
-    const string PLAYER_IDLE_L = "Irina_Idle_L";
+    const string PLAYER_IDLE_R = "Ira_Idle_R";
+    const string PLAYER_IDLE_L = "Ira_Idle_L";
     const string PLAYER_WALK_R = "Ira_Walk_R";
     const string PLAYER_WALK_L = "Ira_Walk_L";
 
