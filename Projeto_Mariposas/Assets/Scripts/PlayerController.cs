@@ -75,10 +75,10 @@ public class PlayerController : MonoBehaviour
 
         moved = false;
         if(running){
-            moveSpd = 5;
+            moveSpd = 3.5f;
         }
         else{
-            moveSpd = 3;
+            moveSpd = 2.4f;
         }
 
         // Movement direction
