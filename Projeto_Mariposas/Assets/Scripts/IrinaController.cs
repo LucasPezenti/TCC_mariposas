@@ -51,7 +51,7 @@ public class IrinaController : MonoBehaviour
         rb.velocity = new Vector2(moveDirection.x * moveSpd, moveDirection.y);
 
         moved = false;
-        moveSpd = 1.2f;
+        moveSpd = 2.2f;
 
         if(moveX > 0){
             moved = true;

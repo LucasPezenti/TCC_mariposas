@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+
+interface IInteractable{
+    public void interact();
+}
 public class Interactable : MonoBehaviour
 {
 
