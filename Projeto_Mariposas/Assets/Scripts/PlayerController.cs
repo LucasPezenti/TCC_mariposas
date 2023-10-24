@@ -20,20 +20,20 @@ public class PlayerController : MonoBehaviour
     private int dir = 4, last_dir = 4;
 
     // Player animations
-    const string PLAYER_IDLE_D = "Player_Idle_D";
-    const string PLAYER_IDLE_U = "Player_Idle_U";
-    const string PLAYER_IDLE_R = "Player_Idle_R";
-    const string PLAYER_IDLE_L = "Player_Idle_L";
+    const string PLAYER_IDLE_D = "Anoush_Idle_D";
+    const string PLAYER_IDLE_U = "Anoush_Idle_U";
+    const string PLAYER_IDLE_R = "Anoush_Idle_R";
+    const string PLAYER_IDLE_L = "Anoush_Idle_L";
 
     const string PLAYER_RUN_R = "Player_Run_R";
     const string PLAYER_RUN_L = "Player_Run_L";
     const string PLAYER_RUN_D = "Player_Run_D";
     const string PLAYER_RUN_U = "Player_Run_U";
 
-    const string PLAYER_WALK_R = "Player_Walk_R";
-    const string PLAYER_WALK_L = "Player_Walk_L";
-    const string PLAYER_WALK_D = "Player_Walk_D";
-    const string PLAYER_WALK_U = "Player_Walk_U";
+    const string PLAYER_WALK_R = "Anoush_Walk_R";
+    const string PLAYER_WALK_L = "Anoush_Walk_L";
+    const string PLAYER_WALK_D = "Anoush_Walk_D";
+    const string PLAYER_WALK_U = "Anoush_Walk_U";
 
     /*
     void Awake(){
