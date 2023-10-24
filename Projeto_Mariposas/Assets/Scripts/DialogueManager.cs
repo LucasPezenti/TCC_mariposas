@@ -8,6 +8,7 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public UnityEngine.UI.Image actorImage;
+    public GameObject dialogueBox;
     public TextMeshProUGUI charName;
     public TextMeshProUGUI messageText;
     public RectTransform backgroundBox;
@@ -19,9 +20,11 @@ public class DialogueManager : MonoBehaviour
         curMessages = messages;
         curActors = actors;
         activeMessage = 0;
-
+        dialogueBox.SetActive(true);
         Debug.Log("Dialogue started! Number of messages: " + messages.Length);
     }
+
+    
 
     // Start is called before the first frame update
     void Start()
