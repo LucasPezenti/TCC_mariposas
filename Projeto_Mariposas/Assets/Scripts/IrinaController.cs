@@ -19,6 +19,8 @@ public class IrinaController : MonoBehaviour
     const string PLAYER_IDLE_L = "Ira_Idle_L";
     const string PLAYER_WALK_R = "Ira_Walk_R";
     const string PLAYER_WALK_L = "Ira_Walk_L";
+    const string IRINA_WAKE_UP = "Irina_WakeUp";
+    const string IRINA_FALL = "Irina_LayDown";
 
     void Start()
     {
@@ -46,6 +48,7 @@ public class IrinaController : MonoBehaviour
         moveDirection = new Vector2(moveX, moveY).normalized;
 
     }
+
     private void Move(){
 
         rb.velocity = new Vector2(moveDirection.x * moveSpd, moveDirection.y);
@@ -86,6 +89,7 @@ public class IrinaController : MonoBehaviour
                 ChangeAnimationState(PLAYER_WALK_L);
             }
         }
+
 
     }
 

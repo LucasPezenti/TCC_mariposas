@@ -7,7 +7,11 @@ public class EndPrologue : MonoBehaviour
 {
     [SerializeField] private PlayableDirector director;
 
+
+   
+
     public void PlayCutscene(){
         director.Play();
     }
+    
 }
