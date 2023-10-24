@@ -21,7 +21,7 @@ public class ChangeLevel : MonoBehaviour, IInteractable
         SceneManager.LoadScene(levelIndex);
     }
 
-    public void interact()
+    public void Interact()
     {
         FadeToLevel(1);
     }

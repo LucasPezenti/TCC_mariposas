@@ -12,6 +12,10 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     private Vector2 moveDirection;
 
+
+    public Transform HoldPoint;
+
+
     private bool moved = false;
     private bool running = false;
     private float moveX = 0;
