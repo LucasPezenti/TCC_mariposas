@@ -3,14 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class EndPrologue : MonoBehaviour, IInteractable
+public class EndPrologue : MonoBehaviour
 {
     [SerializeField] private PlayableDirector director;
-
-    public void Interact()
-    {
-        PlayCutscene();
-    }
 
     public void PlayCutscene(){
         director.Play();

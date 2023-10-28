@@ -15,8 +15,6 @@ public class PlayerController : MonoBehaviour
 
     public Transform HoldPoint;
 
-    public GameObject interactionAlert;
-
 
     private bool moved = false;
     private bool running = false;
@@ -110,14 +108,6 @@ public class PlayerController : MonoBehaviour
         }
         
         
-    }
-
-    public void interactOn(){
-        interactionAlert.SetActive(true);
-    }
-
-    public void interactOff(){
-        interactionAlert.SetActive(false);
     }
 
     private void PlayerAnimation(){

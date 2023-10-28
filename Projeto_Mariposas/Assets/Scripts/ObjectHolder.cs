@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Box : MonoBehaviour, IInteractable
+public class ObjectHolder : MonoBehaviour
 {
-
     private Rigidbody2D rb;
-    private PlayerController Player;
+    public GameObject player;
     
     // Start is called before the first frame update
     void Start()
     {
-        //Player = new PlayerController();
+
     }
 
     // Update is called once per frame
@@ -20,10 +19,10 @@ public class Box : MonoBehaviour, IInteractable
         
     }
 
-    public void Interact()
+    public void HoldObject()
     {
         rb.bodyType = RigidbodyType2D.Dynamic;
-        this.transform.position = Player.HoldPoint.position;
-        this.transform.SetParent(Player.transform);
+        this.transform.position = player.GetComponent<PlayerController>().HoldPoint.position;
+        this.transform.SetParent(player.transform);
     }
 }

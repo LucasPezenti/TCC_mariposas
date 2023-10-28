@@ -14,8 +14,6 @@ public class IrinaController : MonoBehaviour
     private float moveY;
     public float  moveSpd;
 
-    public GameObject interactionAlert;
-
     private int right_dir = 0, left_dir = 1;
     private int dir = 0, last_dir = 0;
     const string PLAYER_IDLE_R = "Ira_Idle_R";
@@ -57,7 +55,7 @@ public class IrinaController : MonoBehaviour
         rb.velocity = new Vector2(moveDirection.x * moveSpd, moveDirection.y);
 
         moved = false;
-        moveSpd = 3.2f;
+        moveSpd = 2.5f;
 
         if(moveX > 0){
             moved = true;
@@ -69,14 +67,6 @@ public class IrinaController : MonoBehaviour
             dir = left_dir;
             last_dir = left_dir;
         }
-    }
-
-    public void interactOn(){
-        interactionAlert.SetActive(true);
-    }
-
-    public void interactOff(){
-        interactionAlert.SetActive(false);
     }
 
     private void PlayerAnimation(){

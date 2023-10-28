@@ -13,16 +13,14 @@ public class Interactable : MonoBehaviour
 
     public bool inRange;
     public KeyCode interactKey;
-    public GameObject interactObj;
+    public UnityEvent interactAction;
 
     // Update is called once per frame
     void Update()
     {
         if(inRange){
             if(Input.GetKeyDown(interactKey)){
-                if(interactObj.TryGetComponent(out IInteractable interactable)){
-                    interactable.Interact();
-                }
+                interactAction.Invoke();
             }
         }    
         
@@ -31,14 +29,14 @@ public class Interactable : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.CompareTag("Player")){
             inRange = true;
-            other.gameObject.GetComponent<IrinaController>().interactOn();
+            other.gameObject.GetComponent<InteractionAlert>().interactOn();
         }
     }
 
     private void OnTriggerExit2D(Collider2D other){
         if(other.gameObject.CompareTag("Player")){
             inRange = false;
-            other.gameObject.GetComponent<IrinaController>().interactOff();
+            other.gameObject.GetComponent<InteractionAlert>().interactOff();
         }
     }
 }
