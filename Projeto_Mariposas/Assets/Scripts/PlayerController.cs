@@ -62,6 +62,9 @@ public class PlayerController : MonoBehaviour
     }
     
     private void ProcessInputs(){
+        if(DialogueManager.isActive == true){
+           return;
+        }
         moveX = Input.GetAxisRaw("Horizontal");
         moveY = Input.GetAxisRaw("Vertical");
 

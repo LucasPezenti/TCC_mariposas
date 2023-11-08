@@ -1,40 +1,52 @@
-using System.Collections;
-using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    public UnityEngine.UI.Image actorImage;
+    public UnityEngine.UI.Image charImage;
     public GameObject dialogueBox;
     public TextMeshProUGUI charName;
     public TextMeshProUGUI messageText;
     public RectTransform backgroundBox;
     Message[] curMessages;
-    Actor[] curActors;
+    Actor[] curChars;
     int activeMessage = 0;
+    public static bool isActive = false;
 
     public void OpenDialogue(Message[] messages, Actor[] actors){
         curMessages = messages;
-        curActors = actors;
+        curChars = actors;
         activeMessage = 0;
-        dialogueBox.SetActive(true);
+        isActive = true;
+        DisplayMessage();
         Debug.Log("Dialogue started! Number of messages: " + messages.Length);
     }
 
-    
+    public void DisplayMessage(){
+        Message messageDisplay = curMessages[activeMessage];
+        messageText.text = messageDisplay.message;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        Actor charDisplay = curChars[messageDisplay.charId];
+        charName.text = charDisplay.name;
+        charImage.sprite = charDisplay.sprite;
+        dialogueBox.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void NextMessage(){
+        activeMessage++;
+        if(activeMessage < curMessages.Length){
+            DisplayMessage();
+        }else{
+            isActive = false;
+            dialogueBox.SetActive(false);
+            Debug.Log("Dialogue ended");
+        }
     }
+
+    void Update(){
+        if(Input.GetKeyDown(KeyCode.Space) && isActive == true){
+            NextMessage();
+        }
+    }
+
 }
