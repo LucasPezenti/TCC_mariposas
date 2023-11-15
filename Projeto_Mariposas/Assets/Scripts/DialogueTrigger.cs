@@ -7,9 +7,16 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Message[] messages;
     public Actor[] actors;
+    public bool repeat;
+    public GameObject interaction;
 
     public void StartDialogue(){
-        FindObjectOfType<DialogueManager>().OpenDialogue(messages, actors);
+        if(!repeat){
+            FindObjectOfType<DialogueManager>().OpenDialogue(messages, actors);
+            interaction.SetActive(false);
+        }else{
+            FindObjectOfType<DialogueManager>().OpenDialogue(messages, actors);
+        }
     }
 }
 

@@ -1,10 +1,11 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public UnityEngine.UI.Image charImage;
     public GameObject dialogueBox;
+    public Image charImage;
     public TextMeshProUGUI charName;
     public TextMeshProUGUI messageText;
     public RectTransform backgroundBox;
@@ -14,18 +15,19 @@ public class DialogueManager : MonoBehaviour
     public static bool isActive = false;
 
     public void OpenDialogue(Message[] messages, Actor[] actors){
-        curMessages = messages;
-        curChars = actors;
-        activeMessage = 0;
-        isActive = true;
-        DisplayMessage();
-        Debug.Log("Dialogue started! Number of messages: " + messages.Length);
+        if(!isActive){
+            curMessages = messages;
+            curChars = actors;
+            activeMessage = 0;
+            isActive = true;
+            //Debug.Log("Dialogue started! Number of messages: " + messages.Length);
+            DisplayMessage();
+        }
     }
 
     public void DisplayMessage(){
         Message messageDisplay = curMessages[activeMessage];
         messageText.text = messageDisplay.message;
-
         Actor charDisplay = curChars[messageDisplay.charId];
         charName.text = charDisplay.name;
         charImage.sprite = charDisplay.sprite;
@@ -39,7 +41,7 @@ public class DialogueManager : MonoBehaviour
         }else{
             isActive = false;
             dialogueBox.SetActive(false);
-            Debug.Log("Dialogue ended");
+            //Debug.Log("Dialogue ended");
         }
     }
 

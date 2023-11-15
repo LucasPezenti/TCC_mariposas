@@ -13,7 +13,10 @@ public class PlayerController : MonoBehaviour
     private Vector2 moveDirection;
 
 
-    public Transform HoldPoint;
+    public Transform holdSpot;
+    public LayerMask pickUpMask;
+    public Vector3 pickDirection{ get; set; }
+    public GameObject itemHolding;
 
 
     private bool moved = false;
@@ -47,6 +50,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        pickDirection = new Vector2(0, 0);
     }
 
     // Update is called once per frame
@@ -75,6 +79,18 @@ public class PlayerController : MonoBehaviour
 
         moveDirection = new Vector2(moveX, moveY).normalized;
 
+        // Pick up direction
+        if(moveDirection.sqrMagnitude > .1f){
+            pickDirection = moveDirection.normalized;
+        }
+
+        if(itemHolding == null && Input.GetKeyDown(KeyCode.E)){
+            PickUp();
+        }
+        else if(itemHolding != null && Input.GetKeyDown(KeyCode.E)){
+            Release();
+        }
+
     }
 
     private void Move(){
@@ -93,24 +109,55 @@ public class PlayerController : MonoBehaviour
             moved = true;
             dir = right_dir;
             last_dir = right_dir;
+            holdSpot.transform.localPosition = new Vector2(0.25f, 0.45f);
+            if(itemHolding != null) itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
         else if(moveX < 0){
             moved = true;
             dir = left_dir;
             last_dir = left_dir;
+            holdSpot.transform.localPosition = new Vector2(-0.25f, 0.45f);
+            if(itemHolding != null) itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
         if(moveY > 0){
             moved = true;
             dir = up_dir;
             last_dir = up_dir;
+            holdSpot.transform.localPosition = new Vector2(0, 0.5f);
+            if(itemHolding != null) itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
         else if(moveY < 0){
             moved = true;
             dir = down_dir;
             last_dir = down_dir;
+            holdSpot.transform.localPosition = new Vector2(0, 0.25f);
+            if(itemHolding != null) itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 1;
         }
         
         
+    }
+
+    private void PickUp(){
+        Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + pickDirection*.5f, .3f, pickUpMask);
+        if(pickUpItem){
+            itemHolding = pickUpItem.gameObject;
+            itemHolding.transform.position = holdSpot.position;
+            itemHolding.transform.parent = holdSpot.transform;
+            if(itemHolding.GetComponent<Rigidbody2D>()){
+                itemHolding.GetComponent<Rigidbody2D>().simulated = false;                
+            //Debug.Log("Item grabbed");
+            }
+        }
+    }
+
+    private void Release(){
+        itemHolding.transform.position = transform.position + pickDirection * .5f;
+        itemHolding.transform.parent = null;
+        if(itemHolding.GetComponent<Rigidbody2D>()){
+            itemHolding.GetComponent<Rigidbody2D>().simulated = true;
+        }
+        itemHolding = null;
+        //Debug.Log("Item released");
     }
 
     private void PlayerAnimation(){

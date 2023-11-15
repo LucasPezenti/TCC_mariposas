@@ -22,7 +22,7 @@ public class ObjectHolder : MonoBehaviour
     public void HoldObject()
     {
         rb.bodyType = RigidbodyType2D.Dynamic;
-        this.transform.position = player.GetComponent<PlayerController>().HoldPoint.position;
+        this.transform.position = player.GetComponent<PlayerController>().holdSpot.position;
         this.transform.SetParent(player.transform);
     }
 }
