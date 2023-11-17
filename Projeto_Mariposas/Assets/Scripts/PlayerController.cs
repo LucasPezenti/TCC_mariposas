@@ -11,45 +11,21 @@ public class PlayerController : MonoBehaviour
     public float moveSpd;
     public Rigidbody2D rb;
     private Vector2 moveDirection;
+    private Vector2 lastMoveDirection;
 
-
+    public Animator anim;
     public Transform holdSpot;
     public LayerMask pickUpMask;
     public Vector3 pickDirection{ get; set; }
     public GameObject itemHolding;
 
-
-    private bool moved = false;
     private bool running = false;
     private float moveX = 0;
     private float moveY = 0;
-    private int right_dir = 0, left_dir = 1, up_dir = 3, down_dir = 4;
-    private int dir = 4, last_dir = 4;
-
-    // Player animations
-    const string PLAYER_IDLE_D = "Anoush_Idle_D";
-    const string PLAYER_IDLE_U = "Anoush_Idle_U";
-    const string PLAYER_IDLE_R = "Anoush_Idle_R";
-    const string PLAYER_IDLE_L = "Anoush_Idle_L";
-
-    const string PLAYER_RUN_R = "Player_Run_R";
-    const string PLAYER_RUN_L = "Player_Run_L";
-    const string PLAYER_RUN_D = "Player_Run_D";
-    const string PLAYER_RUN_U = "Player_Run_U";
-
-    const string PLAYER_WALK_R = "Anoush_Walk_R";
-    const string PLAYER_WALK_L = "Anoush_Walk_L";
-    const string PLAYER_WALK_D = "Anoush_Walk_D";
-    const string PLAYER_WALK_U = "Anoush_Walk_U";
-
-    /*
-    void Awake(){
-        animController = animCtrl.GetComponent<AnimController>();
-    }
-    */
+    
     void Start()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         pickDirection = new Vector2(0, 0);
     }
 
@@ -57,7 +33,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         ProcessInputs();
-        PlayerAnimation();
+        Animate();
     }
 
     // Physics Calculation
@@ -73,8 +49,14 @@ public class PlayerController : MonoBehaviour
         moveY = Input.GetAxisRaw("Vertical");
 
         running = false;
+        anim.SetBool("IsRunning", false);
         if(Input.GetKey("left shift")){
             running = true;
+            anim.SetBool("IsRunning", true);
+        }
+
+         if((moveX == 0 && moveY == 0) && moveDirection.x != 0 || moveDirection.y != 0){
+            lastMoveDirection = moveDirection;
         }
 
         moveDirection = new Vector2(moveX, moveY).normalized;
@@ -96,7 +78,6 @@ public class PlayerController : MonoBehaviour
     private void Move(){
         rb.velocity = new Vector2(moveDirection.x * moveSpd, moveDirection.y * moveSpd);
 
-        moved = false;
         if(running){
             moveSpd = 3.5f;
         }
@@ -105,32 +86,20 @@ public class PlayerController : MonoBehaviour
         }
 
         // Movement direction
-        if(moveX > 0){
-            moved = true;
-            dir = right_dir;
-            last_dir = right_dir;
-            holdSpot.transform.localPosition = new Vector2(0.25f, 0.45f);
+        if(moveX > 0){  // Right
+            holdSpot.transform.localPosition = new Vector2(0.25f, 0.6f);
             if(itemHolding != null) itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
-        else if(moveX < 0){
-            moved = true;
-            dir = left_dir;
-            last_dir = left_dir;
-            holdSpot.transform.localPosition = new Vector2(-0.25f, 0.45f);
+        else if(moveX < 0){ // Left
+            holdSpot.transform.localPosition = new Vector2(-0.25f, 0.6f);
             if(itemHolding != null) itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
-        if(moveY > 0){
-            moved = true;
-            dir = up_dir;
-            last_dir = up_dir;
-            holdSpot.transform.localPosition = new Vector2(0, 0.5f);
+        if(moveY > 0){  // Up
+            holdSpot.transform.localPosition = new Vector2(0, 0.65f);
             if(itemHolding != null) itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
-        else if(moveY < 0){
-            moved = true;
-            dir = down_dir;
-            last_dir = down_dir;
-            holdSpot.transform.localPosition = new Vector2(0, 0.25f);
+        else if(moveY < 0){ // Down
+            holdSpot.transform.localPosition = new Vector2(0, 0.55f);
             if(itemHolding != null) itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 1;
         }
         
@@ -147,6 +116,7 @@ public class PlayerController : MonoBehaviour
                 itemHolding.GetComponent<Rigidbody2D>().simulated = false;                
             //Debug.Log("Item grabbed");
             }
+            anim.SetBool("HoldingBox", true);
         }
     }
 
@@ -157,70 +127,16 @@ public class PlayerController : MonoBehaviour
             itemHolding.GetComponent<Rigidbody2D>().simulated = true;
         }
         itemHolding = null;
-        //Debug.Log("Item released");
+        anim.SetBool("HoldingBox", false);
+        //Debug.Log("Item released"); 
     }
 
-    private void PlayerAnimation(){
-
-        // Idle animation
-        if(!moved){
-            if(last_dir == down_dir){
-                ChangeAnimationState(PLAYER_IDLE_D);
-            }
-            else if(last_dir == up_dir){
-                ChangeAnimationState(PLAYER_IDLE_U);
-            }
-            else if(last_dir == right_dir){
-                ChangeAnimationState(PLAYER_IDLE_R);
-            }
-            else if(last_dir == left_dir){
-                ChangeAnimationState(PLAYER_IDLE_L);
-            }
-        }
-
-        // Walking animation
-        else if(moved){
-            if(dir == down_dir){
-                ChangeAnimationState(PLAYER_WALK_D);
-            }
-            else if(dir == up_dir){
-                ChangeAnimationState(PLAYER_WALK_U);
-            }
-            else if(dir == right_dir){
-                ChangeAnimationState(PLAYER_WALK_R);
-            }
-            else if(dir == left_dir){
-                ChangeAnimationState(PLAYER_WALK_L);
-            }
-        }
-
-        // Running animation
-        else if(moved && running){
-            if(dir == down_dir){
-                ChangeAnimationState(PLAYER_RUN_D);
-            }
-            else if(dir == up_dir){
-                ChangeAnimationState(PLAYER_RUN_U);
-            }
-            else if(dir == right_dir){
-                ChangeAnimationState(PLAYER_RUN_R);
-            }
-            else if(dir == left_dir){
-                ChangeAnimationState(PLAYER_RUN_L);
-            }
-        }
-    }
-    
-    public void ChangeAnimationState(string newState){
-
-        // Stop an animaiton from interrupting itself
-        if(curState == newState){
-            return;
-        }
-
-        animator.Play(newState);
-        curState = newState;
-
+    public void Animate(){
+        anim.SetFloat("AnimMoveX", moveDirection.x);
+        anim.SetFloat("AnimMoveY", moveDirection.y);
+        anim.SetFloat("AnimMoveMagnitude", moveDirection.magnitude);
+        anim.SetFloat("AnimLastMoveX", lastMoveDirection.x);
+        anim.SetFloat("AnimLastMoveY", lastMoveDirection.y);
     }
     
 }
