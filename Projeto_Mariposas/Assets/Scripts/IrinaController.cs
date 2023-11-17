@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class IrinaController : MonoBehaviour
@@ -13,6 +14,9 @@ public class IrinaController : MonoBehaviour
     private float moveX;
     private float moveY;
     public float  moveSpd;
+
+    public GameObject tutorial;
+    private bool tutorialOn;
 
     private int right_dir = 0, left_dir = 1;
     private int dir = 0, last_dir = 0;
@@ -29,6 +33,7 @@ public class IrinaController : MonoBehaviour
         moved = false;
         moveX = 0;
         moveY = 0;
+        tutorialOn = true;
     }
 
     // Update is called once per frame
@@ -60,17 +65,23 @@ public class IrinaController : MonoBehaviour
         rb.velocity = new Vector2(moveDirection.x * moveSpd, moveDirection.y);
 
         moved = false;
-        moveSpd = 2.5f;
+        moveSpd = 1.4f;
 
         if(moveX > 0){
             moved = true;
             dir = right_dir;
             last_dir = right_dir;
+            if(tutorialOn){
+                TutorialOff();
+            }
         }
         else if(moveX < 0){
             moved = true;
             dir = left_dir;
             last_dir = left_dir;
+            if(tutorialOn){
+                TutorialOff();
+            }
         }
     }
 
@@ -109,5 +120,9 @@ public class IrinaController : MonoBehaviour
         animator.Play(newState);
         curState = newState;
 
+    }
+
+    public void TutorialOff(){
+        tutorial.GameObject().SetActive(false);  
     }
 }

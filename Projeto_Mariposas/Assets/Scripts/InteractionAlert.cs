@@ -4,13 +4,27 @@ using UnityEngine;
 
 public class InteractionAlert : MonoBehaviour
 {
-    public GameObject interactionAlert;
+    [SerializeField] GameObject interactionAlert;
+    public static bool alert;
+
+    void Start(){
+        alert = false;
+    }
+
+    void Update(){
+        if(!alert){
+            interactionAlert.SetActive(false);
+        }
+        else{
+            interactionAlert.SetActive(true);
+        }
+    }
 
     public void interactOn(){
-        interactionAlert.SetActive(true);
+        alert = true;
     }
 
     public void interactOff(){
-        interactionAlert.SetActive(false);
+        alert =false;
     }
 }

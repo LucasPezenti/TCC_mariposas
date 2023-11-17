@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Animator animator;
-    private string curState;
-//    AnimController animController;
-//    [SerializeField] GameObject animCtrl;
     public float moveSpd;
     public Rigidbody2D rb;
     private Vector2 moveDirection;
@@ -25,8 +21,8 @@ public class PlayerController : MonoBehaviour
     
     void Start()
     {
-        //animator = GetComponent<Animator>();
         pickDirection = new Vector2(0, 0);
+        DialogueManager.isActive = false;
     }
 
     // Update is called once per frame
@@ -43,7 +39,15 @@ public class PlayerController : MonoBehaviour
     
     private void ProcessInputs(){
         if(DialogueManager.isActive == true){
-           return;
+            moveX = 0;
+            moveY = 0;
+            if((moveX == 0 && moveY == 0) && moveDirection.x != 0 || moveDirection.y != 0){
+            lastMoveDirection = moveDirection;
+            }
+            Animate();
+            moveDirection.x = 0;
+            moveDirection.y = 0;
+            return;
         }
         moveX = Input.GetAxisRaw("Horizontal");
         moveY = Input.GetAxisRaw("Vertical");
@@ -55,7 +59,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("IsRunning", true);
         }
 
-         if((moveX == 0 && moveY == 0) && moveDirection.x != 0 || moveDirection.y != 0){
+        if((moveX == 0 && moveY == 0) && moveDirection.x != 0 || moveDirection.y != 0){
             lastMoveDirection = moveDirection;
         }
 
@@ -87,11 +91,11 @@ public class PlayerController : MonoBehaviour
 
         // Movement direction
         if(moveX > 0){  // Right
-            holdSpot.transform.localPosition = new Vector2(0.25f, 0.6f);
+            holdSpot.transform.localPosition = new Vector2(0.22f, 0.6f);
             if(itemHolding != null) itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
         else if(moveX < 0){ // Left
-            holdSpot.transform.localPosition = new Vector2(-0.25f, 0.6f);
+            holdSpot.transform.localPosition = new Vector2(-0.22f, 0.6f);
             if(itemHolding != null) itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
         if(moveY > 0){  // Up
@@ -117,12 +121,16 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Item grabbed");
             }
             anim.SetBool("HoldingBox", true);
+            if(lastMoveDirection.y == -1){
+                itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 1;
+            }
         }
     }
 
     private void Release(){
         itemHolding.transform.position = transform.position + pickDirection * .5f;
         itemHolding.transform.parent = null;
+        itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 0;
         if(itemHolding.GetComponent<Rigidbody2D>()){
             itemHolding.GetComponent<Rigidbody2D>().simulated = true;
         }

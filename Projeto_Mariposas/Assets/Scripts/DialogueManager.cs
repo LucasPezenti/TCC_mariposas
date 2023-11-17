@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
     public Image charImage;
     public TextMeshProUGUI charName;
     public TextMeshProUGUI messageText;
-    public RectTransform backgroundBox;
+
     Message[] curMessages;
     Actor[] curChars;
     int activeMessage = 0;
@@ -32,6 +32,7 @@ public class DialogueManager : MonoBehaviour
         charName.text = charDisplay.name;
         charImage.sprite = charDisplay.sprite;
         dialogueBox.SetActive(true);
+        InteractionAlert.alert = false;
     }
 
     public void NextMessage(){

@@ -8,16 +8,22 @@ public class DialogueTrigger : MonoBehaviour
     public Message[] messages;
     public Actor[] actors;
     public bool repeat;
-    public GameObject interaction;
+    public GameObject interactionObj;
 
     public void StartDialogue(){
         if(!repeat){
             FindObjectOfType<DialogueManager>().OpenDialogue(messages, actors);
-            interaction.SetActive(false);
+            interactionObj.SetActive(false);
         }else{
             FindObjectOfType<DialogueManager>().OpenDialogue(messages, actors);
         }
     }
+
+    public bool GetRepeat(){
+        return repeat;
+    }
+
+
 }
 
 [System.Serializable]
