@@ -44,6 +44,11 @@ public class IrinaController : MonoBehaviour
     }
 
     private void ProcessInputs(){
+        if(DialogueManager.isActive == true){
+            moveDirection.x = 0;
+            moved = false;
+            return;
+        }
         moveX = Input.GetAxisRaw("Horizontal");
 
         moveDirection = new Vector2(moveX, moveY).normalized;
