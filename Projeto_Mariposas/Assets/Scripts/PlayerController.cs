@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
         if(itemHolding == null && Input.GetKeyDown(KeyCode.E)){
             PickUp();
         }
-        else if(itemHolding != null && Input.GetKeyDown(KeyCode.E)){
+        else if(itemHolding != null && DialogueManager.isActive == false && Input.GetKeyDown(KeyCode.E)){
             Release();
         }
 
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
             moveSpd = 3.5f;
         }
         else{
-            moveSpd = 2.4f;
+            moveSpd = 1.9f;
         }
 
         // Movement direction

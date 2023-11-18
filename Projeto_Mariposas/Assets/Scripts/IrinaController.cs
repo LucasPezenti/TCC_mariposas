@@ -15,8 +15,7 @@ public class IrinaController : MonoBehaviour
     private float moveY;
     public float  moveSpd;
 
-    public GameObject tutorial;
-    private bool tutorialOn;
+    private bool onScene;
 
     private int right_dir = 0, left_dir = 1;
     private int dir = 0, last_dir = 0;
@@ -33,7 +32,7 @@ public class IrinaController : MonoBehaviour
         moved = false;
         moveX = 0;
         moveY = 0;
-        tutorialOn = true;
+        onScene = false;
     }
 
     // Update is called once per frame
@@ -49,7 +48,7 @@ public class IrinaController : MonoBehaviour
     }
 
     private void ProcessInputs(){
-        if(DialogueManager.isActive == true){
+        if(onScene || DialogueManager.isActive == true){
             moveDirection.x = 0;
             moved = false;
             return;
@@ -71,17 +70,11 @@ public class IrinaController : MonoBehaviour
             moved = true;
             dir = right_dir;
             last_dir = right_dir;
-            if(tutorialOn){
-                TutorialOff();
-            }
         }
         else if(moveX < 0){
             moved = true;
             dir = left_dir;
             last_dir = left_dir;
-            if(tutorialOn){
-                TutorialOff();
-            }
         }
     }
 
@@ -122,7 +115,12 @@ public class IrinaController : MonoBehaviour
 
     }
 
-    public void TutorialOff(){
-        tutorial.GameObject().SetActive(false);  
+    public void SetOnSceneOn(){
+        onScene = true;
     }
+
+    public void SetOnSceneOff(){
+        onScene = false;
+    }
+
 }
