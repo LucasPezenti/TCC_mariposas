@@ -49,6 +49,22 @@ public class PlayerController : MonoBehaviour
             moveDirection.y = 0;
             return;
         }
+
+        if(anim.GetBool("TakingPill")){
+            return;
+        }
+        else if(itemHolding == null && DialogueManager.isActive == false && Input.GetKey(KeyCode.Q)){
+            moveX = 0;
+            moveY = 0;
+            if((moveX == 0 && moveY == 0) && moveDirection.x != 0 || moveDirection.y != 0){
+            lastMoveDirection = moveDirection;
+            }
+            anim.SetBool("TakingPill", true);
+            moveDirection.x = 0;
+            moveDirection.y = 0;
+            return;
+        }
+
         moveX = Input.GetAxisRaw("Horizontal");
         moveY = Input.GetAxisRaw("Vertical");
 
@@ -139,6 +155,9 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("Item released"); 
     }
 
+    public void EndPill(){
+        anim.SetBool("TakingPill", false);
+    }
     public void Animate(){
         anim.SetFloat("AnimMoveX", moveDirection.x);
         anim.SetFloat("AnimMoveY", moveDirection.y);
