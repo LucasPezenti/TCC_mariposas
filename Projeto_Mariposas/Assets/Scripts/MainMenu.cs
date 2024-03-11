@@ -14,7 +14,6 @@ public class MainMenu : MonoBehaviour
 
     private void Awake(){
         newGameBtn.onClick.AddListener(StartNewGame);
-
         quitBtn.onClick.AddListener(QuitGame);
     }
 

@@ -22,8 +22,9 @@ public class GameManager : MonoBehaviour
     }
 
     public void ChangeGameState(GameState newState) {
-        State = newState;
+        if(State == newState) return;
 
+        State = newState;
         switch(newState){
             case GameState.menu:
                 break;
