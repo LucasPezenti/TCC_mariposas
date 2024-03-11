@@ -39,7 +39,7 @@ public class IrinaController : MonoBehaviour
     void Update()
     {
         ProcessInputs();
-        PlayerAnimation();
+        AnimatePlayer();
     }
 
     void FixedUpdate()
@@ -78,7 +78,7 @@ public class IrinaController : MonoBehaviour
         }
     }
 
-    private void PlayerAnimation(){
+    private void AnimatePlayer(){
 
         // Idle animation
         if(!moved){
