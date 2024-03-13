@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private Button newGameBtn;
     //[SerializeField] private Button resumeGameBtn;
-    //[SerializeField] private Button settingsBtn;
+    [SerializeField] private Button settingsBtn;
     //[SerializeField] private Button creditsBtn;
     [SerializeField] private Button quitBtn;
 
