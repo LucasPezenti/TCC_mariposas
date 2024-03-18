@@ -47,3 +47,11 @@ public enum GameState {
     gameplay
 
 }
+
+public enum Direction {
+    right,
+    left,
+    up,
+    down
+
+}

@@ -1,22 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class SideScrollMovement : MonoBehaviour
 {
     private float speed;
     private float speedX, speedY;
-    //private bool running;
+    private bool moved;
+    private bool running;
+    [SerializeField] private bool canMove;
+    [SerializeField] private bool canRun;
+
     private Vector2 moveDirection;
-    [SerializeField] private Rigidbody2D rb;
+    private Rigidbody2D rb;
+
+    private IrinaScript irinaScript;
 
     // Start is called before the first frame update
     void Start()
     {
+        moved = false;
         speed = 1.4f;
         speedY = 0;
-        //running = false;
+        running = false;
         rb = GetComponent<Rigidbody2D>();
+        irinaScript = GetComponent<IrinaScript>();
     }
 
     // Update is called once per frame
@@ -31,29 +40,42 @@ public class SideScrollMovement : MonoBehaviour
     }
 
     private void ProcessInputs(){
-        speedX = Input.GetAxisRaw("Horizontal");
+        if(canMove){
+            speedX = Input.GetAxisRaw("Horizontal");
 
-        // Descomentar para adicionar corrida no modo Side Scrolling
-        /*
-        running = false;
-        if(Input.GetKey("left shift")){
-            running = true;
+            if(canRun){
+                running = false;
+                if(Input.GetKey("left shift")){
+                    running = true;
+                }
+            }
+            
+            moveDirection = new Vector2(speedX, speedY).normalized;
         }
-        */
-        moveDirection = new Vector2(speedX, speedY).normalized;
+        
     }
 
     private void Move(){
         rb.velocity = new Vector2(moveDirection.x * speed, moveDirection.y);
-        
-        // Descomentar para adicionar corrida no modo Side Scrolling
-        /*
+    
+        moved = false;
+
+        if(speedX > 0){
+            moved = true;
+            irinaScript.AnimatePlayer(Direction.right);
+        }
+
+        else if(speedX < 0){
+            moved = true;
+            irinaScript.AnimatePlayer(Direction.left);
+        }
+
         if(running){
             speed = 3.2f;
         }else{
             speed = 1.4f;
         }
-        */
+        
     }
 
     public float GetSpeedX(){
@@ -62,5 +84,13 @@ public class SideScrollMovement : MonoBehaviour
 
     public float GetSpeedY(){
         return this.speedY;
+    }
+
+    public bool GetMoved(){
+        return this.moved;
+    }
+
+    public Vector2 GetMoveDirection(){
+        return this.moveDirection;
     }
 }
