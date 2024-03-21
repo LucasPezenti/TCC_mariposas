@@ -14,8 +14,7 @@ public class SideScrollMovement : MonoBehaviour
 
     private Vector2 moveDirection;
     private Rigidbody2D rb;
-
-    private IrinaScript irinaScript;
+    private Direction dir, lastDir;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +24,6 @@ public class SideScrollMovement : MonoBehaviour
         speedY = 0;
         running = false;
         rb = GetComponent<Rigidbody2D>();
-        irinaScript = GetComponent<IrinaScript>();
     }
 
     // Update is called once per frame
@@ -62,12 +60,14 @@ public class SideScrollMovement : MonoBehaviour
 
         if(speedX > 0){
             moved = true;
-            irinaScript.AnimatePlayer(Direction.right);
+            dir = Direction.right;
+            lastDir = Direction.right;
         }
 
         else if(speedX < 0){
             moved = true;
-            irinaScript.AnimatePlayer(Direction.left);
+            dir = Direction.left;
+            lastDir = Direction.left;
         }
 
         if(running){
@@ -92,5 +92,13 @@ public class SideScrollMovement : MonoBehaviour
 
     public Vector2 GetMoveDirection(){
         return this.moveDirection;
+    }
+
+    public Direction GetDir(){
+        return this.dir;
+    }
+
+    public Direction GetLastDir(){
+        return this.lastDir;
     }
 }

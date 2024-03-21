@@ -8,7 +8,6 @@ public class IrinaScript : MonoBehaviour
     private Animator animator;
     private SideScrollMovement PlayerMovement;
     private string curState;
-    private Direction dir;
 
     // Animações Irina
     const string PLAYER_IDLE_R = "Ira_Idle_R";
@@ -22,41 +21,32 @@ public class IrinaScript : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         PlayerMovement = GetComponent<SideScrollMovement>();
-        AnimatePlayer(Direction.right);
     }
 
     void Update()
     {
-        AnimatePlayer(dir);
+        AnimatePlayer();
     }
 
-    public void AnimatePlayer(Direction newDir){
-        if(dir == newDir) return;
-        
-        dir = newDir;
-        switch (newDir){
-            case Direction.right:
-                if(!PlayerMovement.GetMoved()){
-                    ChangeAnimationState(PLAYER_IDLE_R); 
-                }
+    public void AnimatePlayer(){
+         // Idle animation
+        if(!PlayerMovement.GetMoved()){
+            if(PlayerMovement.GetLastDir() == Direction.right){
+                ChangeAnimationState(PLAYER_IDLE_R);
+            }
+            else if(PlayerMovement.GetLastDir() == Direction.left){
+                ChangeAnimationState(PLAYER_IDLE_L);
+            }
+        }
 
-                else if(PlayerMovement.GetMoved() && PlayerMovement.GetSpeedX() > 0){
-                    ChangeAnimationState(PLAYER_WALK_R);
-                }
-                break;
-
-            case Direction.left:
-                if(!PlayerMovement.GetMoved()){
-                    ChangeAnimationState(PLAYER_IDLE_L); 
-                }
-
-                else if(PlayerMovement.GetMoved() && PlayerMovement.GetSpeedX() < 0){
-                    ChangeAnimationState(PLAYER_WALK_L);
-                }
-                break;
-
-            default:
-                throw new ArgumentOutOfRangeException(nameof(newDir), newDir, null);
+        // Walking animation
+        else if(PlayerMovement.GetMoved()){
+            if(PlayerMovement.GetDir() == Direction.right){
+                ChangeAnimationState(PLAYER_WALK_R);
+            }
+            else if(PlayerMovement.GetDir() == Direction.left){
+                ChangeAnimationState(PLAYER_WALK_L);
+            }
         }
 
     }
