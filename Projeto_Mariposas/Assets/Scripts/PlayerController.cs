@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         pickDirection = new Vector2(0, 0);
-        DialogueManager.isActive = false;
+        DialogueManager.onDialogue = false;
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     }
     
     private void ProcessInputs(){
-        if(DialogueManager.isActive == true){
+        if(DialogueManager.onDialogue == true){
             moveX = 0;
             moveY = 0;
             if((moveX == 0 && moveY == 0) && moveDirection.x != 0 || moveDirection.y != 0){
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         if(anim.GetBool("TakingPill")){
             return;
         }
-        else if(itemHolding == null && DialogueManager.isActive == false && Input.GetKey(KeyCode.Q)){
+        else if(itemHolding == null && DialogueManager.onDialogue == false && Input.GetKey(KeyCode.Q)){
             moveX = 0;
             moveY = 0;
             if((moveX == 0 && moveY == 0) && moveDirection.x != 0 || moveDirection.y != 0){
@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
         if(itemHolding == null && Input.GetKeyDown(KeyCode.E)){
             PickUp();
         }
-        else if(itemHolding != null && DialogueManager.isActive == false && Input.GetKeyDown(KeyCode.E)){
+        else if(itemHolding != null && DialogueManager.onDialogue == false && Input.GetKeyDown(KeyCode.E)){
             Release();
         }
 

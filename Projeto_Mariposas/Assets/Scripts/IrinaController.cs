@@ -48,7 +48,7 @@ public class IrinaController : MonoBehaviour
     }
 
     private void ProcessInputs(){
-        if(onScene || DialogueManager.isActive == true){
+        if(onScene || DialogueManager.onDialogue == true){
             moveDirection.x = 0;
             moved = false;
             return;

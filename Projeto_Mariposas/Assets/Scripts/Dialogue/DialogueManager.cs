@@ -12,14 +12,14 @@ public class DialogueManager : MonoBehaviour
     Message[] curMessages;
     Actor[] curChars;
     int activeMessage = 0;
-    public static bool isActive = false;
+    public static bool onDialogue = false;
 
     public void OpenDialogue(Message[] messages, Actor[] actors){
-        if(!isActive){
+        if(!onDialogue){
             curMessages = messages;
             curChars = actors;
             activeMessage = 0;
-            isActive = true;
+            onDialogue = true;
             //Debug.Log("Dialogue started! Number of messages: " + messages.Length);
             DisplayMessage();
         }
@@ -32,7 +32,6 @@ public class DialogueManager : MonoBehaviour
         charName.text = charDisplay.name;
         charImage.sprite = charDisplay.sprite;
         dialogueBox.SetActive(true);
-        InteractionAlert.alert = false;
     }
 
     public void NextMessage(){
@@ -40,14 +39,14 @@ public class DialogueManager : MonoBehaviour
         if(activeMessage < curMessages.Length){
             DisplayMessage();
         }else{
-            isActive = false;
+            onDialogue = false;
             dialogueBox.SetActive(false);
             //Debug.Log("Dialogue ended");
         }
     }
 
     void Update(){
-        if(Input.GetKeyDown(KeyCode.Space) && isActive == true){
+        if(Input.GetKeyDown(KeyCode.Space) && onDialogue == true){
             NextMessage();
         }
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,7 @@ public class TopDownMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 1.8f;
+        speed = 1.4f;
         moved = false;
         running = false;
         rb = GetComponent<Rigidbody2D>();
@@ -27,14 +28,14 @@ public class TopDownMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ProcessInputs();
+        MovementInputs();   
     }
 
     void FixedUpdate(){
         Move();
     }
 
-    private void ProcessInputs(){
+    private void MovementInputs(){
         if(canMove){
             speedX = Input.GetAxisRaw("Horizontal");
             speedY = Input.GetAxisRaw("Vertical");
@@ -88,7 +89,7 @@ public class TopDownMovement : MonoBehaviour
         if(running){
             speed = 3.2f;
         }else{
-            speed = 2f;
+            speed = 1.4f;
         }
     }
 
