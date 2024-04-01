@@ -46,7 +46,6 @@ public class TopDownMovement : MonoBehaviour
                     running = true;
                 }
             }
-            
 
             moveDirection = new Vector2(speedX, speedY).normalized;
         }

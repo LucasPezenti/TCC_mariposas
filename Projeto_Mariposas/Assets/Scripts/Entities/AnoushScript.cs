@@ -6,6 +6,7 @@ public class AnoushScript : MonoBehaviour
 {
      private Animator animator;
     private TopDownMovement PlayerMovement;
+    private HoldObjectScript HoldObject;
     private string curState;
 
     // Animações Anoush
@@ -18,10 +19,21 @@ public class AnoushScript : MonoBehaviour
     const string PLAYER_WALK_U = "Anoush_WalkU";
     const string PLAYER_WALK_D = "Anoush_WalkD";
 
+    // Animações Anoush com caixa
+    const string PLAYER_IDLE_BOX_R = "Anoush_IdleBoxR";
+    const string PLAYER_IDLE_BOX_L = "Anoush_IdleBoxL";
+    const string PLAYER_IDLE_BOX_U = "Anoush_IdleBoxU";
+    const string PLAYER_IDLE_BOX_D = "Anoush_IdleBoxD";
+    const string PLAYER_WALK_BOX_R = "Anoush_WalkBoxR";
+    const string PLAYER_WALK_BOX_L = "Anoush_WalkBoxL";
+    const string PLAYER_WALK_BOX_U = "Anoush_WalkBoxU";
+    const string PLAYER_WALK_BOX_D = "Anoush_WalkBoxD";
+
     void Start()
     {
         animator = GetComponent<Animator>();
         PlayerMovement = GetComponent<TopDownMovement>();
+        HoldObject = GetComponent<HoldObjectScript>();
     }
 
     void Update()
@@ -30,8 +42,8 @@ public class AnoushScript : MonoBehaviour
     }
 
     public void AnimatePlayer(){
-         // Idle animation
-        if(!PlayerMovement.GetMoved()){
+        // Idle animation
+        if(!HoldObject.GetIsHolding() && !PlayerMovement.GetMoved()){
             if(PlayerMovement.GetLastDir() == Direction.right){
                 ChangeAnimationState(PLAYER_IDLE_R);
             }
@@ -48,7 +60,7 @@ public class AnoushScript : MonoBehaviour
         }
 
         // Walking animation
-        else if(PlayerMovement.GetMoved()){
+        else if(!HoldObject.GetIsHolding() && PlayerMovement.GetMoved()){
             if(PlayerMovement.GetDir() == Direction.right){
                 ChangeAnimationState(PLAYER_WALK_R);
             }
@@ -64,6 +76,39 @@ public class AnoushScript : MonoBehaviour
             }
         }
 
+        // Idle with box animation
+        else if(HoldObject.GetIsHolding() && !PlayerMovement.GetMoved()){
+            if(PlayerMovement.GetLastDir() == Direction.right){
+                ChangeAnimationState(PLAYER_IDLE_BOX_R);
+            }
+            else if(PlayerMovement.GetLastDir() == Direction.left){
+                ChangeAnimationState(PLAYER_IDLE_BOX_L);
+            }
+
+            if(PlayerMovement.GetLastDir() == Direction.up){
+                ChangeAnimationState(PLAYER_IDLE_BOX_U);
+            }
+            else if(PlayerMovement.GetLastDir() == Direction.down){
+                ChangeAnimationState(PLAYER_IDLE_BOX_D);
+            }
+        }
+
+        // Walking animation
+        else if(HoldObject.GetIsHolding() && PlayerMovement.GetMoved()){
+            if(PlayerMovement.GetDir() == Direction.right){
+                ChangeAnimationState(PLAYER_WALK_BOX_R);
+            }
+            else if(PlayerMovement.GetDir() == Direction.left){
+                ChangeAnimationState(PLAYER_WALK_BOX_L);
+            }
+
+            if(PlayerMovement.GetDir() == Direction.up){
+                ChangeAnimationState(PLAYER_WALK_BOX_U);
+            }
+            else if(PlayerMovement.GetDir() == Direction.down){
+                ChangeAnimationState(PLAYER_WALK_BOX_D);
+            }
+        }
     }
 
     public void ChangeAnimationState(string newState){
