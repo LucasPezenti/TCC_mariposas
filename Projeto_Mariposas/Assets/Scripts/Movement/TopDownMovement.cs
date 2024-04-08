@@ -92,6 +92,11 @@ public class TopDownMovement : MonoBehaviour
         }
     }
 
+    public void StopMoving(){
+        speedX = 0;
+        speedY = 0;
+    }
+
     public float GetSpeedX(){
         return this.speedX;
     }
@@ -114,5 +119,21 @@ public class TopDownMovement : MonoBehaviour
 
     public Direction GetLastDir(){
         return this.lastDir;
+    }
+
+    public bool GetCanMove(){
+        return this.canMove;
+    }
+
+    public bool GetCanRun(){
+        return this.canRun;
+    }
+
+    public void SetCanMove(bool move){
+        this.canMove = move;
+    }
+
+    public void SetCanRun(bool run){
+        this.canRun = run;
     }
 }
