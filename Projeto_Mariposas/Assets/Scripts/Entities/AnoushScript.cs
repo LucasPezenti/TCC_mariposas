@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnoushScript : MonoBehaviour
 {
-     private Animator animator;
+    private Animator animator;
     private TopDownMovement PlayerMovement;
     private HoldObjectScript HoldObject;
     private string curState;
