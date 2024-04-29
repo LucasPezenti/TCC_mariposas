@@ -53,6 +53,8 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 42265bc1ae8bb5348bed792517be6332, type: 3}
     - {fileID: 2800000, guid: 5b115b34429deff47bef27738f880039, type: 3}
     - {fileID: 2800000, guid: e1af93728ae7cb143a9ee6155b8e7976, type: 3}
+    - {fileID: 2800000, guid: 0dfbbaf8bbaa434428e523e024984482, type: 3}
+    - {fileID: 2800000, guid: fd6551fe75d7a394cbf7cb03cbe0b05f, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -477,6 +479,15 @@ SpriteAtlas:
   - {fileID: -1593357931, guid: 3119fe778f66c394bb9cd2544ffab2b1, type: 3}
   - {fileID: -1045147396, guid: 3119fe778f66c394bb9cd2544ffab2b1, type: 3}
   - {fileID: -1966210500, guid: 3119fe778f66c394bb9cd2544ffab2b1, type: 3}
+  - {fileID: -20093406, guid: 0dfbbaf8bbaa434428e523e024984482, type: 3}
+  - {fileID: 1045518878, guid: 0dfbbaf8bbaa434428e523e024984482, type: 3}
+  - {fileID: 350626313, guid: 0dfbbaf8bbaa434428e523e024984482, type: 3}
+  - {fileID: -356968605, guid: 0dfbbaf8bbaa434428e523e024984482, type: 3}
+  - {fileID: -1131840370, guid: 0dfbbaf8bbaa434428e523e024984482, type: 3}
+  - {fileID: -2032998553, guid: 0dfbbaf8bbaa434428e523e024984482, type: 3}
+  - {fileID: -1344563694, guid: 0dfbbaf8bbaa434428e523e024984482, type: 3}
+  - {fileID: 446026470, guid: 0dfbbaf8bbaa434428e523e024984482, type: 3}
+  - {fileID: -2114417166, guid: 0dfbbaf8bbaa434428e523e024984482, type: 3}
   - {fileID: 8976018127306389262, guid: dc747d0a3cdf6594f9f275fdd2a48b4b, type: 3}
   - {fileID: 2398694386035660818, guid: dc747d0a3cdf6594f9f275fdd2a48b4b, type: 3}
   - {fileID: -8637159173488095169, guid: dc747d0a3cdf6594f9f275fdd2a48b4b, type: 3}
@@ -517,6 +528,15 @@ SpriteAtlas:
   - {fileID: -1397913522, guid: 37e26c5a67cd46a4fb85aea9b792b3a3, type: 3}
   - {fileID: -1703772333, guid: 37e26c5a67cd46a4fb85aea9b792b3a3, type: 3}
   - {fileID: 1691865505, guid: 37e26c5a67cd46a4fb85aea9b792b3a3, type: 3}
+  - {fileID: -934614422, guid: fd6551fe75d7a394cbf7cb03cbe0b05f, type: 3}
+  - {fileID: 1842620145, guid: fd6551fe75d7a394cbf7cb03cbe0b05f, type: 3}
+  - {fileID: 764261136, guid: fd6551fe75d7a394cbf7cb03cbe0b05f, type: 3}
+  - {fileID: 119134645, guid: fd6551fe75d7a394cbf7cb03cbe0b05f, type: 3}
+  - {fileID: -1453867020, guid: fd6551fe75d7a394cbf7cb03cbe0b05f, type: 3}
+  - {fileID: 1534817777, guid: fd6551fe75d7a394cbf7cb03cbe0b05f, type: 3}
+  - {fileID: 760790625, guid: fd6551fe75d7a394cbf7cb03cbe0b05f, type: 3}
+  - {fileID: -772177445, guid: fd6551fe75d7a394cbf7cb03cbe0b05f, type: 3}
+  - {fileID: -498448781, guid: fd6551fe75d7a394cbf7cb03cbe0b05f, type: 3}
   m_PackedSpriteNamesToIndex:
   - floresta_1_101
   - floresta_1_100
@@ -937,6 +957,15 @@ SpriteAtlas:
   - Prologue_Background_12
   - Prologue_Background_19
   - Prologue_Background_18
+  - chaomadeira01_8
+  - chaomadeira01_1
+  - chaomadeira01_0
+  - chaomadeira01_3
+  - chaomadeira01_2
+  - chaomadeira01_5
+  - chaomadeira01_4
+  - chaomadeira01_7
+  - chaomadeira01_6
   - Wall 4
   - Wall 3
   - Soil 6
@@ -977,6 +1006,15 @@ SpriteAtlas:
   - Prologue_Room_2
   - Prologue_Room_1
   - Prologue_Room_0
+  - chaomadeira02_8
+  - chaomadeira02_6
+  - chaomadeira02_7
+  - chaomadeira02_4
+  - chaomadeira02_5
+  - chaomadeira02_2
+  - chaomadeira02_3
+  - chaomadeira02_0
+  - chaomadeira02_1
   m_RenderDataMap: {}
   m_Tag: Tile Atlas
   m_IsVariant: 0
