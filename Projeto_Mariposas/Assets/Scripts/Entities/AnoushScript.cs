@@ -19,6 +19,11 @@ public class AnoushScript : MonoBehaviour
     const string PLAYER_WALK_U = "Anoush_WalkU";
     const string PLAYER_WALK_D = "Anoush_WalkD";
 
+    const string PLAYER_RUN_R = "Anoush_RunR";
+    const string PLAYER_RUN_L = "Anoush_RunL";
+    const string PLAYER_RUN_U = "Anoush_RunU";
+    const string PLAYER_RUN_D = "Anoush_RunD";
+
     // Animações Anoush com caixa
     const string PLAYER_IDLE_BOX_R = "Anoush_IdleBoxR";
     const string PLAYER_IDLE_BOX_L = "Anoush_IdleBoxL";
@@ -73,6 +78,23 @@ public class AnoushScript : MonoBehaviour
             }
             else if(PlayerMovement.GetDir() == Direction.down){
                 ChangeAnimationState(PLAYER_WALK_D);
+            }
+        }
+
+        // Running animation
+        else if(!HoldObject.GetIsHolding() && PlayerMovement.GetMoved() && PlayerMovement.GetRunning()){
+            if(PlayerMovement.GetDir() == Direction.right){
+                ChangeAnimationState(PLAYER_RUN_R);
+            }
+            else if(PlayerMovement.GetDir() == Direction.left){
+                ChangeAnimationState(PLAYER_RUN_L);
+            }
+
+            if(PlayerMovement.GetDir() == Direction.up){
+                ChangeAnimationState(PLAYER_RUN_U);
+            }
+            else if(PlayerMovement.GetDir() == Direction.down){
+                ChangeAnimationState(PLAYER_RUN_D);
             }
         }
 

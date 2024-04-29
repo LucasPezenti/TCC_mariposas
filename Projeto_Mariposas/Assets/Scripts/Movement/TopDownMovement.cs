@@ -121,6 +121,10 @@ public class TopDownMovement : MonoBehaviour
         return this.lastDir;
     }
 
+    public bool GetRunning(){
+        return this.running;
+    }
+
     public bool GetCanMove(){
         return this.canMove;
     }
