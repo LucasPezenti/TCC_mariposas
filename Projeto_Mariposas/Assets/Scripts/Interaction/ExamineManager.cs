@@ -29,6 +29,8 @@ public class ExamineManager : MonoBehaviour
         itemImage.sprite = itemDisplay.sprite;
         descriptionText.text = itemDisplay.description;
         examineBox.SetActive(true);
+        SideScrollMovement.SScanMove = false;
+        TopDownMovement.TDcanMove = false;
     }
 
     void Update()
@@ -40,6 +42,8 @@ public class ExamineManager : MonoBehaviour
         if(Input.GetKeyDown(closeKey)){
             isExamining = false;
             examineBox.SetActive(false);
+            SideScrollMovement.SScanMove = true;
+            TopDownMovement.TDcanMove = true;
         }
     }
 }

@@ -10,6 +10,8 @@ public class IrinaScript : MonoBehaviour
     private string curState;
 
     // Animações Irina
+    private bool IraWakeUP = true;
+    private bool IraFall = false;
     const string PLAYER_IDLE_R = "Ira_Idle_R";
     const string PLAYER_IDLE_L = "Ira_Idle_L";
     const string PLAYER_WALK_R = "Ira_Walk_R";
@@ -29,8 +31,18 @@ public class IrinaScript : MonoBehaviour
     }
 
     public void AnimatePlayer(){
-         // Idle animation
-        if(!PlayerMovement.GetMoved()){
+        //  Irina Waking Up
+        if(IraWakeUP){
+            ChangeAnimationState(IRINA_WAKE_UP);
+        }
+
+        //  Irina Fall
+        else if(IraFall){
+            ChangeAnimationState(IRINA_FALL);
+        }
+        
+        //  Idle animation
+        else if(!PlayerMovement.GetMoved()){
             if(PlayerMovement.GetLastDir() == Direction.right){
                 ChangeAnimationState(PLAYER_IDLE_R);
             }

@@ -9,7 +9,7 @@ public class SideScrollMovement : MonoBehaviour
     private float speedX, speedY;
     private bool moved;
     private bool running;
-    [SerializeField] private bool canMove;
+    public static bool SScanMove;
     [SerializeField] private bool canRun;
 
     private Vector2 moveDirection;
@@ -23,12 +23,17 @@ public class SideScrollMovement : MonoBehaviour
         speed = 1.4f;
         speedY = 0;
         running = false;
+        SScanMove = true;
         rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(!SScanMove || DialogueManager.onDialogue){
+            moved = false;
+            moveDirection.x = 0;
+        }
         ProcessInputs();
     }
 
@@ -38,7 +43,7 @@ public class SideScrollMovement : MonoBehaviour
     }
 
     private void ProcessInputs(){
-        if(canMove){
+        if(SScanMove && !DialogueManager.onDialogue){
             speedX = Input.GetAxisRaw("Horizontal");
 
             if(canRun){
@@ -54,6 +59,7 @@ public class SideScrollMovement : MonoBehaviour
     }
 
     private void Move(){
+        speed = 1.4f;
         rb.velocity = new Vector2(moveDirection.x * speed, moveDirection.y);
     
         moved = false;

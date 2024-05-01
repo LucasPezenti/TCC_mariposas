@@ -9,7 +9,7 @@ public class TopDownMovement : MonoBehaviour
     private float speedX, speedY;
     private bool moved;
     private bool running;
-    [SerializeField] private bool canMove;
+    public static bool TDcanMove;
     [SerializeField] private bool canRun;
 
     private Vector2 moveDirection;
@@ -22,12 +22,18 @@ public class TopDownMovement : MonoBehaviour
         speed = 1.4f;
         moved = false;
         running = false;
+        TDcanMove = true;
         rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(!TDcanMove || DialogueManager.onDialogue){
+            moved = false;
+            moveDirection.x = 0;
+            moveDirection.y = 0;
+        }
         MovementInputs();   
     }
 
@@ -36,7 +42,7 @@ public class TopDownMovement : MonoBehaviour
     }
 
     private void MovementInputs(){
-        if(canMove){
+        if(TDcanMove && !DialogueManager.onDialogue){
             speedX = Input.GetAxisRaw("Horizontal");
             speedY = Input.GetAxisRaw("Vertical");
 
@@ -125,16 +131,8 @@ public class TopDownMovement : MonoBehaviour
         return this.running;
     }
 
-    public bool GetCanMove(){
-        return this.canMove;
-    }
-
     public bool GetCanRun(){
         return this.canRun;
-    }
-
-    public void SetCanMove(bool move){
-        this.canMove = move;
     }
 
     public void SetCanRun(bool run){
