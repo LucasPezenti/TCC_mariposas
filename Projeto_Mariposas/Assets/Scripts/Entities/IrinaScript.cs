@@ -10,7 +10,7 @@ public class IrinaScript : MonoBehaviour
     private string curState;
 
     // Animações Irina
-    private bool IraWakeUP = true;
+    private bool IraWakeUP = false;
     private bool IraFall = false;
     const string PLAYER_IDLE_R = "Ira_Idle_R";
     const string PLAYER_IDLE_L = "Ira_Idle_L";
