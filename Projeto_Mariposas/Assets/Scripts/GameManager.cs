@@ -13,12 +13,19 @@ public class GameManager : MonoBehaviour
     
     void Awake()
     {
-        Instance = this;
+        if(Instance != null){
+            Destroy(gameObject);
+        }
+
+        else{
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
     
     void Start()
     {
-        ChangeGameState(GameState.menu);
+        ChangeGameState(GameState.language);
     }
 
     public void ChangeGameState(GameState newState) {
@@ -26,6 +33,8 @@ public class GameManager : MonoBehaviour
 
         State = newState;
         switch(newState){
+            case GameState.language:
+                break;
             case GameState.menu:
                 break;
             case GameState.cutscene:
@@ -42,6 +51,7 @@ public class GameManager : MonoBehaviour
 }
 
 public enum GameState {
+    language,
     menu,
     dialogue,
     cutscene,

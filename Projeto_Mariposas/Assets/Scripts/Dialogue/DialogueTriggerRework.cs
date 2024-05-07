@@ -28,7 +28,6 @@ public class DialogueTriggerRework : MonoBehaviour
                     dialogue.Enqueue(special);
                     dialogue.Enqueue(curr);
                 }
-
                 else{
                     dialogue.Enqueue(Line);
                 }
