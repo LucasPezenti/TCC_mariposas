@@ -1,0 +1,231 @@
+** IRINA PROLOGO **
+
+[ID=ID_IRA_V]I don't understand why it has be like this, why things have to be the way they are...
+
+[ENDQUEUE]
+
+[ID=ID_IRA_V]Stop yelling...
+
+[ENDQUEUE]
+
+[ID=ID_IRA_V]Where are you?
+
+I need you...
+
+[ENDQUEUE]
+
+[ID=ID_IRA_V]Found you.
+
+[ENDQUEUE]
+
+** ANOUSH E SARKIS - CHEGANDO NA CASA**
+
+[ID=ID_ANOUSH]The moving company didn't even bother to bring the boxes inside...
+
+[ID=ID_SARKIS]Not surprising at all. No one has rented this house in ages, the landlord probably didn't even believe someone was actually going to live here. Yet, it is a very beautiful house.
+
+[ID=ID_ANOUSH]Still... Isn't there any reason why no one has lived here for so long?
+
+[ID=ID_SARKIS]Probably due to the remote location, Anoush. But that doesn't matter; this isn't a summer camp, we're here to work. 
+
+I have a few calls to make. Go and start organizing those boxes in the meantime.
+
+[ENDQUEUE]
+
+** IF: INTERAGIR COM SARKIS DURANTE O PUZZLE **
+
+[ID=ID_SARKIS]I'm on the phone right now.
+
+[ENDQUEUE]
+
+** PUZZLE DAS CAIXAS: SALA **
+
+[ID=ID_ANOUSH]The realtor told us this house has been through renovations recently. It's not unusual to find empty paint cans such as this one.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]Sarkis mentioned no one has rented this house in ages. I must admit this has me a bit uneasy.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]I miss the days when I would have people over for tea. I've been feeling quite lonely in the past few years.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]I miss going out with Sarkis and our friends. I wonder, would they still remember me?
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]I like tending to plants when I feel lonely.
+
+[ENDQUEUE]
+
+** PUZZLE DAS CAIXAS: COZINHA **
+
+[ID=ID_ANOUSH]]Sometimes I wish Sarkis would help me in the kitchen. Making dinner is usually more fun with someone else to set the table.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]I always make Sarkis' favorite food, he really might as well wash the dishes sometimes, in return.
+
+[ENDQUEUE]
+
+** PUZZLE DAS CAIXAS: QUARTO **
+
+[ID=ID_ANOUSH]On one side, he snores, all carefree... On the other one, I suffer with intense nightmares and insomnia... Sometimes, it seems like we don't even sleep in the same bed.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]At least I can sleep now, even if it's just a little bit.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]I miss painting on my free time. I was never really good, but it was a relaxing activity.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]Sarkis and I went to a lot of concerts in the 2000s. I miss the times when we had fun together.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]I really miss this version of Sarkis...
+
+[ENDQUEUE]
+
+** PUZZLE DAS CAIXAS: BANHEIRO **
+
+[ID=ID_ANOUSH]Dr. Petrosyan prescribed me two pills in the morning and two at night, no more and no less... but I feel a lot better when I take them.
+
+Maybe it wouldn't do much harm to take a few more every now and then...
+
+[ENDQUEUE]
+
+** PUZZLE DAS CAIXAS: ESCRITÓRIO **
+
+[ID=ID_ANOUSH]I graduated with even higher grades than Sarkis, yet now he treats me like a reaserch assistant.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]I am glad for the success Sarkis achieved in all these years...
+
+[ENDQUEUE]
+
+** PUZZLE DAS CAIXAS: BEBÊ **
+
+[ID=ID_ANOUSH]It's too hard to even look...
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]I can't go back there.
+
+[ENDQUEUE]
+
+** PUZZLE DAS CAIXAS: COMPLETO **
+
+[ID=ID_ANOUSH]Time to take my meds.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]Would you look at that... Even here you'll show up.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]There's insecticide spray in here. Might be useful, but Sarkis is very allergic...
+
+[ENDQUEUE]
+
+** IF: USAR O INSETICIDA **
+
+[ID=ID_SARKIS]Anoush… cough… did you use… cough… that poison… again?
+
+[ENDQUEUE]
+
+** IF: TENTAR ENTRAR NO ESCRITÓRIO **
+
+[ID=ID_ANOUSH]I should prepare dinner before interrupting Sarkis.
+
+[ENDQUEUE]
+
+** JANTA FEITA - ANOUSH ENTRA NO ESCRITÓRIO **
+
+[ID=ID_SARKIS]Just what I needed, damn it...
+
+[ID=ID_ANOUSH]What happened?
+
+[ID=ID_SARKIS]We have a problem with the samples. Apparently, they didn't send us any female specimens, only males.
+
+[ID=ID_ANOUSH]What do you mean? There were over 30 samples and not even one female?
+
+[ID=ID_SARKIS]I called the lab and they confirmed that there are only male samples.
+
+[ID=ID_ANOUSH]That is too weird. They would have said something before! Maybe they didn't understand your question...
+
+Maybe there are only male samples left because they sent us the only females?
+
+Could it be that they were lost during transportation? But how could all the females just vanish?
+
+Could it really be that they were never there to begin with?
+
+[ID=ID_SARKIS]*Sigh*
+
+Seems like it, Anoush. I meticulously reviewed all of the records and samples and there is no record of female moths. Acording to the records, they have never even got to the lab.
+
+** OPÇÕES DE ESCOLHAS DE DIÁLOGO **
+
+** OPÇÃO 1 **
+
+[ID=ID_ANOUSH]Did you check professor Grigorian's notes again? He was researching these moths until last year. Was there anything about females?
+
+[ID=ID_SARKIS]I did, I did...
+
+** OPÇÃO 2 **
+
+[ID=ID_ANOUSH]Do you think it's possible that the lab might have lost some of their records?
+
+[ID=ID_SARKIS]Everything is possible! I don't know!
+
+** OPÇÃO 3 **
+
+[ID=ID_ANOUSH]What do you think of this discrepancy?
+
+[ID=ID_SARKIS]Don't know...
+
+** OPÇÃO 4 **
+
+[ID=ID_ANOUSH]I have a hypothesis. It might be a very blatant sexual dimorphism, similar to that of the humpback anglerfish, Melanocetus johnsonii.
+
+The males are so different from the females that it took years to-
+
+[ID=ID_SARKIS]Anoush, I know, I have a doctor's degree in biology, remember?
+
+[ID=ID_ANOUSH]I was just mentioning for the sake of comparison, sorry...
+
+But... As you know, to this day, they could only obtain less than 10 male samples of that species, so-
+
+[ID=ID_SARKIS]I have already considered this hypothesis, it was the first thing I thought of. We can't be sure yet. It's a complex situation, coming up with theories right now is useless.
+
+[ID=ID_ANOUSH]Right...
+
+** OPÇÃO 5 **
+
+[ID=ID_ANOUSH]What a pickle...
+
+** Continuação do diálogo **
+
+[ID=ID_ANOUSH]Well. Don't you want to have dinner, then, and leave that for tomorrow?
+
+[ID=ID_SARKIS]No... I'm not hungry... I'll be here a bit longer...
+
+[ENDQUEUE]
+
+** ANOUSH SAI DO ESCRITÓRIO **
+
+[ID=ID_ANOUSH]I'd better go to bed. I also lost my appetite.
+
+** DIA 2: CASO PERGUNTE MAIS DA CASA **
+
+[ID=ID_ANOUSH]A letter...? How odd...
+
+[ENDQUEUE]
+
+

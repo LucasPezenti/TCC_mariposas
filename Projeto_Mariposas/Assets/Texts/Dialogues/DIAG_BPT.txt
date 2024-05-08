@@ -1,0 +1,231 @@
+** IRINA PROLOGO **
+
+[ID=ID_IRA_V]Eu não entendo por que deve ser assim, por que tem que ser desse jeito...
+
+[ENDQUEUE]
+
+[ID=ID_IRA_V]Parem de gritar...
+
+[ENDQUEUE]
+
+[ID=ID_IRA_V]Onde está você?
+
+Preciso de você...
+
+[ENDQUEUE]
+
+[ID=ID_IRA_V]Te encontrei.
+
+[ENDQUEUE]
+
+** ANOUSH E SARKIS - CHEGANDO NA CASA**
+
+[ID=ID_ANOUSH]O caminhão da mudança nem levou as caixas para dentro...
+
+[ID=ID_SARKIS]Não é surpresa alguma. Ninguém aluga esta casa há anos, o locador nem deve ter acreditado que alguém realmente viria morar aqui. Ainda assim, é uma casa muito bonita.
+
+[ID=ID_ANOUSH]Só que... não há nenhuma razão para ninguém morar aqui em tanto tempo?
+
+[ID=ID_SARKIS]Provavelmente por causa da localização afastada, Anoush. Mas isso não importa; esta não é uma colônia de férias, é trabalho.
+
+Tenho algumas ligações para fazer. Vá organizando as caixas enquanto isso.
+
+[ENDQUEUE]
+
+** IF: INTERAGIR COM SARKIS DURANTE O PUZZLE **
+
+[ID=ID_SARKIS]Estou ao telefone.
+
+[ENDQUEUE]
+
+** PUZZLE DAS CAIXAS: SALA **
+
+[ID=ID_ANOUSH]A corretora nos disse que esta casa passou por reformas recentes. Não é incomum encontrar latas de tinta vazias, como esta.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]Sarkis mencionou que ninguém aluga esta casa há anos. Devo admitir que isso me deixa um pouco apreensiva.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]Sinto falta do tempo em que eu recebia pessoas para tomar chá. Nos últimos anos eu me senti muito sozinha.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]Sinto falta de sair com Sarkis e nossos amigos. Será que eles ainda se lembram de mim?
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]Gosto de cuidar de plantas quando me sinto sozinha.
+
+[ENDQUEUE]
+
+** PUZZLE DAS CAIXAS: COZINHA **
+
+[ID=ID_ANOUSH]Às vezes eu queria que Sarkis me ajudasse na cozinha. Preparar o jantar costuma ser mais divertido com alguém para por os pratos.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]Eu sempre preparo a comida favorita de Sarkis, bem que ele poderia lavar os pratos como agradecimento às vezes…
+
+[ENDQUEUE]
+
+** PUZZLE DAS CAIXAS: QUARTO **
+
+[ID=ID_ANOUSH]De um lado ele ronca despreocupado, do outro eu sofro com pesadelos intensos e insônia… às vezes nem parece que dormimos na mesma cama.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]Pelo menos eu consigo dormir agora, mesmo que seja pouco.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]Sinto saudades de pintar meus quadros no tempo livre. Eu nunca fui muito boa, mas a atividade era relaxante.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]Sarkis e eu fomos em muitos shows nos anos 2000. Sinto falta de quando nós nos divertíamos juntos.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]Sinto muita saudade deste Sarkis…
+
+[ENDQUEUE]
+
+** PUZZLE DAS CAIXAS: BANHEIRO **
+
+[ID=ID_ANOUSH]Dr. Petrosyan me prescreveu duas pílulas de manhã e duas à noite, nada mais e nada a menos… mas eu me sinto muito melhor quando as tomo.
+
+Talvez não faça tão mal tomar algumas a mais de vez em quando...
+
+[ENDQUEUE]
+
+** PUZZLE DAS CAIXAS: ESCRITÓRIO **
+
+[ID=ID_ANOUSH]Me formei com notas até melhores que Sarkis, mas hoje ele me trata como assistente de pesquisa.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]Eu fico feliz pelo sucesso que Sarkis conseguiu nesses anos todos...
+
+[ENDQUEUE]
+
+** PUZZLE DAS CAIXAS: BEBÊ **
+
+[ID=ID_ANOUSH]É difícil até mesmo olhar...
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]Não consigo voltar lá.
+
+[ENDQUEUE]
+
+** PUZZLE DAS CAIXAS: COMPLETO **
+
+[ID=ID_ANOUSH]É hora de tomar minha medicação.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]Olha só... até aqui vocês aparecem.
+
+[ENDQUEUE]
+
+[ID=ID_ANOUSH]Tem uma lata de inseticida aqui. Pode ser útil, mas o Sarkis é muito alérgico…
+
+[ENDQUEUE]
+
+** IF: USAR O INSETICIDA **
+
+[ID=ID_SARKIS]Anoush… cof… você tá usando… cof… aquele veneno… de novo?
+
+[ENDQUEUE]
+
+** IF: TENTAR ENTRAR NO ESCRITÓRIO **
+
+[ID=ID_ANOUSH]Eu deveria servir o jantar antes de interromper Sarkis.
+
+[ENDQUEUE]
+
+** JANTA FEITA - ANOUSH ENTRA NO ESCRITÓRIO **
+
+[ID=ID_SARKIS]Mais essa agora, que diabos...
+
+[ID=ID_ANOUSH]O que aconteceu?
+
+[ID=ID_SARKIS]Temos um problema com as amostras. Aparentemente não nos enviaram nenhum espécime fêmea, somente machos.
+
+[ID=ID_ANOUSH]Como assim? Eram mais de 30 exemplares e não havia uma única fêmea?
+
+[ID=ID_SARKIS]Liguei para o laboratório e eles afirmam que só existem amostras de machos.
+
+[ID=ID_ANOUSH]Isso é estranho demais. Eles teriam falado algo antes! Talvez não tenham entendido sua pergunta...
+
+Talvez só tenham sobrado amostras de macho porque eles nos mandaram as únicas fêmeas?
+
+Será que elas desapareceram no transporte? Mas como todas as fêmeas poderiam simplesmente desaparecer?
+
+Será mesmo possível que elas nunca estiveram lá pra início de conversa?
+
+[ID=ID_SARKIS]*Suspiro*
+
+É isso que parece, Anoush. Eu revi minuciosamente todos os registros e amostras, e não há nenhum registro de mariposas fêmeas. Segundo os registros, elas nunca nem chegaram ao laboratório.
+
+** OPÇÕES DE ESCOLHAS DE DIÁLOGO **
+
+** OPÇÃO 1 **
+
+[ID=ID_ANOUSH]Você conferiu novamente as notas do professor Grigorian? Que estava trabalhando com essas mariposas até o ano passado? Havia algo sobre fêmeas?
+
+[ID=ID_SARKIS]Conferi, conferi...
+
+** OPÇÃO 2 **
+
+[ID=ID_ANOUSH]Você acha possível que tenham perdido alguns dos registros no laboratório?
+
+[ID=ID_SARKIS]Possível tudo é! Sei lá!
+
+** OPÇÃO 3 **
+
+[ID=ID_ANOUSH]O que você acha sobre essa discrepância?
+
+[ID=ID_SARKIS]Não sei...
+
+** OPÇÃO 4 **
+
+[ID=ID_ANOUSH]Eu tenho uma hipótese. Talvez um dimorfismo sexual muito gritante, que nem o do peixe-diabo negro, Melanocetus johnsonii.
+
+Os machos são tão diferentes das fêmeas que levou anos para-
+
+[ID=ID_SARKIS]Anoush, eu sei, eu sou doutor em biologia, lembra?
+
+[ID=ID_ANOUSH]Só estava citando a título de comparação, desculpa...
+
+Mas... Como você sabe, só conseguiram obter menos de 10 exemplares de machos dessa espécie até hoje, então-
+
+[ID=ID_SARKIS]Eu já considerei essa hipótese, foi a primeira coisa que pensei. Não dá pra ter certeza de nada ainda. A situação é complexa, não adianta ficar teorizando agora.
+
+[ID=ID_ANOUSH]Certo...
+
+** OPÇÃO 5 **
+
+[ID=ID_ANOUSH]Que situação...
+
+** Continuação do diálogo **
+
+[ID=ID_ANOUSH]Bem. Você não quer ir jantar, então, e deixar isso pra amanhã?
+
+[ID=ID_SARKIS]Não... Não estou com fome... Vou ficar aqui um pouco mais...
+
+[ENDQUEUE]
+
+** ANOUSH SAI DO ESCRITÓRIO **
+
+[ID=ID_ANOUSH]Melhor eu ir para a cama. Também perdi a fome.
+
+** DIA 2: CASO PERGUNTE MAIS DA CASA **
+
+[ID=ID_ANOUSH]Uma carta...? Que estranho...
+
+[ENDQUEUE]
+
+
