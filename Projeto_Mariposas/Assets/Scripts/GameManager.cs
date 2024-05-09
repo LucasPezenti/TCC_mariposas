@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
         State = newState;
         switch(newState){
             case GameState.language:
-                HandleLanguage();
+                //HandleLanguage();
                 break;
             case GameState.menu:
                 break;
@@ -76,6 +76,14 @@ public class GameManager : MonoBehaviour
 
     public string GetUIFilePath(){
         return this.UIFilePath;
+    }
+
+    public void SetDialogueFilePath(string path){
+        this.DialogueFilePath = path;
+    }
+
+    public void SetUIFilePath(string path){
+        this.UIFilePath = path;
     }
 }
 

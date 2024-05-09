@@ -28,7 +28,8 @@ public class LanguageMenu : MonoBehaviour
     }
     
     public void SelectPTB(){
-        GameManager.curLanguage = Languages.PTB;
+        GameManager.GetInstance().SetDialogueFilePath("Assets/Texts/Dialogues/DIAG_BPT.txt");
+        GameManager.GetInstance().SetUIFilePath("Assets/Texts/UIUX/UIUX_BPT.txt");
         selectionText.text = "Selecione o idioma";
         confirmText.text = "Confirmar";
         confirmBtn.gameObject.SetActive(true);
@@ -36,7 +37,8 @@ public class LanguageMenu : MonoBehaviour
     }
 
     public void SelectENG(){
-        GameManager.curLanguage = Languages.ENG;
+        GameManager.GetInstance().SetDialogueFilePath("Assets/Texts/Dialogues/DIAG_ENG.txt");
+        GameManager.GetInstance().SetUIFilePath("Assets/Texts/UIUX/UIUX_ENG.txt");
         selectionText.text = "Select the language";
         confirmText.text = "Confirm";
         confirmBtn.gameObject.SetActive(true);

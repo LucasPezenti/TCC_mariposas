@@ -15,8 +15,12 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI messageText;
 
     public string idInicial;
-    public string idFinal = "[ENDQUEUE]";
-    public List<string> curDialogue = new List<string>();
+    private const string idFinal = "[ENDQUEUE]";
+    private const string idActor = "ActorLine";
+    private const string idMessage = "MessageLine";
+    //public List<string> curDialogue = new List<string>();
+    public List<Message> messageList  = new List<Message>();
+    public List<Actor> actorList  = new List<Actor>();
 
     Message[] curMessages;
     Actor[] curChars;
@@ -35,21 +39,33 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    //  Versão manual
+    /*
     public void DisplayMessage(){
         Message messageDisplay = curMessages[activeMessage];    // Pega na lista a mensagem que será mostrada
         messageText.text = messageDisplay.message;              // Mostra a mensagem
         Actor charDisplay = curChars[messageDisplay.charId];    // Pega na lista o personagem que está falando
         charName.text = charDisplay.name;                       // Mostra o nome do personagem
-        charImage.sprite = charDisplay.sprite;                  // Mostra a sprite do personagem
+        //charImage.sprite = charDisplay.sprite;                  // Mostra a sprite do personagem
         dialogueBox.SetActive(true);                            // Torna a caixa de diálogo visível
     }
+    */
 
+    //  Versão com leitura de txt
+    public void DisplayMessage(){
+        Message messageDisplay = messageList[activeMessage];    // Pega na lista a mensagem que será mostrada
+        messageText.text = messageDisplay.message;              // Mostra a mensagem
+        Actor charDisplay = actorList[messageDisplay.charId];    // Pega na lista o personagem que está falando
+        charName.text = charDisplay.name;                       // Mostra o nome do personagem
+        charImage.sprite = Resources.Load(charDisplay.spritePath) as Sprite;
+        dialogueBox.SetActive(true);
+    }
     //  Método novo, lendo os diálogos a partir do arquivo .txt
     public void LoadDialogue(string DialogueID){
-        if(File.Exists(GameManager.GetDialogueFilePath())){
+        if(File.Exists(GameManager.GetInstance().GetDialogueFilePath())){
             bool startReading = false;
             idInicial = DialogueID;
-            string[] lines = File.ReadAllLines(GameManager.GetDialogueFilePath());
+            string[] lines = File.ReadAllLines(GameManager.GetInstance().GetDialogueFilePath());
 
             foreach (string line in lines)
             {
@@ -66,19 +82,32 @@ public class DialogueManager : MonoBehaviour
 
                 if (startReading)
                 {
-                    curDialogue.Add(line);
+                    string[] info = line.Split(';');
+                    if(line.Contains(idActor)){
+                        actorList.Add(new Actor {name = info[1].Trim(), spritePath = info[2].Trim()}); 
+                    }
+                    else if(line.Contains(idMessage)){
+                        messageList.Add(new Message {charId = int.Parse(info[1].Trim()), message = info[2].Trim()}); 
+                        Debug.Log(messageList.Count);
+                    }
+                    
+                    //curDialogue.Add(line);
                 }
             }
+
+            activeMessage = 0;          // Identificado, volta para a primmeira mensagem da lista
+            onDialogue = true;          
+            DisplayMessage();   
         }
+
         else{
             Debug.Log("O arquivo não foi encontrado.");
         }
-        //Debug.Log("Dialogue started! Number of messages: " + messages.Length);
     }
 
     public void NextMessage(){
         activeMessage++;
-        if(activeMessage < curMessages.Length){
+        if(activeMessage < messageList.Count){
             DisplayMessage();
         }else{
             onDialogue = false;

@@ -7,16 +7,25 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Message[] messages;
     public Actor[] actors;
-    public string DialogueID;
+    public string dialogueID;
     public bool repeat;
+    public bool areaTrigger;
     public GameObject interactionObj;
 
     public void StartDialogue(){
+        /*
         if(!repeat){
             FindObjectOfType<DialogueManager>().OpenDialogue(messages, actors);
             interactionObj.SetActive(false);
         }else{
             FindObjectOfType<DialogueManager>().OpenDialogue(messages, actors);
+        }
+        */
+        if(!repeat){
+            FindObjectOfType<DialogueManager>().LoadDialogue(dialogueID);
+            interactionObj.SetActive(false);
+        }else{
+            FindObjectOfType<DialogueManager>().LoadDialogue(dialogueID);
         }
     }
 
@@ -24,6 +33,14 @@ public class DialogueTrigger : MonoBehaviour
         return repeat;
     }
 
+    private void OnTriggerEnter2D(Collider2D other){
+        if(areaTrigger){
+            if(other.gameObject.CompareTag("Player")){
+                GetComponent<DialogueTrigger>().StartDialogue();
+
+            }
+        }
+    }
 
 }
 
@@ -36,5 +53,5 @@ public class Message{
 [System.Serializable]
 public class Actor{
     public string name;
-    public Sprite sprite;
+    public string spritePath;
 }

@@ -547,9 +547,10 @@ MonoBehaviour:
     message: "Eu preciso de voc\xEA."
   actors:
   - name: Irina
-    sprite: {fileID: 21300000, guid: 343bc159c1cf0dd4a80dd19179096bfb, type: 3}
-  DialogueID: 
+    spritePath: 
+  dialogueID: 
   repeat: 0
+  areaTrigger: 1
   interactionObj: {fileID: 188180882}
 --- !u!61 &188180885
 BoxCollider2D:
@@ -1694,9 +1695,10 @@ MonoBehaviour:
       jeito..."
   actors:
   - name: Irina
-    sprite: {fileID: 21300000, guid: 343bc159c1cf0dd4a80dd19179096bfb, type: 3}
-  DialogueID: ID_00_001
+    spritePath: 
+  dialogueID: ID_00_001
   repeat: 0
+  areaTrigger: 1
   interactionObj: {fileID: 280013056}
 --- !u!61 &280013058
 BoxCollider2D:
@@ -1895,9 +1897,10 @@ MonoBehaviour:
     message: Te encontrei!
   actors:
   - name: Irina
-    sprite: {fileID: 21300000, guid: 343bc159c1cf0dd4a80dd19179096bfb, type: 3}
-  DialogueID: 
+    spritePath: 
+  dialogueID: 
   repeat: 0
+  areaTrigger: 0
   interactionObj: {fileID: 894068819}
 --- !u!1 &305490803
 GameObject:
@@ -6600,9 +6603,10 @@ MonoBehaviour:
     message: Parem de gritar...
   actors:
   - name: Irina
-    sprite: {fileID: 21300000, guid: 343bc159c1cf0dd4a80dd19179096bfb, type: 3}
-  DialogueID: 
+    spritePath: 
+  dialogueID: 
   repeat: 0
+  areaTrigger: 1
   interactionObj: {fileID: 1015924047}
 --- !u!61 &1015924050
 BoxCollider2D:
@@ -9723,8 +9727,8 @@ MonoBehaviour:
   charName: {fileID: 944983509}
   messageText: {fileID: 168676263}
   idInicial: 
-  idFinal: ENDDIALOGUE
-  curDialogue: []
+  messageList: []
+  actorList: []
 --- !u!1 &1657248944
 GameObject:
   m_ObjectHideFlags: 0

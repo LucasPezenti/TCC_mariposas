@@ -1,6 +1,8 @@
 ** IRINA PROLOGO **
 ID_00_001
-[ID=ID_IRA_V]Eu não entendo por que deve ser assim, por que tem que ser desse jeito...
+ActorLine;Irina;Assets/Graphics/Portraits/Port_Ira1
+MessageLine;0;Eu não entendo por que deve ser assim, por que tem que ser desse jeito...
+MessageLine;0;Funcionou?
 [ENDQUEUE]
 
 [ID=ID_IRA_V]Parem de gritar...
