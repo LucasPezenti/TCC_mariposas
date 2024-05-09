@@ -7,6 +7,7 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Message[] messages;
     public Actor[] actors;
+    public string DialogueID;
     public bool repeat;
     public GameObject interactionObj;
 

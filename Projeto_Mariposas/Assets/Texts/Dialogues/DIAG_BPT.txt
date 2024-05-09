@@ -1,7 +1,6 @@
 ** IRINA PROLOGO **
-
+ID_00_001
 [ID=ID_IRA_V]Eu não entendo por que deve ser assim, por que tem que ser desse jeito...
-
 [ENDQUEUE]
 
 [ID=ID_IRA_V]Parem de gritar...

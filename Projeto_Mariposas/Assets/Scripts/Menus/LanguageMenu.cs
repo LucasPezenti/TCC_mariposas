@@ -17,8 +17,7 @@ public class LanguageMenu : MonoBehaviour
     public TextMeshProUGUI selectionText;
     public TextMeshProUGUI confirmText;
 
-    // Save the current language
-    public static Languages curLanguage;
+    GameManager GameManager = GameManager.GetInstance();
 
     private void Awake(){
         PTB_Btn.onClick.AddListener(SelectPTB);
@@ -29,27 +28,22 @@ public class LanguageMenu : MonoBehaviour
     }
     
     public void SelectPTB(){
-        curLanguage = Languages.PTB;
+        GameManager.curLanguage = Languages.PTB;
         selectionText.text = "Selecione o idioma";
         confirmText.text = "Confirmar";
         confirmBtn.gameObject.SetActive(true);
-        Debug.Log(curLanguage);
+        Debug.Log(GameManager.curLanguage);
     }
 
     public void SelectENG(){
-        curLanguage = Languages.ENG;
+        GameManager.curLanguage = Languages.ENG;
         selectionText.text = "Select the language";
         confirmText.text = "Confirm";
         confirmBtn.gameObject.SetActive(true);
-        Debug.Log(curLanguage);
+        Debug.Log(GameManager.curLanguage);
     }
 
     public void ConfirmSelection(){
         SceneManager.LoadScene("MainMenu");
     }
-}
-
-public enum Languages{
-    PTB,
-    ENG
 }
