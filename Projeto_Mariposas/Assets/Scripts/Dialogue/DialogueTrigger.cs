@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public Message[] messages;
-    public Actor[] actors;
-    public string dialogueID;
+    //public Message[] messages;
+    //public Actor[] actors;
+    public string startDialogueID;
+    public string endDialogueID;
     public bool repeat;
     public bool areaTrigger;
     public GameObject interactionObj;
@@ -22,10 +23,10 @@ public class DialogueTrigger : MonoBehaviour
         }
         */
         if(!repeat){
-            FindObjectOfType<DialogueManager>().LoadDialogue(dialogueID);
+            FindObjectOfType<DialogueManager>().LoadDialogue(startDialogueID, endDialogueID);
             interactionObj.SetActive(false);
         }else{
-            FindObjectOfType<DialogueManager>().LoadDialogue(dialogueID);
+            FindObjectOfType<DialogueManager>().LoadDialogue(startDialogueID, endDialogueID);
         }
     }
 
@@ -36,8 +37,7 @@ public class DialogueTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
         if(areaTrigger){
             if(other.gameObject.CompareTag("Player")){
-                GetComponent<DialogueTrigger>().StartDialogue();
-
+                StartDialogue();
             }
         }
     }
@@ -53,5 +53,5 @@ public class Message{
 [System.Serializable]
 public class Actor{
     public string name;
-    public string spritePath;
+    public int spriteId;
 }

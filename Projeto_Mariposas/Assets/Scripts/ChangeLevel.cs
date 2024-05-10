@@ -23,6 +23,6 @@ public class ChangeLevel : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        FadeToLevel(1);
+        FadeToLevel(levelIndex);
     }
 }

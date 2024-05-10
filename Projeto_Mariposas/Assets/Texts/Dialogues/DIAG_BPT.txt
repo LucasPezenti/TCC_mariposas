@@ -1,23 +1,25 @@
 ** IRINA PROLOGO **
-ID_00_001
-ActorLine;Irina;Assets/Graphics/Portraits/Port_Ira1
-MessageLine;0;Eu não entendo por que deve ser assim, por que tem que ser desse jeito...
-MessageLine;0;Funcionou?
-[ENDQUEUE]
 
-[ID=ID_IRA_V]Parem de gritar...
+Prologo_001_start
+ActorLine ; Irina ; 0
+MessageLine ; 0 ; Eu não entendo por que deve ser assim, por que tem que ser desse jeito...
+Prologo_001_end
 
-[ENDQUEUE]
+Prologo_002_start
+ActorLine ; Irina ; 0
+MessageLine ; 0 ; Parem de gritar...
+Prologo_002_end
 
-[ID=ID_IRA_V]Onde está você?
+Prologo_003_start
+ActorLine ; Irina ; 0
+MessageLine ; 0 ; Onde está você?
+MessageLine ; 0 ; Preciso de você...
+Prologo_003_end
 
-Preciso de você...
-
-[ENDQUEUE]
-
-[ID=ID_IRA_V]Te encontrei.
-
-[ENDQUEUE]
+Prologo_004_start
+ActorLine ; Irina ; 0
+MessageLine ; 0 ; Te encontrei.
+Prologo_004_end
 
 ** ANOUSH E SARKIS - CHEGANDO NA CASA**
 

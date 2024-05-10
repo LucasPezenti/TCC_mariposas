@@ -1,22 +1,25 @@
 ** IRINA PROLOGO **
 
-[ID=ID_IRA_V]I don't understand why it has be like this, why things have to be the way they are...
+Prologo_001_start
+ActorLine ; Irina ; 0
+MessageLine ; 0 ; I don't understand why it has be like this, why things have to be the way they are...
+Prologo_001_end
 
-[ENDQUEUE]
+Prologo_002_start
+ActorLine ; Irina ; 0
+MessageLine ; 0 ; Stop yelling...
+Prologo_002_end
 
-[ID=ID_IRA_V]Stop yelling...
+Prologo_003_start
+ActorLine ; Irina ; 0
+MessageLine ; 0 ; Where are you?
+MessageLine ; 0 ; I need you...
+Prologo_003_end
 
-[ENDQUEUE]
-
-[ID=ID_IRA_V]Where are you?
-
-I need you...
-
-[ENDQUEUE]
-
-[ID=ID_IRA_V]Found you.
-
-[ENDQUEUE]
+Prologo_004_start
+ActorLine ; Irina ; 0
+MessageLine ; 0 ; Found you.
+Prologo_004_end
 
 ** ANOUSH E SARKIS - CHEGANDO NA CASA**
 

@@ -33,7 +33,6 @@ public class LanguageMenu : MonoBehaviour
         selectionText.text = "Selecione o idioma";
         confirmText.text = "Confirmar";
         confirmBtn.gameObject.SetActive(true);
-        Debug.Log(GameManager.curLanguage);
     }
 
     public void SelectENG(){
@@ -42,7 +41,6 @@ public class LanguageMenu : MonoBehaviour
         selectionText.text = "Select the language";
         confirmText.text = "Confirm";
         confirmBtn.gameObject.SetActive(true);
-        Debug.Log(GameManager.curLanguage);
     }
 
     public void ConfirmSelection(){

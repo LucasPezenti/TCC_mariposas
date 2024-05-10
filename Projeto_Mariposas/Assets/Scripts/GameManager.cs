@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -44,30 +45,24 @@ public class GameManager : MonoBehaviour
         State = newState;
         switch(newState){
             case GameState.language:
-                //HandleLanguage();
+                SceneManager.LoadScene("LanguageSelection");
                 break;
             case GameState.menu:
+                SceneManager.LoadScene("MainMenu");
                 break;
-            case GameState.cutscene:
+            case GameState.prologue:
+                SceneManager.LoadScene("Prologue");
                 break;
-            case GameState.gameplay:
+            case GameState.chapter1:
+                SceneManager.LoadScene("Chapter1");
+                break;
+            case GameState.testePuzzle:
+                SceneManager.LoadScene("TestePuzzle");
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
         OnGameStateChanged?.Invoke(newState);
-    }
-
-    public void HandleLanguage(){
-        if(curLanguage == Languages.PTB){
-            DialogueFilePath = "Assets/Texts/Dialogues/DIAG_BPT.txt";
-            UIFilePath = "Assets/Texts/UIUX/UIUX_BPT.txt";
-        }
-
-        else if(curLanguage == Languages.ENG){
-            DialogueFilePath = "Assets/Texts/Dialogues/DIAG_ENG.txt";
-            UIFilePath = "Assets/Texts/UIUX/UIUX_ENG.txt";
-        }
     }
 
     public string GetDialogueFilePath(){
@@ -90,9 +85,9 @@ public class GameManager : MonoBehaviour
 public enum GameState {
     language,
     menu,
-    dialogue,
-    cutscene,
-    gameplay
+    prologue,
+    chapter1,
+    testePuzzle
 
 }
 
