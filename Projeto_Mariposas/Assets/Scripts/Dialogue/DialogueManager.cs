@@ -77,7 +77,7 @@ public class DialogueManager : MonoBehaviour
 
                 if (startReading)
                 {
-                    string[] info = line.Split(';');
+                    string[] info = line.Split('/');
                     if(line.Contains(idActor)){
                         actorList.Add(new Actor 
                         {

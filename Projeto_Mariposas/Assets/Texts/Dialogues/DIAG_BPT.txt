@@ -1,39 +1,42 @@
 ** IRINA PROLOGO **
 
 Prologo_001_start
-ActorLine ; Irina ; 0
-MessageLine ; 0 ; Eu não entendo por que deve ser assim, por que tem que ser desse jeito...
+ActorLine / Irina / 0
+MessageLine / 0 / Eu não entendo por que deve ser assim, por que tem que ser desse jeito...
 Prologo_001_end
 
 Prologo_002_start
-ActorLine ; Irina ; 0
-MessageLine ; 0 ; Parem de gritar...
+ActorLine / Irina / 0
+MessageLine / 0 / Parem de gritar...
 Prologo_002_end
 
 Prologo_003_start
-ActorLine ; Irina ; 0
-MessageLine ; 0 ; Onde está você?
-MessageLine ; 0 ; Preciso de você...
+ActorLine / Irina / 0
+MessageLine / 0 / Onde está você?
+MessageLine / 0 / Preciso de você...
 Prologo_003_end
 
 Prologo_004_start
-ActorLine ; Irina ; 0
-MessageLine ; 0 ; Te encontrei.
+ActorLine / Irina / 0
+MessageLine / 0 / Te encontrei.
 Prologo_004_end
 
 ** ANOUSH E SARKIS - CHEGANDO NA CASA**
 
-[ID=ID_ANOUSH]O caminhão da mudança nem levou as caixas para dentro...
+Fase1_001_start
+ActorLine / Anoush / 2
+ActorLine / Sarkis / 3
 
-[ID=ID_SARKIS]Não é surpresa alguma. Ninguém aluga esta casa há anos, o locador nem deve ter acreditado que alguém realmente viria morar aqui. Ainda assim, é uma casa muito bonita.
+MessageLine / 0 / O caminhão da mudança nem levou as caixas para dentro...
 
-[ID=ID_ANOUSH]Só que... não há nenhuma razão para ninguém morar aqui em tanto tempo?
+MessageLine / 1 / Não é surpresa alguma. Ninguém aluga esta casa há anos, o locador nem deve ter acreditado que alguém realmente viria morar aqui. Ainda assim, é uma casa muito bonita.
 
-[ID=ID_SARKIS]Provavelmente por causa da localização afastada, Anoush. Mas isso não importa; esta não é uma colônia de férias, é trabalho.
+MessageLine / 0 / Só que... não há nenhuma razão para ninguém morar aqui em tanto tempo?
 
-Tenho algumas ligações para fazer. Vá organizando as caixas enquanto isso.
+MessageLine / 1 / Provavelmente por causa da localização afastada, Anoush. Mas isso não importa; esta não é uma colônia de férias, é trabalho.
 
-[ENDQUEUE]
+MessageLine / 1 / Tenho algumas ligações para fazer. Vá organizando as caixas enquanto isso.
+Fase1_001_end
 
 ** IF: INTERAGIR COM SARKIS DURANTE O PUZZLE **
 
