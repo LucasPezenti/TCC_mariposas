@@ -92,7 +92,7 @@ public enum GameState {
 }
 
 public enum Languages{
-    PTB,
+    BPT,
     ENG
 }
 

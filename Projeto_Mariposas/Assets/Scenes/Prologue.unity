@@ -255,8 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeaf2c4b0abd2c94fbcec36452bc5ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDialogueID: Prologo_003_start
-  endDialogueID: Prologo_003_end
+  startDialogueID: Pro_0002_start
+  endDialogueID: Pro_0002_end
   repeat: 0
   areaTrigger: 1
   interactionObj: {fileID: 188180882}
@@ -1314,8 +1314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeaf2c4b0abd2c94fbcec36452bc5ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDialogueID: Prologo_001_start
-  endDialogueID: Prologo_001_end
+  startDialogueID: Pro_0000_start
+  endDialogueID: Pro_0000_end
   repeat: 0
   areaTrigger: 1
   interactionObj: {fileID: 280013056}
@@ -1499,8 +1499,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeaf2c4b0abd2c94fbcec36452bc5ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDialogueID: Prologo_004_start
-  endDialogueID: Prologo_004_end
+  startDialogueID: Pro_0003_start
+  endDialogueID: Pro_0003_end
   repeat: 0
   areaTrigger: 0
   interactionObj: {fileID: 894068819}
@@ -5879,8 +5879,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeaf2c4b0abd2c94fbcec36452bc5ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startDialogueID: Prologo_002_start
-  endDialogueID: Prologo_002_end
+  startDialogueID: Pro_0001_start
+  endDialogueID: Pro_0001_end
   repeat: 0
   areaTrigger: 1
   interactionObj: {fileID: 1015924047}
@@ -9092,7 +9092,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1678702047
 RectTransform:
   m_ObjectHideFlags: 0

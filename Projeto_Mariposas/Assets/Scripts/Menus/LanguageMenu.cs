@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class LanguageMenu : MonoBehaviour
 {
     // Buttons
-    [SerializeField] private Button PTB_Btn;
+    [SerializeField] private Button BPT_Btn;
     [SerializeField] private Button ENG_Btn;
     [SerializeField] private Button confirmBtn;
 
@@ -20,24 +20,25 @@ public class LanguageMenu : MonoBehaviour
     GameManager GameManager = GameManager.GetInstance();
 
     private void Awake(){
-        PTB_Btn.onClick.AddListener(SelectPTB);
+        BPT_Btn.onClick.AddListener(SelectBPT);
         ENG_Btn.onClick.AddListener(SelectENG);
 
         confirmBtn.onClick.AddListener(ConfirmSelection);
         confirmBtn.gameObject.SetActive(false);
     }
     
-    public void SelectPTB(){
-        GameManager.GetInstance().SetDialogueFilePath("Assets/Texts/Dialogues/DIAG_BPT.txt");
-        GameManager.GetInstance().SetUIFilePath("Assets/Texts/UIUX/UIUX_BPT.txt");
+    public void SelectBPT(){
+        GameManager.GetInstance().SetDialogueFilePath(Application.dataPath + "/DIAG_BPT.txt");
+        Debug.Log(GameManager.GetInstance().GetDialogueFilePath());
+        GameManager.GetInstance().SetUIFilePath(Application.dataPath + "/UIUX_BPT.txt");
         selectionText.text = "Selecione o idioma";
         confirmText.text = "Confirmar";
         confirmBtn.gameObject.SetActive(true);
     }
 
     public void SelectENG(){
-        GameManager.GetInstance().SetDialogueFilePath("Assets/Texts/Dialogues/DIAG_ENG.txt");
-        GameManager.GetInstance().SetUIFilePath("Assets/Texts/UIUX/UIUX_ENG.txt");
+        GameManager.GetInstance().SetDialogueFilePath(Application.dataPath + "/DIAG_ENG.txt");
+        GameManager.GetInstance().SetUIFilePath(Application.dataPath + "/UIUX_ENG.txt");
         selectionText.text = "Select the language";
         confirmText.text = "Confirm";
         confirmBtn.gameObject.SetActive(true);

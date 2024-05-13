@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04280ef8e9f934e4cbb8d1b13def5b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PTB_Btn: {fileID: 599536718}
+  BPT_Btn: {fileID: 599536718}
   ENG_Btn: {fileID: 1884418681}
   confirmBtn: {fileID: 1926756496}
   selectionText: {fileID: 669658266}
@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 599536719}
   - component: {fileID: 599536718}
   m_Layer: 5
-  m_Name: PTB
+  m_Name: BPT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
