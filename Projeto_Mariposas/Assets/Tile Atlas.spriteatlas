@@ -55,6 +55,9 @@ SpriteAtlas:
     - {fileID: 2800000, guid: e1af93728ae7cb143a9ee6155b8e7976, type: 3}
     - {fileID: 2800000, guid: 0dfbbaf8bbaa434428e523e024984482, type: 3}
     - {fileID: 2800000, guid: fd6551fe75d7a394cbf7cb03cbe0b05f, type: 3}
+    - {fileID: 2800000, guid: b9dfb8ec9b66f3b4e90862d1ae9fc5ca, type: 3}
+    - {fileID: 2800000, guid: 6a6a0409fd485a74cb83cb50660c17a4, type: 3}
+    - {fileID: 2800000, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -488,6 +491,67 @@ SpriteAtlas:
   - {fileID: -1344563694, guid: 0dfbbaf8bbaa434428e523e024984482, type: 3}
   - {fileID: 446026470, guid: 0dfbbaf8bbaa434428e523e024984482, type: 3}
   - {fileID: -2114417166, guid: 0dfbbaf8bbaa434428e523e024984482, type: 3}
+  - {fileID: -175878871, guid: 6a6a0409fd485a74cb83cb50660c17a4, type: 3}
+  - {fileID: 1285728707, guid: 6a6a0409fd485a74cb83cb50660c17a4, type: 3}
+  - {fileID: -1428468299, guid: 6a6a0409fd485a74cb83cb50660c17a4, type: 3}
+  - {fileID: 239333448, guid: 6a6a0409fd485a74cb83cb50660c17a4, type: 3}
+  - {fileID: 1623771928, guid: 6a6a0409fd485a74cb83cb50660c17a4, type: 3}
+  - {fileID: 1879742936, guid: 6a6a0409fd485a74cb83cb50660c17a4, type: 3}
+  - {fileID: 1542573696, guid: 6a6a0409fd485a74cb83cb50660c17a4, type: 3}
+  - {fileID: -1297434380, guid: 6a6a0409fd485a74cb83cb50660c17a4, type: 3}
+  - {fileID: 846231256, guid: 6a6a0409fd485a74cb83cb50660c17a4, type: 3}
+  - {fileID: -2144529814, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -1049961766, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 1083401209, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -914821979, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 1734993424, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -1869185673, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 327643101, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 683361311, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 878495197, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 1098062402, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -1779310449, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -856130120, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 106553668, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -1071113001, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 512557739, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 18264335, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -1033346664, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -191676628, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 1947385631, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -1563525543, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -1603830178, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 1846743036, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 960708359, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 1004105953, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 277970052, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -526728514, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 327070362, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 1582812862, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 386202961, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -1078433062, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -456117285, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -1592206727, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -1822025843, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -762870822, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 1571782297, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 1929767518, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -1809724860, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -1160590353, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 2023131052, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -296753503, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 1578133694, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -1328221405, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 154422233, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 785752877, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 1860379291, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: 309452620, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -1971195577, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -245228829, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -2119432222, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -1952940206, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -748757645, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+  - {fileID: -1048129152, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
   - {fileID: 8976018127306389262, guid: dc747d0a3cdf6594f9f275fdd2a48b4b, type: 3}
   - {fileID: 2398694386035660818, guid: dc747d0a3cdf6594f9f275fdd2a48b4b, type: 3}
   - {fileID: -8637159173488095169, guid: dc747d0a3cdf6594f9f275fdd2a48b4b, type: 3}
@@ -528,6 +592,15 @@ SpriteAtlas:
   - {fileID: -1397913522, guid: 37e26c5a67cd46a4fb85aea9b792b3a3, type: 3}
   - {fileID: -1703772333, guid: 37e26c5a67cd46a4fb85aea9b792b3a3, type: 3}
   - {fileID: 1691865505, guid: 37e26c5a67cd46a4fb85aea9b792b3a3, type: 3}
+  - {fileID: -260726354, guid: b9dfb8ec9b66f3b4e90862d1ae9fc5ca, type: 3}
+  - {fileID: -202455797, guid: b9dfb8ec9b66f3b4e90862d1ae9fc5ca, type: 3}
+  - {fileID: 2133006326, guid: b9dfb8ec9b66f3b4e90862d1ae9fc5ca, type: 3}
+  - {fileID: 371066790, guid: b9dfb8ec9b66f3b4e90862d1ae9fc5ca, type: 3}
+  - {fileID: 1882138500, guid: b9dfb8ec9b66f3b4e90862d1ae9fc5ca, type: 3}
+  - {fileID: 7473352, guid: b9dfb8ec9b66f3b4e90862d1ae9fc5ca, type: 3}
+  - {fileID: 1366629015, guid: b9dfb8ec9b66f3b4e90862d1ae9fc5ca, type: 3}
+  - {fileID: 1208523643, guid: b9dfb8ec9b66f3b4e90862d1ae9fc5ca, type: 3}
+  - {fileID: 533016146, guid: b9dfb8ec9b66f3b4e90862d1ae9fc5ca, type: 3}
   - {fileID: -934614422, guid: fd6551fe75d7a394cbf7cb03cbe0b05f, type: 3}
   - {fileID: 1842620145, guid: fd6551fe75d7a394cbf7cb03cbe0b05f, type: 3}
   - {fileID: 764261136, guid: fd6551fe75d7a394cbf7cb03cbe0b05f, type: 3}
@@ -966,6 +1039,67 @@ SpriteAtlas:
   - chaomadeira01_4
   - chaomadeira01_7
   - chaomadeira01_6
+  - chaoExterior02_7
+  - chaoExterior02_6
+  - chaoExterior02_5
+  - chaoExterior02_4
+  - chaoExterior02_3
+  - chaoExterior02_2
+  - chaoExterior02_1
+  - chaoExterior02_0
+  - chaoExterior02_8
+  - abajur2
+  - mesinha0
+  - mesinha1
+  - mesinha2
+  - prateleira1
+  - prateleira2
+  - armario2
+  - mobilia_19
+  - cerca1
+  - cerca3
+  - cerca2
+  - poltrona2
+  - cerca4
+  - Armario1
+  - poltrona1
+  - lampiao2
+  - lampiao1
+  - Abajur1
+  - sofaFrente2
+  - sofaFrente3
+  - sofaFrente0
+  - sofaFrente1
+  - tapete2
+  - tapete1
+  - mobilia_38
+  - mobilia_39
+  - gaveteiro1
+  - mobilia_29
+  - gaveteiro2
+  - mobilia_30
+  - mobilia_31
+  - mobilia_49
+  - mobilia_32
+  - mobilia_48
+  - mobilia_33
+  - mobilia_34
+  - mobilia_50
+  - mobilia_35
+  - mobilia_51
+  - mobilia_45
+  - mobilia_36
+  - mobilia_44
+  - mobilia_37
+  - mobilia_27
+  - mobilia_47
+  - mobilia_46
+  - mobilia_41
+  - mobilia_40
+  - mobilia_43
+  - mobilia_42
+  - sofaLado1
+  - sofaLado2
   - Wall 4
   - Wall 3
   - Soil 6
@@ -1006,6 +1140,15 @@ SpriteAtlas:
   - Prologue_Room_2
   - Prologue_Room_1
   - Prologue_Room_0
+  - chaoExterior01_0
+  - chaoExterior01_1
+  - chaoExterior01_2
+  - chaoExterior01_3
+  - chaoExterior01_4
+  - chaoExterior01_5
+  - chaoExterior01_6
+  - chaoExterior01_7
+  - chaoExterior01_8
   - chaomadeira02_8
   - chaomadeira02_6
   - chaomadeira02_7
