@@ -34,7 +34,7 @@ public class HoldObjectScript : MonoBehaviour
         if(PlayerMovement.GetMoveDirection().sqrMagnitude > .1f){
             pickDirection = PlayerMovement.GetMoveDirection().normalized;
         }
-
+ 
         if(itemHolding == null && Input.GetKeyDown(KeyCode.E)){
             PickUp();
         }
@@ -42,6 +42,7 @@ public class HoldObjectScript : MonoBehaviour
         else if(itemHolding != null && Input.GetKeyDown(KeyCode.E)){
             Release();
         }
+        
     }
 
     private void ChangePosition(){
@@ -64,33 +65,41 @@ public class HoldObjectScript : MonoBehaviour
     }
 
     public void PickUp(){
-        Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + pickDirection*.5f, .3f, pickUpMask);
-        if(pickUpItem){
+        
+        Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + pickDirection * .5f, .3f, pickUpMask);
+        if (pickUpItem)
+        {
             itemHolding = pickUpItem.gameObject;
             itemHolding.transform.position = holdSpot.position;
             itemHolding.transform.parent = holdSpot.transform;
-            if(itemHolding.GetComponent<Rigidbody2D>()){
-                itemHolding.GetComponent<Rigidbody2D>().simulated = false;                
+            if (itemHolding.GetComponent<Rigidbody2D>())
+            {
+                itemHolding.GetComponent<Rigidbody2D>().simulated = false;
                 //Debug.Log("Item grabbed");
             }
-            isHolding = true;            
-            if(PlayerMovement.GetLastDir() == Direction.down){
+            isHolding = true;
+            if (PlayerMovement.GetLastDir() == Direction.down)
+            {
                 itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 1;
             }
-            
         }
     }
 
     public void Release(){
-        itemHolding.transform.position = transform.position + pickDirection * .5f;
-        itemHolding.transform.parent = null;
-        itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 0;
-        if(itemHolding.GetComponent<Rigidbody2D>()){
-            itemHolding.GetComponent<Rigidbody2D>().simulated = true;
+        if(itemHolding != null)
+        {
+            itemHolding.transform.position = transform.position + pickDirection * .5f;
+            itemHolding.transform.parent = null;
+            itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 0;
+            if (itemHolding.GetComponent<Rigidbody2D>())
+            {
+                itemHolding.GetComponent<Rigidbody2D>().simulated = true;
+            }
+            itemHolding = null;
+            isHolding = false;
+            //Debug.Log("Item released");
         }
-        itemHolding = null;
-        isHolding = false;
-        //Debug.Log("Item released");
+
     }
 
     public bool GetIsHolding(){

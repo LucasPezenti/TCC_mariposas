@@ -9,9 +9,7 @@ public class ExamineManager : MonoBehaviour
     [SerializeField] private KeyCode closeKey;
 
     public GameObject examineBox;
-    [SerializeField] private Image itemImage;
-    [SerializeField] private TextMeshProUGUI itemName;
-    [SerializeField] private TextMeshProUGUI descriptionText;
+    public Image itemImage;
     private Item curItem;
     public static bool isExamining = false;
 
@@ -25,9 +23,7 @@ public class ExamineManager : MonoBehaviour
 
     public void DisplayItem(){
         Item itemDisplay = curItem;
-        itemName.text = itemDisplay.name;
         itemImage.sprite = itemDisplay.sprite;
-        descriptionText.text = itemDisplay.description;
         examineBox.SetActive(true);
         SideScrollMovement.SScanMove = false;
         TopDownMovement.TDcanMove = false;
