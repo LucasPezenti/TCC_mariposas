@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
         }
     }
     
+    
     void Start()
     {
         ChangeGameState(GameState.language);
@@ -64,6 +65,7 @@ public class GameManager : MonoBehaviour
         }
         OnGameStateChanged?.Invoke(newState);
     }
+    
 
     public string GetDialogueFilePath(){
         return this.DialogueFilePath;

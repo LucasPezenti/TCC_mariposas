@@ -20,7 +20,6 @@ public class DialogueManager : MonoBehaviour
     private string idFinal;
     private const string idActor = "ActorLine";
     private const string idMessage = "MessageLine";
-    //public List<string> curDialogue = new List<string>();
     private List<Message> messageList  = new List<Message>();
     private List<Actor> actorList  = new List<Actor>();
 

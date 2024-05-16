@@ -29,8 +29,9 @@ public class LanguageMenu : MonoBehaviour
     
     public void SelectBPT(){
         GameManager.GetInstance().SetDialogueFilePath(Application.dataPath + "/DIAG_BPT.txt");
-        Debug.Log(GameManager.GetInstance().GetDialogueFilePath());
         GameManager.GetInstance().SetUIFilePath(Application.dataPath + "/UIUX_BPT.txt");
+        Debug.Log(GameManager.GetInstance().GetDialogueFilePath());
+
         selectionText.text = "Selecione o idioma";
         confirmText.text = "Confirmar";
         confirmBtn.gameObject.SetActive(true);
@@ -39,6 +40,8 @@ public class LanguageMenu : MonoBehaviour
     public void SelectENG(){
         GameManager.GetInstance().SetDialogueFilePath(Application.dataPath + "/DIAG_ENG.txt");
         GameManager.GetInstance().SetUIFilePath(Application.dataPath + "/UIUX_ENG.txt");
+        Debug.Log(GameManager.GetInstance().GetDialogueFilePath());
+
         selectionText.text = "Select the language";
         confirmText.text = "Confirm";
         confirmBtn.gameObject.SetActive(true);
