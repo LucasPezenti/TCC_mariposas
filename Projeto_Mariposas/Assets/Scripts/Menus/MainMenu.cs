@@ -24,7 +24,6 @@ public class MainMenu : MonoBehaviour
     private void Awake(){
         newGameBtn.onClick.AddListener(StartNewGame);
         quitBtn.onClick.AddListener(QuitGame);
-        LoadMenuTexts();
     }
 
     public void StartNewGame(){
@@ -57,28 +56,4 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void LoadMenuTexts(){
-        if(System.IO.File.Exists(GameManager.GetInstance().GetDialogueFilePath())){
-            string[] lines = System.IO.File.ReadAllLines(GameManager.GetInstance().GetUIFilePath());
-
-            foreach(string line in lines){
-                string[] info = line.Split('/');
-                if(line.Contains("PlayID")){
-                    newGameBtnText.text = info[1].Trim();
-                }
-                
-                if(line.Contains("OptionsID")){
-                    settingsBtnText.text = info[1].Trim();
-                }
-
-                if(line.Contains("CreditsID")){
-                    creditsBtnText.text = info[1].Trim();
-                }
-
-                if(line.Contains("QuitID")){
-                    quitBtnText.text = info[1].Trim();
-                }
-            }
-        }
-    }
 }

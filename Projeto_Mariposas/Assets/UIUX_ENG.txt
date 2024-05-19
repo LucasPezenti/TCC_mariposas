@@ -8,43 +8,49 @@ OptionsID / Options
 
 CreditsID / Credits
 
-QuitID / Exit
+QuitID / Quit
 
 ** OPTIONS **
 
-[ID=ID_MENU]Volume
+VolumeID / Volume
 
-[ID=ID_MENU]Brightness
+BrightnessID / Brightness
 
 ** TELAS DE TRANSIÇÃO **
 
-[ID=ID_TRANSITION]Russia, 1890
+Transition_00 / Russia, 1890
 
-[ID=ID_TRANSITION]2024
+Transition_01 / 2024
 
 ** ESCOLHAS DO JOGO **
 
-[ID=ID_CHOICE]Would you like to send an e-mail to the owners?
+Choice_00 / Would you like to send an e-mail to the owners?
 
-[ID=ID_CHOICEOP]Yes
+Choice_00_00 / Yes
 
-[ID=ID_CHOICEOP]No
+Choice_00_01 / No
 
 ** QUESTS DO JOGO **
 
-[ID=ID_QUEST]Dinner time
+Quest_00 / Home Sweet Home
 
-[ID=ID_QUESTSTEP]Prepare a meal for Anoush and Sarkis
+Quest_00_00 / Unload the moving boxes into their respective rooms, according to the images drawn on each box
 
-[ID=ID_QUESTSTEP]Take a plate of food to Sarkis in the office
+Quest_01 / Health Comes First
 
-[ID=ID_QUEST]Home Sweet Home
+Quest_01_00 / Take the medicine prescribed by Dr. Petrosyan
 
-[ID=ID_QUESTSTEP]Unload the moving boxes in their respective rooms, according to the images drawn on each box
+Quest_02 / Under the Ground
 
-[ID=ID_QUEST]Mail!
+Quest_02_00 / Check the basement's condition
 
-[ID=ID_QUESTSTEP]Get the mail by the house's entrance
+Quest_03 / Dinner time
+
+Quest_03_00 / Take some food to Sarkis in the office
+
+Quest_04 / Brute Force
+
+Quest_04_00 / Find a tool to open the basement door
 
 [ID=ID_LETTERTEXT]“Dear Mrs. Gasparian, 
 
@@ -60,9 +66,9 @@ When he died, Rodion Mikhailovich made a most unusual request to his daughter, M
 
 After Mrs Rodionova's death, the children, who didn't have any interest in fulfilling the desire of their grandfather, Rodion, put the house up for auction and my grandpa bought it. He renovated the interior, fixed the infrastructure, tended to the land, and brought it back to life, with the intention of using it as a country house. My grandpa and his family came to spend the summer a few times, but... Something was off. It seemed as though every time they spent a while here, everyone ended up arguing. Soon, they started saying there was something wrong with the house and gave up coming. My grandpa, realizing he had wasted money, became spiteful towards the place and it ended up empty for another two decades or so.
 
-When my father inherited the house, he decided that he wanted to try and make it useful by renting it, so that people could come spend their vacations here. Although some people actually showed interest, they usually gave up after coming to check the house in person. You see, there was, in fact, nothing wrong with it. Although olf, the house was (and still is) very beautiful, with a strong structure, good heating, in a lovely location... as you can see for yourself, being in it right now. Nevertheless, there seemed to be something scaring away the customers.
+When my father inherited the house, he decided that he wanted to try and make it useful by renting it, so that people could come spend their vacations here. Although some people actually showed interest, they usually gave up after coming and checking the house in person. You see, there was, in fact, nothing wrong with it. Although old, the house was (and still is) very beautiful, with a strong structure, good heating, in a lovely location... as you can see for yourself, being in it right now. Nevertheless, there seemed to be something scaring away the customers.
 
-The only time my father got to actually rent the house, it was to a couple with a kid, who came to stay for two months, but ended up quitting and leaving on day three. They said that the house had a negative energy. On top of that, they also claimed to hear weird noises sometimes, as if the house was haunted, and that their son didn't want to be here anymore. That was seven years ago... Since then, no one else has lived here.
+The only time my father got to actually rent the house it was to a couple with a kid, who came to stay for two months, but ended up quitting and leaving on day three. They said that the house had a negative energy. On top of that, they also claimed to hear weird noises sometimes, as if the house was haunted, and that their son didn't want to be here anymore. That was seven years ago... Since then, no one else has lived here.
 
 As you can see, Mrs. Gasparian, the house does not have the most appealing history, and that's why Vassilii didn't want me to explain the situation to you. He, in fact, doesn't know that I am sending you this letter, so I would be thankful if you mantained this exchange of ours in secret.
 
@@ -72,5 +78,3 @@ I hope that his little fanciful tale satisfies your curiosity and brings a littl
 
 Enjoy your stay,
 Maria Nikolaevna Volkova."
-
-

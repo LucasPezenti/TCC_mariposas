@@ -37,9 +37,9 @@ public class LanguageMenu : MonoBehaviour
     }
     
     public void SelectBPT(){
-        GameManager.GetInstance().SetDialogueFilePath(Application.dataPath + "DIAG_BPT.txt");
+        GameManager.GetInstance().SetDialogueFilePath(Application.dataPath + "/DIAG_BPT.txt");
         //GameManager.GetInstance().SetDialogueFilePath(@"C:\Program Files(x86)Motenoia\Motenoia_Data");
-        GameManager.GetInstance().SetUIFilePath(Application.dataPath + "UIUX_BPT.txt");
+        GameManager.GetInstance().SetUIFilePath(Application.dataPath + "/UIUX_BPT.txt");
         Log(GameManager.GetInstance().GetDialogueFilePath());
         Log(Application.dataPath);
 

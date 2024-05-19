@@ -12,39 +12,45 @@ QuitID / Sair
 
 ** OPTIONS **
 
-[ID=ID_MENU]Volume
+VolumeID / Volume
 
-[ID=ID_MENU]Luminosidade
+BrightnessID / Luminosidade
 
 ** TELAS DE TRANSIÇÃO **
 
-[ID=ID_TRANSITION]Rússia, 1890
+Transition_00 / Rússia, 1890
 
-[ID=ID_TRANSITION]2024
+Transition_01 / 2024
 
 ** ESCOLHAS DO JOGO **
 
-[ID=ID_CHOICE]Deseja enviar um e-mail aos proprietários?
+Choice_00 / Deseja enviar um e-mail aos proprietários?
 
-[ID=ID_CHOICEOP]Sim
+Choice_00_00 / Sim
 
-[ID=ID_CHOICEOP]Não
+Choice_00_01 / Não
 
 ** QUESTS DO JOGO **
 
-[ID=ID_QUEST]Hora Da Janta
+Quest_00 / Lar Doce Lar
 
-[ID=ID_QUESTSTEP]Prepare uma refeição para Anoush e Sarkis
+Quest_00_00 / Descarregue as caixas da mudança nos respectivos cômodos de acordo com as imagens desenhadas em cada caixa
 
-[ID=ID_QUESTSTEP]Entregue um prato para Sarkis no escritório
+Quest_01 / Saúde em Primeiro Lugar
 
-[ID=ID_QUEST]Lar Doce Lar
+Quest_01_00 / Tome o remédio receitado pelo Dr. Petrosyan
 
-[ID=ID_QUESTSTEP]Descarregue as caixas da mudança nos respectivos cômodos de acordo com as imagens desenhadas em cada caixa
+Quest_02 / Abaixo da Terra
 
-[ID=ID_QUEST]Correio!
+Quest_02_00 / Verifique a condição do porão da casa
 
-[ID=ID_QUESTSTEP]Pegue a correspondência na entrada da casa
+Quest_03 / Hora da Janta
+
+Quest_03_00 / Entregue um prato para Sarkis no escritório
+
+Quest_04 / Força Bruta
+
+Quest_04_00 / Encontre uma ferramenta para abrir a porta do porão
 
 [ID=ID_LETTERTEXT]“Cara senhora Gasparian, 
 
@@ -62,7 +68,7 @@ Após a morte da senhora Rodiónova, os filhos, que não tinham interesse em man
 
 Quando meu pai herdou a casa, ele decidiu que queria tentar dar alguma utilidade para ela e a botou para alugar, para que as pessoas passassem as férias aqui. Algumas pessoas até se interessaram, mas geralmente desistiam depois de vir ver a casa pessoalmente. Veja bem, não havia, de fato, nada de errado com ela. Apesar de velha, a casa era (e ainda é) muito bonita, com uma boa estrutura, bom aquecimento, em um local agradável... como você mesma pode ver, estando nela agora. Mesmo assim, parecia haver algo que espantava os clientes. 
 
-A única vez que meu pai conseguiu, realmente, alugar a casa, foi para um casal com uma criança que veio pra ficar dois meses, mas acabou desistindo e indo embora no terceiro dia. Eles disseram que a casa tinha uma energia ruim. Disseram também que ouviam barulhos estranhos às vezes, como se ela fosse assombrada, e que seu filho não queria mais ficar aqui. Isso já faz sete anos... Desde então, ninguém mais morou aqui. 
+A única vez que meu pai conseguiu realmente alugar a casa foi para um casal com uma criança que veio pra ficar dois meses, mas acabou desistindo e indo embora no terceiro dia. Eles disseram que a casa tinha uma energia ruim. Disseram também que ouviam barulhos estranhos às vezes, como se ela fosse assombrada, e que seu filho não queria mais ficar aqui. Isso já faz sete anos... Desde então, ninguém mais morou aqui. 
 
 Como pode ver, senhora Gasparian, a casa não tem uma história muito atraente, e é por isso que Vassilii não queria que eu explicasse a situação a vocês. Ele, na verdade, não sabe que estou enviando esta carta, então eu agradeceria se você pudesse manter essa nossa conversa em sigilo. 
 
