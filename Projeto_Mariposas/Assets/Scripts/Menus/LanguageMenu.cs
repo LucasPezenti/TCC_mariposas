@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,7 +20,15 @@ public class LanguageMenu : MonoBehaviour
 
     GameManager GameManager = GameManager.GetInstance();
 
-    private void Awake(){
+
+    private void Log(string conteudo)
+    {
+        conteudo = DateTime.Now + " " + conteudo + Environment.NewLine;
+        System.IO.File.AppendAllText("mariposas.log", conteudo);
+    }
+
+    private void Awake()
+    {
         BPT_Btn.onClick.AddListener(SelectBPT);
         ENG_Btn.onClick.AddListener(SelectENG);
 
@@ -28,9 +37,11 @@ public class LanguageMenu : MonoBehaviour
     }
     
     public void SelectBPT(){
-        GameManager.GetInstance().SetDialogueFilePath(Application.dataPath + "/DIAG_BPT.txt");
-        GameManager.GetInstance().SetUIFilePath(Application.dataPath + "/UIUX_BPT.txt");
-        Debug.Log(GameManager.GetInstance().GetDialogueFilePath());
+        GameManager.GetInstance().SetDialogueFilePath(Application.dataPath + "DIAG_BPT.txt");
+        //GameManager.GetInstance().SetDialogueFilePath(@"C:\Program Files(x86)Motenoia\Motenoia_Data");
+        GameManager.GetInstance().SetUIFilePath(Application.dataPath + "UIUX_BPT.txt");
+        Log(GameManager.GetInstance().GetDialogueFilePath());
+        Log(Application.dataPath);
 
         selectionText.text = "Selecione o idioma";
         confirmText.text = "Confirmar";

@@ -3787,8 +3787,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newGameBtn: {fileID: 1117820757}
-  settingsBtn: {fileID: 38800011}
+  newGameBtnText: {fileID: 17311209}
+  settingsBtnText: {fileID: 548181867}
+  creditsBtnText: {fileID: 1267672558}
   quitBtn: {fileID: 476563236}
+  quitBtnText: {fileID: 1936138186}
 --- !u!1 &1195183176
 GameObject:
   m_ObjectHideFlags: 0

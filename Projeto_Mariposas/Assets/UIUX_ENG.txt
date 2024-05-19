@@ -2,13 +2,13 @@
 
 ** MAIN **
 
-[ID=ID_MENU]Start
+PlayID / Start
 
-[ID=ID_MENU]Options
+OptionsID / Options
 
-[ID=ID_MENU]Credits
+CreditsID / Credits
 
-[ID=ID_MENU]Exit
+QuitID / Exit
 
 ** OPTIONS **
 
