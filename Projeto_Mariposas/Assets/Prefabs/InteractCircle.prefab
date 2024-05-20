@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77bc67a7c40d5e84cb83f66b6a6f5260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inRange: 0
   interactKey: 0
   interactAction:
     m_PersistentCalls:
@@ -65,4 +64,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.3

@@ -10,6 +10,8 @@ CreditsID / Créditos
 
 QuitID / Sair
 
+BackID / Voltar
+
 ** OPTIONS **
 
 VolumeID / Volume
@@ -21,6 +23,14 @@ BrightnessID / Luminosidade
 Transition_00 / Rússia, 1890
 
 Transition_01 / 2024
+
+** AÇÕES DENTRO DO JOGO **
+
+Action_InteractID / (E) Interagir
+
+Action_ExamineID / (Q) Examinar
+
+Action_BackID / (Espaço) Voltar
 
 ** ESCOLHAS DO JOGO **
 

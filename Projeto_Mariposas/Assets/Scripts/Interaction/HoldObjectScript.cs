@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HoldObjectScript : MonoBehaviour
 {
+    public GameObject ExamineAlert;
+
     [SerializeField] private Transform holdSpot;
     [SerializeField] private LayerMask pickUpMask;
     private Vector3 pickDirection { get; set; }
@@ -42,7 +44,23 @@ public class HoldObjectScript : MonoBehaviour
         else if(itemHolding != null && Input.GetKeyDown(KeyCode.E)){
             Release();
         }
-        
+
+        if (itemHolding != null)
+        {
+            ExamineAlert.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                ExamineAlert.SetActive(false);
+                itemHolding.GetComponent<ExamineTrigger>().ExamineItem();
+            }
+
+        }
+
+        else
+        {
+            ExamineAlert.SetActive(false);
+        }
+
     }
 
     private void ChangePosition(){

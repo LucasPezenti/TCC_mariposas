@@ -10,6 +10,8 @@ CreditsID / Credits
 
 QuitID / Quit
 
+BackID / Back
+
 ** OPTIONS **
 
 VolumeID / Volume
@@ -21,6 +23,14 @@ BrightnessID / Brightness
 Transition_00 / Russia, 1890
 
 Transition_01 / 2024
+
+** AÇÔES DENTRO DO JOGO **
+
+Action_InteractID / (E) Interact
+
+Action_ExamineID / (Q) Examine
+
+Action_BackID / (Space) Back
 
 ** ESCOLHAS DO JOGO **
 

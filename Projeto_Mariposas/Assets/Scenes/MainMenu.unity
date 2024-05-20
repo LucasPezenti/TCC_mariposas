@@ -5734,7 +5734,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
       propertyPath: UIelements.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
       propertyPath: UIelements.Array.data[0].textID
@@ -5753,6 +5753,10 @@ PrefabInstance:
       value: QuitID
       objectReference: {fileID: 0}
     - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
+      propertyPath: UIelements.Array.data[4].textID
+      value: BackID
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
       propertyPath: UIelements.Array.data[0].textToDisplay
       value: 
       objectReference: {fileID: 17311209}
@@ -5768,6 +5772,10 @@ PrefabInstance:
       propertyPath: UIelements.Array.data[3].textToDisplay
       value: 
       objectReference: {fileID: 1936138186}
+    - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
+      propertyPath: UIelements.Array.data[4].textToDisplay
+      value: 
+      objectReference: {fileID: 1777809068}
     - target: {fileID: 5754326708653917996, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
       propertyPath: m_Name
       value: UIManager
