@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sarkis spritesheet 15-11-23_0
+      name: sarkisD_01 15-11-23
       rect:
         serializedVersion: 2
         x: 0
@@ -126,7 +126,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sarkis spritesheet 15-11-23_1
+      name: sarkisD_02 15-11-23
       rect:
         serializedVersion: 2
         x: 32
@@ -147,7 +147,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sarkis spritesheet 15-11-23_2
+      name: sarkisD_03 15-11-23
       rect:
         serializedVersion: 2
         x: 64
@@ -168,7 +168,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sarkis spritesheet 15-11-23_3
+      name: sarkisD_04 15-11-23
       rect:
         serializedVersion: 2
         x: 96
@@ -189,7 +189,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sarkis spritesheet 15-11-23_4
+      name: sarkisD_05 15-11-23
       rect:
         serializedVersion: 2
         x: 128
@@ -619,8 +619,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sarkis spritesheet 15-11-23_0: 1838684530
-      sarkis spritesheet 15-11-23_1: -92922465
       sarkis spritesheet 15-11-23_10: 1413520553
       sarkis spritesheet 15-11-23_11: 1895522032
       sarkis spritesheet 15-11-23_12: -514101325
@@ -631,18 +629,20 @@ TextureImporter:
       sarkis spritesheet 15-11-23_17: -1701199843
       sarkis spritesheet 15-11-23_18: 1265246345
       sarkis spritesheet 15-11-23_19: -1177810433
-      sarkis spritesheet 15-11-23_2: -957874533
       sarkis spritesheet 15-11-23_20: -1365981862
       sarkis spritesheet 15-11-23_21: -1845066601
       sarkis spritesheet 15-11-23_22: 1259452722
       sarkis spritesheet 15-11-23_23: 838686891
-      sarkis spritesheet 15-11-23_3: -1454788839
-      sarkis spritesheet 15-11-23_4: 1590272776
       sarkis spritesheet 15-11-23_5: 1683306757
       sarkis spritesheet 15-11-23_6: 2007219281
       sarkis spritesheet 15-11-23_7: 1705260561
       sarkis spritesheet 15-11-23_8: -1306035206
       sarkis spritesheet 15-11-23_9: -1442245305
+      sarkisD_01 15-11-23: 1838684530
+      sarkisD_02 15-11-23: -92922465
+      sarkisD_03 15-11-23: -957874533
+      sarkisD_04 15-11-23: -1454788839
+      sarkisD_05 15-11-23: 1590272776
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

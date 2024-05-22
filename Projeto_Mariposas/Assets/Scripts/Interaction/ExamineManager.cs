@@ -29,17 +29,22 @@ public class ExamineManager : MonoBehaviour
         TopDownMovement.TDcanMove = false;
     }
 
+    public void CloseItemDisplay()
+    {
+        isExamining = false;
+        examineBox.SetActive(false);
+        SideScrollMovement.SScanMove = true;
+        TopDownMovement.TDcanMove = true;
+    }
+
     void Update()
     {
-        ProcessInputs();
+        //ProcessInputs();
     }
 
     private void ProcessInputs(){
         if(Input.GetKeyDown(closeKey)){
-            isExamining = false;
-            examineBox.SetActive(false);
-            SideScrollMovement.SScanMove = true;
-            TopDownMovement.TDcanMove = true;
+            CloseItemDisplay();
         }
     }
 }

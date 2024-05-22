@@ -33,10 +33,6 @@ public class HoldObjectScript : MonoBehaviour
     }
 
     private void ProcessInputs(){
-        if(PlayerMovement.GetMoveDirection().sqrMagnitude > .1f){
-            pickDirection = PlayerMovement.GetMoveDirection().normalized;
-        }
- 
         if(itemHolding == null && Input.GetKeyDown(KeyCode.E)){
             PickUp();
         }
@@ -47,37 +43,55 @@ public class HoldObjectScript : MonoBehaviour
 
         if (itemHolding != null)
         {
-            ExamineAlert.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.Q))
+
+            if (ExamineManager.isExamining)
             {
                 ExamineAlert.SetActive(false);
-                itemHolding.GetComponent<ExamineTrigger>().ExamineItem();
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    FindObjectOfType<ExamineManager>().CloseItemDisplay();
+                }
+            }
+            else
+            {
+                ExamineAlert.SetActive(true);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                FindObjectOfType<ExamineManager>().OpenItemExam(itemHolding.GetComponent<PuzzleBox>().item);
             }
 
         }
-
         else
         {
             ExamineAlert.SetActive(false);
         }
 
+        
+
     }
 
     private void ChangePosition(){
-        if(PlayerMovement.GetDir() == Direction.right){
-            holdSpot.transform.localPosition = new Vector2(0.22f, 0.6f);
+        if (PlayerMovement.GetMoveDirection().sqrMagnitude > .1f)
+        {
+            pickDirection = PlayerMovement.GetMoveDirection().normalized;
+        }
+
+        if (PlayerMovement.GetDir() == Direction.right){
+            holdSpot.transform.localPosition = new Vector2(0.22f, 0.58f);
             if(itemHolding != null) itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
         else if(PlayerMovement.GetDir() == Direction.left){
-            holdSpot.transform.localPosition = new Vector2(-0.22f, 0.6f);
+            holdSpot.transform.localPosition = new Vector2(-0.22f, 0.58f);
             if(itemHolding != null) itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
         if(PlayerMovement.GetDir() == Direction.up){
-            holdSpot.transform.localPosition = new Vector2(0, 0.65f);
+            holdSpot.transform.localPosition = new Vector2(0, 0.61f);
             if(itemHolding != null) itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
         else if(PlayerMovement.GetDir() == Direction.down){
-            holdSpot.transform.localPosition = new Vector2(0, 0.55f);
+            holdSpot.transform.localPosition = new Vector2(0, 0.53f);
             if(itemHolding != null) itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 1;        
         }
     }
