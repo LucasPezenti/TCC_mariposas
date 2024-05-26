@@ -58,6 +58,8 @@ SpriteAtlas:
     - {fileID: 2800000, guid: b9dfb8ec9b66f3b4e90862d1ae9fc5ca, type: 3}
     - {fileID: 2800000, guid: 6a6a0409fd485a74cb83cb50660c17a4, type: 3}
     - {fileID: 2800000, guid: 2badfcb9588c1d84cab0aefacc08d487, type: 3}
+    - {fileID: 2800000, guid: b3cbd5743afacb142aa4c79856130685, type: 3}
+    - {fileID: 2800000, guid: 9fa8611362006ea4b830507700de4b85, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -219,6 +221,8 @@ SpriteAtlas:
   - {fileID: 63462043, guid: e1af93728ae7cb143a9ee6155b8e7976, type: 3}
   - {fileID: 1100850075, guid: e1af93728ae7cb143a9ee6155b8e7976, type: 3}
   - {fileID: 932331306, guid: e1af93728ae7cb143a9ee6155b8e7976, type: 3}
+  - {fileID: -651874382, guid: 9fa8611362006ea4b830507700de4b85, type: 3}
+  - {fileID: 1516742690, guid: 9fa8611362006ea4b830507700de4b85, type: 3}
   - {fileID: 1908306902, guid: 5b115b34429deff47bef27738f880039, type: 3}
   - {fileID: 1854590677, guid: 5b115b34429deff47bef27738f880039, type: 3}
   - {fileID: 1705482652, guid: 5b115b34429deff47bef27738f880039, type: 3}
@@ -408,6 +412,8 @@ SpriteAtlas:
   - {fileID: -318126536, guid: 51d5b244a3f107d4aa585ab54eba95f0, type: 3}
   - {fileID: 1643822673, guid: 51d5b244a3f107d4aa585ab54eba95f0, type: 3}
   - {fileID: 1125606354, guid: 51d5b244a3f107d4aa585ab54eba95f0, type: 3}
+  - {fileID: 2000264111, guid: b3cbd5743afacb142aa4c79856130685, type: 3}
+  - {fileID: -872330119, guid: b3cbd5743afacb142aa4c79856130685, type: 3}
   - {fileID: -1231428177, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
   - {fileID: 1947646150, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
   - {fileID: 237563343, guid: 20d6cce5c7ac33b4e97f0f98a09aa347, type: 3}
@@ -767,6 +773,8 @@ SpriteAtlas:
   - parede_6
   - parede_9
   - parede_8
+  - tilesparede5_1
+  - tilesparede5_0
   - floresta_138
   - floresta_139
   - floresta_118
@@ -956,6 +964,8 @@ SpriteAtlas:
   - Prologue_Trees_0
   - Prologue_Trees_9
   - Prologue_Trees_8
+  - tilesparede2_0
+  - tilesparede2_1
   - Objects_22
   - Objects_23
   - Objects_20

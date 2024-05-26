@@ -9,7 +9,7 @@ public class HoldObjectScript : MonoBehaviour
     [SerializeField] private Transform holdSpot;
     [SerializeField] private LayerMask pickUpMask;
     private Vector3 pickDirection { get; set; }
-    private GameObject itemHolding;
+    public GameObject itemHolding;
     private TopDownMovement PlayerMovement;
 
     private bool isHolding;
@@ -98,7 +98,7 @@ public class HoldObjectScript : MonoBehaviour
 
     public void PickUp(){
         
-        Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + pickDirection * .5f, .3f, pickUpMask);
+        Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + pickDirection * .2f, .1f, pickUpMask);
         if (pickUpItem)
         {
             itemHolding = pickUpItem.gameObject;

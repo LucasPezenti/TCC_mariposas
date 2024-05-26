@@ -6,6 +6,7 @@ public class PuzzleBox : MonoBehaviour
 {
 
     public Item item;
+    public int boxID;
 
 }
 

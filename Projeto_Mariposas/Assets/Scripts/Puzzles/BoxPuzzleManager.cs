@@ -6,7 +6,9 @@ public class BoxPuzzleManager : MonoBehaviour
 {
     public GameObject[] oldFurniture;
     public GameObject[] newFurniture;
-    private string boxName;
+    [SerializeField] private int roomID;
+    private GameObject playerBox;
+    private bool canLeaveBox;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,36 @@ public class BoxPuzzleManager : MonoBehaviour
         
     }
 
+    public void Unpack()
+    {
+        playerBox = FindAnyObjectByType<HoldObjectScript>().itemHolding;
+        if (playerBox != null)
+        {
+            if(playerBox.GetComponent<PuzzleBox>().boxID == roomID)
+            {
+                playerBox.transform.position = this.transform.position;
+                playerBox.transform.parent = transform;
+                if (playerBox.GetComponent<Rigidbody2D>())
+                {
+                    playerBox.GetComponent<Rigidbody2D>().simulated = true;
+                }
+                SwitchFurniture();
+                Destroy(playerBox);
+                this.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    /*
+    public void CheckBox(int boxIndex)
+    {
+        if (boxIndex == roomID)
+        {
+    
+        }
+    }
+    */
+
     public void SwitchFurniture()
     {
         for (int i = 0; i < oldFurniture.Length; i ++)
@@ -31,15 +63,5 @@ public class BoxPuzzleManager : MonoBehaviour
         {
             newFurniture[i].SetActive(true);
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-
     }
 }
