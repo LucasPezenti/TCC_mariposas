@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public UIElement[] UIelements;
+    public UIElement[] elements;
 
     private void Start()
     {
@@ -21,11 +21,11 @@ public class UIManager : MonoBehaviour
             foreach (string line in lines)
             {
                 string[] info = line.Split('/');
-                for(int i = 0; i < UIelements.Length; i++)
+                for(int i = 0; i < elements.Length; i++)
                 {
-                    if (line.Contains(UIelements[i].textID))
+                    if (line.Contains(elements[i].textID))
                     {
-                        UIelements[i].textToDisplay.text = info[1].Trim();
+                        elements[i].textToDisplay.text = info[1].Trim();
                     }
                 }
             }

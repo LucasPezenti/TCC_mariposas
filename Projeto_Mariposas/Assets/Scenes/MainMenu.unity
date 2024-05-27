@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 17311210}
   - component: {fileID: 17311209}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: StartText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2144,7 +2144,7 @@ GameObject:
   - component: {fileID: 548181868}
   - component: {fileID: 548181867}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: OptionsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4099,7 +4099,7 @@ GameObject:
   - component: {fileID: 1267672559}
   - component: {fileID: 1267672558}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: CreditsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5219,7 +5219,7 @@ GameObject:
   - component: {fileID: 1777809069}
   - component: {fileID: 1777809068}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: BackText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5534,7 +5534,7 @@ GameObject:
   - component: {fileID: 1936138187}
   - component: {fileID: 1936138186}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: QuitText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5733,8 +5733,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 1859517583}
     m_Modifications:
     - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
+      propertyPath: elements.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
       propertyPath: UIelements.Array.size
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
+      propertyPath: elements.Array.data[0].textID
+      value: PlayID
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
+      propertyPath: elements.Array.data[1].textID
+      value: OptionsID
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
+      propertyPath: elements.Array.data[2].textID
+      value: CreditsID
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
+      propertyPath: elements.Array.data[3].textID
+      value: QuitID
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
+      propertyPath: elements.Array.data[4].textID
+      value: BackID
       objectReference: {fileID: 0}
     - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
       propertyPath: UIelements.Array.data[0].textID
@@ -5756,6 +5780,26 @@ PrefabInstance:
       propertyPath: UIelements.Array.data[4].textID
       value: BackID
       objectReference: {fileID: 0}
+    - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
+      propertyPath: elements.Array.data[0].textToDisplay
+      value: 
+      objectReference: {fileID: 17311209}
+    - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
+      propertyPath: elements.Array.data[1].textToDisplay
+      value: 
+      objectReference: {fileID: 548181867}
+    - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
+      propertyPath: elements.Array.data[2].textToDisplay
+      value: 
+      objectReference: {fileID: 1267672558}
+    - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
+      propertyPath: elements.Array.data[3].textToDisplay
+      value: 
+      objectReference: {fileID: 1936138186}
+    - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
+      propertyPath: elements.Array.data[4].textToDisplay
+      value: 
+      objectReference: {fileID: 1777809068}
     - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
       propertyPath: UIelements.Array.data[0].textToDisplay
       value: 

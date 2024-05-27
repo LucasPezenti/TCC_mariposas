@@ -98,7 +98,7 @@ public class HoldObjectScript : MonoBehaviour
 
     public void PickUp(){
         
-        Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + pickDirection * .2f, .1f, pickUpMask);
+        Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + pickDirection * .2f, .15f, pickUpMask);
         if (pickUpItem)
         {
             itemHolding = pickUpItem.gameObject;

@@ -30,7 +30,7 @@ Action_InteractID / (E) Interagir
 
 Action_ExamineID / (Q) Examinar
 
-Action_BackID / (Espaço) Voltar
+Action_ReturnID / (Espaço) Voltar
 
 ** ESCOLHAS DO JOGO **
 
