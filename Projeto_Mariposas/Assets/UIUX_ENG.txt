@@ -6,6 +6,8 @@ PlayID / Start
 
 OptionsID / Options
 
+AboutID / About
+
 CreditsID / Credits
 
 QuitID / Quit

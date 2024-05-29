@@ -7,22 +7,29 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+
+    [Header("Buttons")]
     [SerializeField] private Button newGameBtn;
-    public TextMeshProUGUI newGameBtnText;
 
     //[SerializeField] private Button resumeGameBtn;
-    
+
     //[SerializeField] private Button settingsBtn;
-    public TextMeshProUGUI settingsBtnText;
     
-    //[SerializeField] private Button creditsBtn;
-    public TextMeshProUGUI creditsBtnText;
-    
+    [SerializeField] private Button aboutBtn;
+
+    [SerializeField] private Button creditsBtn;
+
     [SerializeField] private Button quitBtn;
-    public TextMeshProUGUI quitBtnText;
+
+    [Header("Screens")]
+    public GameObject mainScreen;
+    //public GameObject settingsScreen;
+    //public GameObject aboutScreen;
+    public GameObject creditScreen;
 
     private void Awake(){
         newGameBtn.onClick.AddListener(StartNewGame);
+        creditsBtn.onClick.AddListener(OpenCredits);
         quitBtn.onClick.AddListener(QuitGame);
     }
 
@@ -45,11 +52,11 @@ public class MainMenu : MonoBehaviour
     */
 
     //  Criar tela de créditos
-    /*
+    
     public void OpenCredits(){
-
+        creditScreen.SetActive(true);
+        mainScreen.SetActive(false);
     }
-    */
 
     public void QuitGame(){
         Debug.Log("Jogo fechado!");

@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
 
     public void LoadUI()
     {
+        //if (System.IO.File.Exists(GameManager.GetInstance().GetUIFilePath()))
         if (System.IO.File.Exists(GameManager.GetInstance().GetUIFilePath()))
         {
             string[] lines = System.IO.File.ReadAllLines(GameManager.GetInstance().GetUIFilePath());

@@ -6,6 +6,8 @@ PlayID / Iniciar
 
 OptionsID / Opções
 
+AboutID / Sobre
+
 CreditsID / Créditos
 
 QuitID / Sair

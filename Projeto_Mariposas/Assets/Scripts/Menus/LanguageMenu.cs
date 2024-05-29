@@ -37,21 +37,23 @@ public class LanguageMenu : MonoBehaviour
     }
     
     public void SelectBPT(){
-        GameManager.GetInstance().SetDialogueFilePath(Application.dataPath + "/DIAG_BPT.txt");
-        //GameManager.GetInstance().SetDialogueFilePath(@"C:\Program Files(x86)Motenoia\Motenoia_Data");
-        GameManager.GetInstance().SetUIFilePath(Application.dataPath + "/UIUX_BPT.txt");
-        Log(GameManager.GetInstance().GetDialogueFilePath());
-        Log(Application.dataPath);
+        
+        //GameManager.GetInstance().SetDialogueFilePath(Application.dataPath + "/DIAG_BPT.txt");
+        //GameManager.GetInstance().SetUIFilePath(Application.dataPath + "/UIUX_BPT.txt");
+        GameManager.GetInstance().ChangeLanguage(Languages.BPT);
+        //Log(GameManager.GetInstance().GetDialogueFile());
+        //Log(Application.dataPath);
 
+        Debug.Log(GameManager.GetInstance().GetUIFilePath());
         selectionText.text = "Selecione o idioma";
         confirmText.text = "Confirmar";
         confirmBtn.gameObject.SetActive(true);
     }
 
     public void SelectENG(){
-        GameManager.GetInstance().SetDialogueFilePath(Application.dataPath + "/DIAG_ENG.txt");
-        GameManager.GetInstance().SetUIFilePath(Application.dataPath + "/UIUX_ENG.txt");
-        Debug.Log(GameManager.GetInstance().GetDialogueFilePath());
+        //GameManager.GetInstance().SetDialogueFilePath(Application.dataPath + "/DIAG_ENG.txt");
+        //GameManager.GetInstance().SetUIFilePath(Application.dataPath + "/UIUX_ENG.txt");
+        GameManager.GetInstance().ChangeLanguage(Languages.ENG);
 
         selectionText.text = "Select the language";
         confirmText.text = "Confirm";
