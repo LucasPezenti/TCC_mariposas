@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
 
     //[SerializeField] private Button resumeGameBtn;
 
-    //[SerializeField] private Button settingsBtn;
+    [SerializeField] private Button settingsBtn;
     
     [SerializeField] private Button aboutBtn;
 
@@ -23,12 +23,15 @@ public class MainMenu : MonoBehaviour
 
     [Header("Screens")]
     public GameObject mainScreen;
-    //public GameObject settingsScreen;
+    public GameObject settingsScreen;
     //public GameObject aboutScreen;
     public GameObject creditScreen;
 
+    public Animator creditsAnimator;
+
     private void Awake(){
         newGameBtn.onClick.AddListener(StartNewGame);
+        settingsBtn.onClick.AddListener(OpenCredits);
         creditsBtn.onClick.AddListener(OpenCredits);
         quitBtn.onClick.AddListener(QuitGame);
     }
@@ -45,17 +48,19 @@ public class MainMenu : MonoBehaviour
     */
 
     //  Criar menu de configurações
-    /*
+    
     public void OpenSettings(){
-
+        settingsScreen.SetActive(true);
+        mainScreen.SetActive(false);
     }
-    */
+    
 
     //  Criar tela de créditos
     
     public void OpenCredits(){
         creditScreen.SetActive(true);
-        mainScreen.SetActive(false);
+        creditsAnimator.SetTrigger("TriggerCredits");
+        
     }
 
     public void QuitGame(){

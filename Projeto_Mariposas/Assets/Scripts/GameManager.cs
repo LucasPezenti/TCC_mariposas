@@ -44,7 +44,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         ChangeGameState(GameState.language);
-        ChangeLanguage(Languages.ENG);
+        ChangeLanguage(Languages.BPT);
+        UIFilePath = Application.dataPath + "/UIUX_BPT.txt";
+        DialogueFilePath = Application.dataPath + "/DIAG_BPT.txt";
     }
 
     public void ChangeGameState(GameState newState) {
