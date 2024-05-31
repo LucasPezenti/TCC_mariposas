@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     // Language variables 
     // Save the current language
-    public static Languages curLanguage;
+    private Languages curLanguage;
     [SerializeField] private TextAsset BptDialogueFile;
     [SerializeField] private TextAsset EngDialogueFile;
     [SerializeField] private TextAsset BptUIFile;
@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
 
     private string DialogueFilePath;
     private string UIFilePath;
+    private string CreditsFilePath;
+    private string AboutFilePath;
     
     public static GameManager GetInstance(){
         return Instance;
@@ -47,6 +49,8 @@ public class GameManager : MonoBehaviour
         ChangeLanguage(Languages.BPT);
         UIFilePath = Application.dataPath + "/UIUX_BPT.txt";
         DialogueFilePath = Application.dataPath + "/DIAG_BPT.txt";
+        CreditsFilePath = Application.dataPath + "/CREDITOS_BPT.txt";
+        AboutFilePath = Application.dataPath + "/SOBRE_BPT.txt";
     }
 
     public void ChangeGameState(GameState newState) {
@@ -85,16 +89,25 @@ public class GameManager : MonoBehaviour
             case Languages.BPT:
                 UIFilePath = Application.dataPath + "/UIUX_BPT.txt";
                 DialogueFilePath = Application.dataPath + "/DIAG_BPT.txt";
+                CreditsFilePath = Application.dataPath + "/CREDITOS_BPT.txt";
+                AboutFilePath = Application.dataPath + "/SOBRE_BPT.txt";
                 break;
             case Languages.ENG:
                 UIFilePath = Application.dataPath + "/UIUX_ENG.txt";
                 DialogueFilePath = Application.dataPath + "/DIAG_ENG.txt";
+                CreditsFilePath = Application.dataPath + "/CREDITOS_ENG.txt";
+                AboutFilePath = Application.dataPath + "/SOBRE_ENG.txt";
                 break;
             
             default:
                 throw new ArgumentOutOfRangeException(nameof(newLanguage), newLanguage, null);
         }
         OnLanguageChanged?.Invoke(newLanguage);
+    }
+
+    public Languages GetCurLanguage()
+    {
+        return this.curLanguage;
     }
 
     public string GetDialogueFilePath(){

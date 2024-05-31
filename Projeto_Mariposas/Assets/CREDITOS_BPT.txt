@@ -1,0 +1,77 @@
+Agradecemos por jogar!
+
+	Este jogo foi desenvolvido como Trabalho de Graduação do curso de Jogos Digitais da Fatec São Caetano do Sul, do Centro Paula Souza.
+
+High Concept:
+
+	Morgan Guedes Soares
+	Gabriella Natalini Ribeiro
+
+Game Design:
+
+	Melissa Xavier Falcão Branco
+	Morgan Guedes Soares
+
+Design de Nível:
+
+	Melissa Xavier Falcão Branco
+	Morgan Guedes Soares
+
+Programação:
+
+	Lucas Pezenti de Souza
+
+Implementação:
+
+	Lucas Pezenti de Souza
+
+Arte Conceitual:
+
+	Gabriella Natalini Ribeiro
+	Morgan Guedes Soares
+
+Arte Final:
+
+	Gabriella Natalini Ribeiro
+	Morgan Guedes Soares
+
+Animações:
+
+	Gabriella Natalini Ribeiro
+
+Efeitos Sonoros:
+
+	Melissa Xavier Falcão Branco
+
+Música:
+
+	Gabriella Natalini Ribeiro
+
+Professores Orientadores:
+
+	Alexandre Santaella Braga
+	Raquel Silva
+	Ricardo Baitz	
+	Willians Monteiro da Silva
+
+Fonte:
+
+	Zelda DX, por Brian Kent (kentpw@norwich.net), disponível em https://www.dafont.com/pt/zelda-dx.font
+
+Agradecimentos Especiais:
+
+	Aos pets: Cloud Strife, Fatecat, Miyuki Narutomaki e Nina
+	Às nossas famílias
+	Aos nossos amigos
+	Ao corpo docente da Fatec São Caetano do Sul
+	Ao nosso coordenador, Alan Henrique Pardo de Carvalho
+	Andrade Souza Gostautas Gritti
+	César Neves Mosca
+	Edgar Angelini Petrillo
+	Gabriel (Cas) Simon
+	Guilherme Rocha Pedrina
+	Josué Eduardo Menezes Junior
+	Willian dos Santos Pedrosa
+
+	O grupo Aracnebula reconhece o Genocídio Armênio de 1915-1923 e seu impacto social e cultural até os dias atuais. Expressamos nossa empatia e apoio às vítimas e seus descendentes.
+
