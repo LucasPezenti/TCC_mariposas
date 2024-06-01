@@ -8115,6 +8115,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2516740660708245614, guid: 36214ee0619877041a1852c565811b85, type: 3}
+      propertyPath: alert
+      value: 
+      objectReference: {fileID: 1195798798}
+    - target: {fileID: 2516740660708245614, guid: 36214ee0619877041a1852c565811b85, type: 3}
       propertyPath: alertObject
       value: 
       objectReference: {fileID: 0}
@@ -8226,8 +8230,17 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 9078650412972436662, guid: 36214ee0619877041a1852c565811b85, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36214ee0619877041a1852c565811b85, type: 3}
+--- !u!1 &1195798798 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1365508076948716123, guid: 36214ee0619877041a1852c565811b85, type: 3}
+  m_PrefabInstance: {fileID: 1187375364}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1203782440
 GameObject:
   m_ObjectHideFlags: 0
@@ -8694,7 +8707,6 @@ GameObject:
   - component: {fileID: 1530271944}
   - component: {fileID: 1530271943}
   - component: {fileID: 1530271942}
-  - component: {fileID: 1530271941}
   m_Layer: 5
   m_Name: InteractionAlert
   m_TagString: Untagged
@@ -8723,19 +8735,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1530271941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1530271939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a16d56c139c605e4d9caabd2c30b217a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alertObject: {fileID: 622898752}
 --- !u!114 &1530271942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8765,10 +8764,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 64
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 640, y: 480}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -8786,9 +8785,9 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1576769751}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0

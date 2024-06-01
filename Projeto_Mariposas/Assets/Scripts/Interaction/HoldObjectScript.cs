@@ -98,7 +98,7 @@ public class HoldObjectScript : MonoBehaviour
 
     public void PickUp(){
         
-        Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + pickDirection * .2f, .15f, pickUpMask);
+        Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + pickDirection * .35f, .15f, pickUpMask);
         if (pickUpItem)
         {
             itemHolding = pickUpItem.gameObject;
@@ -120,7 +120,7 @@ public class HoldObjectScript : MonoBehaviour
     public void Release(){
         if(itemHolding != null)
         {
-            itemHolding.transform.position = transform.position + pickDirection * .5f;
+            itemHolding.transform.position = transform.position + pickDirection * .4f;
             itemHolding.transform.parent = null;
             itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 0;
             if (itemHolding.GetComponent<Rigidbody2D>())

@@ -16,17 +16,16 @@ public class Interactable : MonoBehaviour
     private bool inRange;
     [SerializeField] private KeyCode interactKey;
     [SerializeField] private UnityEvent interactAction;
+    public GameObject alert;
 
     //[SerializeField] GameObject alertObject;
 
     // Update is called once per frame
     void Update()
     {
-        
         if(inRange){
             Interact();
         }
-        
     }
 
     private void Interact(){
@@ -51,13 +50,11 @@ public class Interactable : MonoBehaviour
     }
 
     private void TurnAlertOn(){
-        //alertObject.SetActive(false);
-        InteractionAlert.isInteractable = true;
+        alert.SetActive(true);
     }
 
     private void TurnAlertOff(){
-        //alertObject.SetActive(false);
-        InteractionAlert.isInteractable = false;
+        alert.SetActive(false);
     }
 
     public bool GetInRange(){
