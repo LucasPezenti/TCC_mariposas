@@ -777,7 +777,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobilia 26-05-2024_32
+      name: Balcao_Lado
       rect:
         serializedVersion: 2
         x: 64
@@ -798,7 +798,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobilia 26-05-2024_33
+      name: Fogao
       rect:
         serializedVersion: 2
         x: 96
@@ -819,7 +819,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobilia 26-05-2024_34
+      name: Geladeira
       rect:
         serializedVersion: 2
         x: 128
@@ -1228,6 +1228,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Balcao_Lado: 718642982
+      Fogao: 1028202305
+      Geladeira: 580614074
       Mobilia 26-05-2024_0: -1601216537
       Mobilia 26-05-2024_1: -239619603
       Mobilia 26-05-2024_10: 1335827303
@@ -1254,9 +1257,6 @@ TextureImporter:
       Mobilia 26-05-2024_3: -2014348582
       Mobilia 26-05-2024_30: -194277771
       Mobilia 26-05-2024_31: 1938974670
-      Mobilia 26-05-2024_32: 718642982
-      Mobilia 26-05-2024_33: 1028202305
-      Mobilia 26-05-2024_34: 580614074
       Mobilia 26-05-2024_35: 115254842
       Mobilia 26-05-2024_36: 597890933
       Mobilia 26-05-2024_37: -925820036

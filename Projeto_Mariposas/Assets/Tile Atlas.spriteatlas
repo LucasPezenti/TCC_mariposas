@@ -629,6 +629,9 @@ SpriteAtlas:
   - {fileID: -1397913522, guid: 37e26c5a67cd46a4fb85aea9b792b3a3, type: 3}
   - {fileID: -1703772333, guid: 37e26c5a67cd46a4fb85aea9b792b3a3, type: 3}
   - {fileID: 1691865505, guid: 37e26c5a67cd46a4fb85aea9b792b3a3, type: 3}
+  - {fileID: 1028202305, guid: 205d724b93bc7af43a042567ba638e85, type: 3}
+  - {fileID: 580614074, guid: 205d724b93bc7af43a042567ba638e85, type: 3}
+  - {fileID: 718642982, guid: 205d724b93bc7af43a042567ba638e85, type: 3}
   - {fileID: 355524274, guid: 205d724b93bc7af43a042567ba638e85, type: 3}
   - {fileID: 1470383602, guid: 205d724b93bc7af43a042567ba638e85, type: 3}
   - {fileID: -696581031, guid: 205d724b93bc7af43a042567ba638e85, type: 3}
@@ -643,10 +646,7 @@ SpriteAtlas:
   - {fileID: -1141284522, guid: 205d724b93bc7af43a042567ba638e85, type: 3}
   - {fileID: 115254842, guid: 205d724b93bc7af43a042567ba638e85, type: 3}
   - {fileID: -1219832606, guid: 205d724b93bc7af43a042567ba638e85, type: 3}
-  - {fileID: 580614074, guid: 205d724b93bc7af43a042567ba638e85, type: 3}
   - {fileID: 2139653415, guid: 205d724b93bc7af43a042567ba638e85, type: 3}
-  - {fileID: 1028202305, guid: 205d724b93bc7af43a042567ba638e85, type: 3}
-  - {fileID: 718642982, guid: 205d724b93bc7af43a042567ba638e85, type: 3}
   - {fileID: 1938974670, guid: 205d724b93bc7af43a042567ba638e85, type: 3}
   - {fileID: -194277771, guid: 205d724b93bc7af43a042567ba638e85, type: 3}
   - {fileID: -496095853, guid: 205d724b93bc7af43a042567ba638e85, type: 3}
@@ -1271,6 +1271,9 @@ SpriteAtlas:
   - Prologue_Room_2
   - Prologue_Room_1
   - Prologue_Room_0
+  - Fogao
+  - Geladeira
+  - Balcao_Lado
   - Mobilia 26-05-2024_28
   - Mobilia 26-05-2024_29
   - Mobilia 26-05-2024_24
@@ -1285,10 +1288,7 @@ SpriteAtlas:
   - Mobilia 26-05-2024_21
   - Mobilia 26-05-2024_35
   - Mobilia 26-05-2024_22
-  - Mobilia 26-05-2024_34
   - Mobilia 26-05-2024_23
-  - Mobilia 26-05-2024_33
-  - Mobilia 26-05-2024_32
   - Mobilia 26-05-2024_31
   - Mobilia 26-05-2024_30
   - Mobilia 26-05-2024_15
