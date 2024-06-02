@@ -32,8 +32,6 @@ public class UIManager : MonoBehaviour
             }
         }
     }
-
-    
 }
 
 [System.Serializable]

@@ -6,8 +6,10 @@ using UnityEngine;
 
 public class InteractionAlert : MonoBehaviour
 {
-    [SerializeField] private GameObject alertObject;
-    public static bool isInteractable;
+    [SerializeField] private GameObject interactionAlert;
+    [SerializeField] private GameObject dialogueAlert;
+    private bool isInteractable;
+    private bool isDialogue;
 
     void Start(){
         isInteractable = false;
@@ -15,11 +17,29 @@ public class InteractionAlert : MonoBehaviour
 
     void Update(){
         if(!isInteractable){ // Se necessário, Adicionar verificação de diálogo
-            alertObject.SetActive(false);
+            interactionAlert.SetActive(false);
+            dialogueAlert.SetActive(false);
         }
         else{
-            alertObject.SetActive(true);
+            if (isDialogue)
+            {
+                dialogueAlert.SetActive(true);
+            }
+            else
+            {
+                interactionAlert.SetActive(true);
+            }
         }
+    }
+    public void TurnAlertOn(bool isDialogue)
+    {
+        isInteractable = true;
+        this.isDialogue = isDialogue;
+    }
+
+    public void TurnAlertOff()
+    {
+        isInteractable = false;
     }
 
 }

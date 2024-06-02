@@ -12,7 +12,6 @@ public class DialogueTrigger : MonoBehaviour
     public bool repeat;
     public bool areaTrigger;
     public GameObject interactionObj;
-    private bool inRange;
 
     public void StartDialogue(){
         /*
@@ -35,56 +34,15 @@ public class DialogueTrigger : MonoBehaviour
         return repeat;
     }
 
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (inRange)
-        {
-            if (Input.GetKey(KeyCode.E))
-            {
-                StartDialogue();
-                TurnDialogueAlertOff();
-            }
-        }            
-    }
-
-    private void OnTriggerEnter2D(Collider2D other){
-        if(areaTrigger){
-            if(other.gameObject.CompareTag("Player")){
-                inRange = true;
-                StartDialogue();
-            }
-        }
-        else
+        if (areaTrigger)
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                inRange = true;
-                TurnDialogueAlertOn();
+                StartDialogue();
             }
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        inRange = false;
-
-        if (!areaTrigger)
-        {
-            if (other.gameObject.CompareTag("Player"))
-            {
-                TurnDialogueAlertOff();
-            }
-        }
-    }
-
-    public void TurnDialogueAlertOn()
-    {
-        interactionObj.SetActive(true);
-    }
-
-    public void TurnDialogueAlertOff()
-    {
-        interactionObj.SetActive(false);
     }
 
 }

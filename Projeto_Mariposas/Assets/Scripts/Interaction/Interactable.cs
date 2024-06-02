@@ -16,9 +16,15 @@ public class Interactable : MonoBehaviour
     private bool inRange;
     [SerializeField] private KeyCode interactKey;
     [SerializeField] private UnityEvent interactAction;
+    public bool isDialogue;
     public GameObject alert;
 
     //[SerializeField] GameObject alertObject;
+
+    void Start()
+    {
+        FindObjectOfType<InteractionAlert>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -30,7 +36,7 @@ public class Interactable : MonoBehaviour
 
     private void Interact(){
         if(Input.GetKeyDown(interactKey)){
-            TurnAlertOff();
+            FindObjectOfType<InteractionAlert>().TurnAlertOff();
             interactAction.Invoke();
         }
     }
@@ -38,23 +44,15 @@ public class Interactable : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
         if(other.gameObject.CompareTag("Player")){
             inRange = true;
-            TurnAlertOn();
+            FindObjectOfType<InteractionAlert>().TurnAlertOn(isDialogue);
         }
     }
 
     private void OnTriggerExit2D(Collider2D other){
         if(other.gameObject.CompareTag("Player")){
             inRange = false;
-            TurnAlertOff();
+            FindObjectOfType<InteractionAlert>().TurnAlertOff();
         }
-    }
-
-    private void TurnAlertOn(){
-        alert.SetActive(true);
-    }
-
-    private void TurnAlertOff(){
-        alert.SetActive(false);
     }
 
     public bool GetInRange(){

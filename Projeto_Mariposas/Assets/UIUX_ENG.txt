@@ -44,25 +44,25 @@ Choice_00_01 / No
 
 ** QUESTS DO JOGO **
 
-Quest_00 / Home Sweet Home
+QuestName_00 / Home Sweet Home
 
-Quest_00_00 / Unload the moving boxes into their respective rooms, according to the images drawn on each box
+QuestStep_00_00 / Unload the moving boxes into their respective rooms, according to the images drawn on each box
 
-Quest_01 / Health Comes First
+QuestName_01 / Health Comes First
 
-Quest_01_00 / Take the medicine prescribed by Dr. Petrosyan
+QuestStep_01_00 / Take the medicine prescribed by Dr. Petrosyan
 
-Quest_02 / Under the Ground
+QuestName_02 / Under the Ground
 
-Quest_02_00 / Check the basement's condition
+QuestStep_02_00 / Check the basement's condition
 
-Quest_03 / Dinner Time
+QuestName_03 / Dinner Time
 
-Quest_03_00 / Take some food to Sarkis in the office
+QuestStep_03_00 / Take some food to Sarkis in the office
 
-Quest_04 / Brute Force
+QuestName_04 / Brute Force
 
-Quest_04_00 / Find a tool to open the basement door
+QuestStep_04_00 / Find a tool to open the basement door
 
 [ID=ID_LETTERTEXT]“Dear Mrs. Gasparian, 
 
