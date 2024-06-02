@@ -446,6 +446,8 @@ MessageLine / 0 / Não consigo dormir...
 
 MessageLine / 0 / Acho que vou tentar entrar naquele porão de novo... Deve ter alguma ferramenta nessa casa que me ajude.
 
+MessageLine / 0 / Talvez nas caixas de coisas que trouxemos do Brasil quando fizemos aquele intercâmbio pra estudar o besouro Titanus giganteus.
+
 AbrePor_0000_end
 
 ##
@@ -483,13 +485,68 @@ AbrePor_0003_end
 
 ##
 
-# Dentro do porão #
+# EvoGen #
 
 AbrePor_0004_start
 ActorLine / Anoush / 2
 
-MessageLine / 0 / Uma carta...? Que estranho...
+MessageLine / 0 / Não tem nada útil aqui, só alguns quadrinhos do Suricato Lelê.
 
 AbrePor_0004_end
+
+##
+
+# Mini Challenges #
+
+AbrePor_0005_start
+ActorLine / Anoush / 2
+
+MessageLine / 0 / Aqui tem só um jornal... ''A polícia ainda está investigando o caso das crianças desaparecidas, Scoth e Smith.''
+
+AbrePor_0005_end
+
+##
+
+# Os Camundangos #
+
+AbrePor_0006_start
+ActorLine / Anoush / 2
+
+MessageLine / 0 / Nada de útil, apenas CDs velhos. Eu costumava ouvir direto esse álbum dos Camundangos!
+
+AbrePor_0006_end
+
+##
+
+# XODÓ #
+
+AbrePor_0007_start
+ActorLine / Anoush / 2
+
+MessageLine / 0 / Essa caixa está vazia, tirando por uma revista de jardinagem XODÓ...
+
+AbrePor_0007_end
+
+##
+
+# Achou o martelo! #
+
+AbrePor_0008_start
+ActorLine / Anoush / 2
+
+MessageLine / 0 / Esse martelo deve servir!
+
+AbrePor_0008_end
+
+##
+
+# Dentro do porão #
+
+AbrePor_0009_start
+ActorLine / Anoush / 2
+
+MessageLine / 0 / Uma carta...? Que estranho...
+
+AbrePor_0009_end
 
 ##

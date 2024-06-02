@@ -211,7 +211,6 @@ ActorLine / Anoush / 2
 
 MessageLine / 0 / Even looking at it is difficult...
 
-
 BoxBB_0000_end
 
 ##
@@ -447,6 +446,8 @@ MessageLine / 0 / I can't sleep...
 
 MessageLine / 0 / I think I'll try to get into that basement again... There must be some tool in this house that could help me.
 
+MessageLine / 0 / Maybe in those boxes with stuff we brought back from that interchange we did in Brazil, to study the Titanus giganteus beetle.
+
 AbrePor_0000_end
 
 ##
@@ -484,13 +485,68 @@ AbrePor_0003_end
 
 ##
 
-# Dentro do porão #
+# EvoGen #
 
 AbrePor_0004_start
 ActorLine / Anoush / 2
 
-MessageLine / 0 / A letter...? How odd...
+MessageLine / 0 / Nothing useful here, just some 'Meerkat Lelê' comics.
 
 AbrePor_0004_end
+
+##
+
+# Mini Challenges #
+
+AbrePor_0005_start
+ActorLine / Anoush / 2
+
+MessageLine / 0 / There's only a newspaper here... ''The police is still investigating the case of the missing children, Smith and Scoth.''
+
+AbrePor_0005_end
+
+##
+
+# Os Camundangos #
+
+AbrePor_0006_start
+ActorLine / Anoush / 2
+
+MessageLine / 0 / Nothing of use here, just some old CDs. I used to listen to this 'Os Camundangos' album all the time!
+
+AbrePor_0006_end
+
+##
+
+# XODÓ #
+
+AbrePor_0007_start
+ActorLine / Anoush / 2
+
+MessageLine / 0 / This box is empty, save for an issue of the gardening magazine 'XODÓ'...
+
+AbrePor_0007_end
+
+##
+
+# Achou o martelo! #
+
+AbrePor_0008_start
+ActorLine / Anoush / 2
+
+MessageLine / 0 / This hammer should do!
+
+AbrePor_0008_end
+
+##
+
+# Dentro do porão #
+
+AbrePor_0009_start
+ActorLine / Anoush / 2
+
+MessageLine / 0 / Uma carta...? Que estranho...
+
+AbrePor_0009_end
 
 ##
