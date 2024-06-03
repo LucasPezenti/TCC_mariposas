@@ -22,6 +22,8 @@ BrightnessID / Brightness
 
 ** TELAS DE TRANSIÇÃO **
 
+DevText / A game by
+
 Transition_00 / Russia, 1890
 
 Transition_01 / 2024

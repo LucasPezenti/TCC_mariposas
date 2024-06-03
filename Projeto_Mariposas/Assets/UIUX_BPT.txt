@@ -22,6 +22,8 @@ BrightnessID / Luminosidade
 
 ** TELAS DE TRANSIÇÃO **
 
+DevText / Desenvolvido por
+
 Transition_00 / Rússia, 1890
 
 Transition_01 / 2024
