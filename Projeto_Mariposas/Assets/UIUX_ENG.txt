@@ -16,13 +16,23 @@ BackID / Back
 
 ** OPTIONS **
 
+LanguageID / Select the language
+
+PtbrID / Português
+
+EngID / English
+
+ConfirmID / Confirm
+
 VolumeID / Volume
 
 BrightnessID / Brightness
 
 ** TELAS DE TRANSIÇÃO **
 
-DevText / A game by
+DevText_01 / A game by
+
+DevText_02 / Aracnebula Studio
 
 Transition_00 / Russia, 1890
 

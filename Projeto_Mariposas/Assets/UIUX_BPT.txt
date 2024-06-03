@@ -16,13 +16,23 @@ BackID / Voltar
 
 ** OPTIONS **
 
+LanguageID / Selecione o idioma
+
+PtbrID / Português
+
+EngID / English
+
+ConfirmID / Confirmar
+
 VolumeID / Volume
 
 BrightnessID / Luminosidade
 
 ** TELAS DE TRANSIÇÃO **
 
-DevText / Desenvolvido por
+DevText_01 / Desenvolvido por
+
+DevText_02 / Estúdio Aracnebula
 
 Transition_00 / Rússia, 1890
 

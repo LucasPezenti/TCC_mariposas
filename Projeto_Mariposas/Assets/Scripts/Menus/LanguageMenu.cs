@@ -14,11 +14,11 @@ public class LanguageMenu : MonoBehaviour
     [SerializeField] private Button ENG_Btn;
     [SerializeField] private Button confirmBtn;
 
-    // Texts to change according to the language
-    public TextMeshProUGUI selectionText;
-    public TextMeshProUGUI confirmText;
+    public GameObject splash;
+    public GameObject timeline;
+    public GameObject menu;
 
-    GameManager GameManager = GameManager.GetInstance();
+    GameManager gameManager;
 
 
     private void Log(string conteudo)
@@ -29,34 +29,42 @@ public class LanguageMenu : MonoBehaviour
 
     private void Awake()
     {
+        gameManager = GameManager.GetInstance();
+
         BPT_Btn.onClick.AddListener(SelectBPT);
         ENG_Btn.onClick.AddListener(SelectENG);
 
         confirmBtn.onClick.AddListener(ConfirmSelection);
         confirmBtn.gameObject.SetActive(false);
     }
-    
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            timeline.SetActive(false);
+            splash.SetActive(false);
+            menu.SetActive(true);
+        }
+    }
+
     public void SelectBPT(){
-        
+
         //GameManager.GetInstance().SetDialogueFilePath(Application.dataPath + "/DIAG_BPT.txt");
         //GameManager.GetInstance().SetUIFilePath(Application.dataPath + "/UIUX_BPT.txt");
-        GameManager.GetInstance().ChangeLanguage(Languages.BPT);
+        gameManager.ChangeLanguage(Languages.BPT);
         //Log(GameManager.GetInstance().GetDialogueFile());
         //Log(Application.dataPath);
-
-        Debug.Log(GameManager.GetInstance().GetUIFilePath());
-        selectionText.text = "Selecione o idioma";
-        confirmText.text = "Confirmar";
+        FindAnyObjectByType<UIManager>().LoadUI();
+        //Debug.Log(GameManager.GetInstance().GetUIFilePath());
         confirmBtn.gameObject.SetActive(true);
     }
 
     public void SelectENG(){
         //GameManager.GetInstance().SetDialogueFilePath(Application.dataPath + "/DIAG_ENG.txt");
         //GameManager.GetInstance().SetUIFilePath(Application.dataPath + "/UIUX_ENG.txt");
-        GameManager.GetInstance().ChangeLanguage(Languages.ENG);
-
-        selectionText.text = "Select the language";
-        confirmText.text = "Confirm";
+        gameManager.ChangeLanguage(Languages.ENG);
+        FindAnyObjectByType<UIManager>().LoadUI();
         confirmBtn.gameObject.SetActive(true);
     }
 
