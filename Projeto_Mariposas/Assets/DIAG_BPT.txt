@@ -44,7 +44,9 @@ ActorLine / Sarkis / 3
 
 MessageLine / 0 / O caminhão da mudança nem levou as caixas para dentro...
 
-MessageLine / 1 / Não é surpresa alguma. Ninguém aluga esta casa há anos, o locador nem deve ter acreditado que alguém realmente viria morar aqui. Ainda assim, é uma casa muito bonita.
+MessageLine / 1 / Não é surpresa alguma. Ninguém aluga esta casa há anos, o locador nem deve ter acreditado que alguém realmente viria morar aqui.
+
+MessageLine / 1 / Ainda assim, é uma casa muito bonita.
 
 MessageLine / 0 / Só que... não há nenhuma razão para ninguém morar aqui em tanto tempo?
 

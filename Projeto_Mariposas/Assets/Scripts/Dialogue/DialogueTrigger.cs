@@ -22,11 +22,18 @@ public class DialogueTrigger : MonoBehaviour
             FindObjectOfType<DialogueManager>().OpenDialogue(messages, actors);
         }
         */
-        if(!repeat){
-            FindObjectOfType<DialogueManager>().LoadDialogue(startDialogueID, endDialogueID);
-            interactionObj.SetActive(false);
-        }else{
-            FindObjectOfType<DialogueManager>().LoadDialogue(startDialogueID, endDialogueID);
+        if (!DialogueManager.onDialogue)
+        {
+            DialogueManager.onDialogue = true;
+            if (!repeat)
+            {
+                FindObjectOfType<DialogueManager>().LoadDialogue(startDialogueID, endDialogueID);
+                interactionObj.SetActive(false);
+            }
+            else
+            {
+                FindObjectOfType<DialogueManager>().LoadDialogue(startDialogueID, endDialogueID);
+            }
         }
     }
 

@@ -94,7 +94,7 @@ public class DialogueManager : MonoBehaviour
                     
                 }
             }
-            onDialogue = true; 
+            //onDialogue = true; 
             //Debug.Log("Dialogue started! Number of messages: " + messageList.Count);         
             DisplayMessage();   
         }
@@ -111,6 +111,7 @@ public class DialogueManager : MonoBehaviour
         Actor charDisplay = actorList[messageDisplay.charId];       // Pega na lista o personagem que está falando
         charName.text = charDisplay.name;                           // Mostra o nome do personagem
         charImage.sprite = portraitSprites[charDisplay.spriteId];   // Mostra a imagem do personagem
+        onDialogue = true;
         dialogueBox.SetActive(true);                                // Ativa o objeto da caixa de diálogo
     }
 

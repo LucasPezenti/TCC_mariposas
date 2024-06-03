@@ -25,7 +25,10 @@ public class HoldObjectScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ProcessInputs();   
+        if (!DialogueManager.onDialogue)
+        {
+            ProcessInputs();
+        }
     }
 
     void FixedUpdate(){
@@ -33,12 +36,17 @@ public class HoldObjectScript : MonoBehaviour
     }
 
     private void ProcessInputs(){
-        if(itemHolding == null && Input.GetKeyDown(KeyCode.E)){
-            PickUp();
-        }
+        if (!ExamineManager.isExamining)
+        {
+            if (itemHolding == null && Input.GetKeyDown(KeyCode.E))
+            {
+                PickUp();
+            }
 
-        else if(itemHolding != null && Input.GetKeyDown(KeyCode.E)){
-            Release();
+            else if (itemHolding != null && Input.GetKeyDown(KeyCode.E))
+            {
+                Release();
+            }
         }
 
         if (itemHolding != null)
@@ -80,19 +88,15 @@ public class HoldObjectScript : MonoBehaviour
 
         if (PlayerMovement.GetDir() == Direction.right){
             holdSpot.transform.localPosition = new Vector2(0.22f, 0.58f);
-            if(itemHolding != null) itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
         else if(PlayerMovement.GetDir() == Direction.left){
             holdSpot.transform.localPosition = new Vector2(-0.22f, 0.58f);
-            if(itemHolding != null) itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
         if(PlayerMovement.GetDir() == Direction.up){
             holdSpot.transform.localPosition = new Vector2(0, 0.61f);
-            if(itemHolding != null) itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
         else if(PlayerMovement.GetDir() == Direction.down){
-            holdSpot.transform.localPosition = new Vector2(0, 0.53f);
-            if(itemHolding != null) itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 1;        
+            holdSpot.transform.localPosition = new Vector2(0, 0.53f);       
         }
     }
 
@@ -104,16 +108,13 @@ public class HoldObjectScript : MonoBehaviour
             itemHolding = pickUpItem.gameObject;
             itemHolding.transform.position = holdSpot.position;
             itemHolding.transform.parent = holdSpot.transform;
+            itemHolding.GetComponent<SpriteRenderer>().enabled = false;
             if (itemHolding.GetComponent<Rigidbody2D>())
             {
                 itemHolding.GetComponent<Rigidbody2D>().simulated = false;
                 //Debug.Log("Item grabbed");
             }
             isHolding = true;
-            if (PlayerMovement.GetLastDir() == Direction.down)
-            {
-                itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 1;
-            }
         }
     }
 
@@ -122,7 +123,7 @@ public class HoldObjectScript : MonoBehaviour
         {
             itemHolding.transform.position = transform.position + pickDirection * .4f;
             itemHolding.transform.parent = null;
-            itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 0;
+            itemHolding.GetComponent<SpriteRenderer>().enabled = true;
             if (itemHolding.GetComponent<Rigidbody2D>())
             {
                 itemHolding.GetComponent<Rigidbody2D>().simulated = true;

@@ -44,7 +44,9 @@ ActorLine / Sarkis / 3
 
 MessageLine / 0 / The moving company didn't even bother to bring the boxes inside...
 
-MessageLine / 1 / Not surprising at all. No one has rented this house in ages, the landlord probably didn't even believe someone was actually going to live here. Yet, it is a very beautiful house.
+MessageLine / 1 / Not surprising at all. No one has rented this house in ages, the landlord probably didn't even believe someone was actually going to live here.
+
+MessageLine / 1 / Yet, it is a very beautiful house.
 
 MessageLine / 0 / The only thing is... Isn't there any reason why no one has lived here for so long?
 
