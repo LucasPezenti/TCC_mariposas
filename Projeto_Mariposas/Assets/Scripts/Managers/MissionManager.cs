@@ -24,7 +24,6 @@ public class MissionManager : MonoBehaviour
 
     public void LoadMission()
     {
-        //if (System.IO.File.Exists(GameManager.GetInstance().GetUIFilePath()))
         if (System.IO.File.Exists(GameManager.GetInstance().GetUIFilePath()))
         {
             string[] lines = System.IO.File.ReadAllLines(GameManager.GetInstance().GetUIFilePath());

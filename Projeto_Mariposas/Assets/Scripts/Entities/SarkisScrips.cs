@@ -39,6 +39,15 @@ public class SarkisScrips : MonoBehaviour
         
     }
 
+    public void AnimateSarkis()
+    {
+        // Sarkis idle
+
+        // Sarkis walking
+
+        // Sarkis on the phone
+    }
+
     public void ChangeAnimationState(string newState)
     {
         // Stop an animaiton from interrupting itself

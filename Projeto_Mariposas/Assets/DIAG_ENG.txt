@@ -166,16 +166,9 @@ ActorLine / Anoush / 2
 
 MessageLine / 0 / Sarkis and I went to a lot of concerts in the 2000s. I miss the times when we had fun together.
 
-BoxQrt_0003_end
-
-##
-
-BoxQrt_0004_start
-ActorLine / Anoush / 2
-
 MessageLine / 0 / I really miss this version of Sarkis...
 
-BoxQrt_0004_end
+BoxQrt_0003_end
 
 ##
 
@@ -199,12 +192,12 @@ BoxEscr_0000_end
 
 ##
 
-BoxEscr_0000_start
+BoxEscr_0001_start
 ActorLine / Anoush / 2
 
 MessageLine / 0 / I am glad for the success Sarkis achieved in all these years...
 
-BoxEscr_0000_end
+BoxEscr_0001_end
 
 ##
 

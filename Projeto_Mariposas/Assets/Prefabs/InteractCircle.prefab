@@ -130,10 +130,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77bc67a7c40d5e84cb83f66b6a6f5260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactKey: 0
+  interactKey: 101
   interactAction:
     m_PersistentCalls:
       m_Calls: []
+  isDialogue: 0
   alert: {fileID: 1365508076948716123}
 --- !u!58 &6871938723625685412
 CircleCollider2D:

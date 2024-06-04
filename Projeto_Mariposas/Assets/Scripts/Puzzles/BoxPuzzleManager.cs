@@ -42,16 +42,6 @@ public class BoxPuzzleManager : MonoBehaviour
         }
     }
 
-    /*
-    public void CheckBox(int boxIndex)
-    {
-        if (boxIndex == roomID)
-        {
-    
-        }
-    }
-    */
-
     public void SwitchFurniture()
     {
         for (int i = 0; i < oldFurniture.Length; i ++)
