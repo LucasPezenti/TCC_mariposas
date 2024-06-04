@@ -19,6 +19,7 @@ public class LanguageMenu : MonoBehaviour
     public GameObject menu;
 
     GameManager gameManager;
+    AudioManager audioManager;
 
 
     private void Log(string conteudo)
@@ -30,6 +31,7 @@ public class LanguageMenu : MonoBehaviour
     private void Awake()
     {
         gameManager = GameManager.GetInstance();
+        audioManager = AudioManager.GetAudioInstance();
 
         BPT_Btn.onClick.AddListener(SelectBPT);
         ENG_Btn.onClick.AddListener(SelectENG);
@@ -58,6 +60,8 @@ public class LanguageMenu : MonoBehaviour
         FindAnyObjectByType<UIManager>().LoadUI();
         //Debug.Log(GameManager.GetInstance().GetUIFilePath());
         confirmBtn.gameObject.SetActive(true);
+
+        audioManager.Play("ButtonFX01");
     }
 
     public void SelectENG(){
@@ -66,9 +70,11 @@ public class LanguageMenu : MonoBehaviour
         gameManager.ChangeLanguage(Languages.ENG);
         FindAnyObjectByType<UIManager>().LoadUI();
         confirmBtn.gameObject.SetActive(true);
+        audioManager.Play("ButtonFX01");
     }
 
     public void ConfirmSelection(){
         SceneManager.LoadScene("MainMenu");
+        audioManager.Play("ButtonFX01");
     }
 }

@@ -8,7 +8,7 @@ public class MusicTrigger : MonoBehaviour
     public string musicName;
     void Start()
     {
-        audioManager = AudioManager.GetInstance();
+        audioManager = AudioManager.GetAudioInstance();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

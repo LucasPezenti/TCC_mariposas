@@ -13,6 +13,8 @@ public class MissionManager : MonoBehaviour
     public GameObject missionStepsText;
     private bool stepsActive;
 
+    AudioManager audioManager = AudioManager.GetAudioInstance();
+
     private void Start()
     {
         stepsActive = false;
@@ -53,6 +55,7 @@ public class MissionManager : MonoBehaviour
             missionStepsText.SetActive(false);
             stepsActive = false;
         }
+        audioManager.Play("ButtonFX01");
     }
 
     public void SetMissionIndex(int index)

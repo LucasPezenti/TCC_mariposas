@@ -8,7 +8,7 @@ public class MusicController : MonoBehaviour
     public string musicName;
     void Start()
     {
-        audioManager = AudioManager.GetInstance();
+        audioManager = AudioManager.GetAudioInstance();
         audioManager.Play(musicName);
     }
 

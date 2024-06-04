@@ -24,7 +24,7 @@ public class IrinaScript : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         PlayerMovement = GetComponent<SideScrollMovement>();
-        audioManager = AudioManager.GetInstance();
+        audioManager = AudioManager.GetAudioInstance();
     }
 
     void Update()
@@ -55,13 +55,13 @@ public class IrinaScript : MonoBehaviour
 
         // Walking animation
         else if(PlayerMovement.GetMoved()){
-            audioManager.Play("Steps_Base");
             if(PlayerMovement.GetDir() == Direction.right){
                 ChangeAnimationState(PLAYER_WALK_R);
             }
             else if(PlayerMovement.GetDir() == Direction.left){
                 ChangeAnimationState(PLAYER_WALK_L);
             }
+            audioManager.Play("Steps_Base");
         }
 
     }

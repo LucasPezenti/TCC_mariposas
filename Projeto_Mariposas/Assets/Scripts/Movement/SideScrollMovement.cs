@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SideScrollMovement : MonoBehaviour
 {
+    private AudioManager audioManager;
+
     private float speed;
     private float speedX, speedY;
     private bool moved;
@@ -24,6 +26,7 @@ public class SideScrollMovement : MonoBehaviour
         running = false;
         SScanMove = true;
         rb = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
@@ -60,7 +63,7 @@ public class SideScrollMovement : MonoBehaviour
     private void Move(){
         speed = 1.4f;
         rb.velocity = new Vector2(moveDirection.x * speed, moveDirection.y);
-    
+        
         moved = false;
 
         if(speedX > 0){

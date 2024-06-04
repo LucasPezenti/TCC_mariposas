@@ -8,7 +8,8 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
 
-    GameManager GameManager = GameManager.GetInstance();
+    GameManager gameManager = GameManager.GetInstance();
+    AudioManager audioManager = AudioManager.GetAudioInstance();
 
     [Header("Buttons")]
     [SerializeField] private Button newGameBtn;
@@ -27,15 +28,22 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] private Button languageBtn;
 
+    [Header("Back Buttons")]
+    [SerializeField] private Button backCreditsBtn;
+    [SerializeField] private Button backAboutBtn;
+    [SerializeField] private Button backOptionsBtn;
+    [SerializeField] private Button backLanguageBtn;
+    [SerializeField] private Button backControlsBptBtn;
+    [SerializeField] private Button backControlsEngBtn;
+
     [Header("Screens")]
     public GameObject mainScreen;
     public GameObject settingsScreen;
-    //public GameObject aboutScreen;
+    public GameObject aboutScreen;
     public GameObject creditScreen;
     public GameObject controlsScreenBpt;
     public GameObject controlsScreenEng;
     public GameObject languageScreen;
-    public GameObject aboutScreen;
 
     public Animator creditsAnimator;
 
@@ -46,9 +54,18 @@ public class MainMenu : MonoBehaviour
         quitBtn.onClick.AddListener(QuitGame);
         controlsBtn.onClick.AddListener(OpenControls);
         languageBtn.onClick.AddListener(OpenLanguageSelection);
+        aboutBtn.onClick.AddListener(OpenAboutScreen);
+
+        backCreditsBtn.onClick.AddListener(BackCredits);
+        backAboutBtn.onClick.AddListener(BackAbout);
+        backOptionsBtn.onClick.AddListener(BackOptions);
+        backLanguageBtn.onClick.AddListener(BackLanguage);
+        backControlsBptBtn.onClick.AddListener(BackControlsBpt);
+        backControlsEngBtn.onClick.AddListener(BackControlsEng);
     }
 
     public void StartNewGame(){
+        audioManager.Play("ButtonFX01");
         SceneManager.LoadScene("Prologue");
     }
 
@@ -64,30 +81,34 @@ public class MainMenu : MonoBehaviour
     public void OpenSettings(){
         settingsScreen.SetActive(true);
         mainScreen.SetActive(false);
+        audioManager.Play("ButtonFX01");
     }
 
     public void OpenControls()
     {
-        if (GameManager.GetInstance().GetCurLanguage() == Languages.BPT)
+        if (gameManager.GetCurLanguage() == Languages.BPT)
         {
             controlsScreenBpt.SetActive(true);
         }
 
-        else if(GameManager.GetInstance().GetCurLanguage() == Languages.ENG)
+        else if(gameManager.GetCurLanguage() == Languages.ENG)
         {
             controlsScreenEng.SetActive(true);
         }
+        audioManager.Play("ButtonFX01");
 
     }
 
     public void OpenLanguageSelection()
     {
         languageScreen.SetActive(true);
+        audioManager.Play("ButtonFX01");
     }
 
     public void OpenAboutScreen()
     {
         aboutScreen.SetActive(true);
+        audioManager.Play("ButtonFX01");
     }
 
 
@@ -95,13 +116,54 @@ public class MainMenu : MonoBehaviour
 
     public void OpenCredits(){
         creditScreen.SetActive(true);
-        creditsAnimator.SetTrigger("TriggerCredits");
-        
+        FindAnyObjectByType<CreditsMovement>().StartCredits();
+        //creditsAnimator.SetTrigger("TriggerCredits");
+        audioManager.Play("ButtonFX01");
+
     }
 
     public void QuitGame(){
+        audioManager.Play("ButtonFX01");
         Debug.Log("Jogo fechado!");
         Application.Quit();
+    }
+
+
+    public void BackCredits()
+    {
+        creditScreen.SetActive(false);
+        audioManager.Play("ButtonFX01");
+    }
+
+    public void BackAbout()
+    {
+        aboutScreen.SetActive(false);
+        audioManager.Play("ButtonFX01");
+    }
+
+    public void BackOptions()
+    {
+        mainScreen.SetActive(true);
+        settingsScreen.SetActive(false);
+        audioManager.Play("ButtonFX01");
+    }
+
+    public void BackLanguage()
+    {
+        languageScreen.SetActive(false);
+        audioManager.Play("ButtonFX01");
+    }
+
+    public void BackControlsBpt()
+    {
+        controlsScreenBpt.SetActive(false);
+        audioManager.Play("ButtonFX01");
+    }
+
+    public void BackControlsEng()
+    {
+        controlsScreenEng.SetActive(false);
+        audioManager.Play("ButtonFX01");
     }
 
 }

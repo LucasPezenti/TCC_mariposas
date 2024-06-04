@@ -16,13 +16,17 @@ BackID / Back
 
 ** OPTIONS **
 
-LanguageID / Select the language
+SwitchLangID / Select the language
+
+LanguageID / Language
 
 PtbrID / Português
 
 EngID / English
 
 ConfirmID / Confirm
+
+ControlsID / Controls
 
 VolumeID / Volume
 

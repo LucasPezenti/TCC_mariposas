@@ -7,7 +7,8 @@ public class LanguageSelector : MonoBehaviour
 {
     [SerializeField] private Button BPT_Btn;
     [SerializeField] private Button ENG_Btn;
-    GameManager GameManager = GameManager.GetInstance();
+    GameManager gameManager = GameManager.GetInstance();
+    AudioManager audioManager = AudioManager.GetAudioInstance();
 
     private void Awake()
     {
@@ -17,13 +18,16 @@ public class LanguageSelector : MonoBehaviour
 
     public void SelectBPT()
     {
-        GameManager.GetInstance().ChangeLanguage(Languages.BPT);
+        gameManager.ChangeLanguage(Languages.BPT);
         FindAnyObjectByType<UIManager>().LoadUI();
+        //FindFirstObjectByType<CreditsReader>().LoadCredits();
+        audioManager.Play("ButtonFX01");
     }
 
     public void SelectENG()
     {
-        GameManager.GetInstance().ChangeLanguage(Languages.ENG);
+        gameManager.ChangeLanguage(Languages.ENG);
         FindAnyObjectByType<UIManager>().LoadUI();
+        audioManager.Play("ButtonFX01");
     }
 }

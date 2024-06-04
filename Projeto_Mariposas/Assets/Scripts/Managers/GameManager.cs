@@ -114,6 +114,16 @@ public class GameManager : MonoBehaviour
         return this.DialogueFilePath;
     }
 
+    public string GetCreditsFilePath()
+    {
+        return this.CreditsFilePath;
+    }
+
+    public string GetAboutFilePath()
+    {
+        return this.AboutFilePath;
+    }
+
     public string GetUIFilePath(){
         return this.UIFilePath;
     }

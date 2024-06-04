@@ -1,77 +1,77 @@
-Thank you for playing!
+Line01 / Thank you for playing!
 
-	This game was developed as the Graduation Project in the Digital Games course, at Fatec São Caetano do Sul, from Centro Paula Souza.
+Line02 / 	This game was developed as the Graduation Project in the Digital Games course, at Fatec São Caetano do Sul, from Centro Paula Souza.
 
-High Concept:
+Line03 / High Concept:
 
-	Morgan Guedes Soares
-	Gabriella Natalini Ribeiro
+Line04 / 	Morgan Guedes Soares
+Line05 / 	Gabriella Natalini Ribeiro
 
-Game Design:
+Line06 / Game Design:
 
-	Melissa Xavier Falcão Branco
-	Morgan Guedes Soares
+Line07 / 	Melissa Xavier Falcão Branco
+Line08 / 	Morgan Guedes Soares
 
-Level Design:
+Line09 / Level Design:
 
-	Melissa Xavier Falcão Branco
-	Morgan Guedes Soares
+Line10 / 	Melissa Xavier Falcão Branco
+Line11 / 	Morgan Guedes Soares
 
-Coding:
+Line12 / Coding:
 
-	Lucas Pezenti de Souza
+Line13 / 	Lucas Pezenti de Souza
 
-Implementation:
+Line14 / Implementation:
 
-	Lucas Pezenti de Souza
+Line15 / 	Lucas Pezenti de Souza
 
-Concept Art:
+Line16 / Concept Art:
 
-	Gabriella Natalini Ribeiro
-	Morgan Guedes Soares
+Line17 / 	Gabriella Natalini Ribeiro
+Line18 / 	Morgan Guedes Soares
 
-Game Art:
+Line19 / Game Art:
 
-	Gabriella Natalini Ribeiro
-	Morgan Guedes Soares
+Line20 / 	Gabriella Natalini Ribeiro
+Line21 / 	Morgan Guedes Soares
 
-Animation:
+Line22 / Animation:
 
-	Gabriella Natalini Ribeiro
+Line23 / 	Gabriella Natalini Ribeiro
 
-Sound Effects:
+Line24 / Sound Effects:
 
-	Melissa Xavier Falcão Branco
+Line25 / 	Melissa Xavier Falcão Branco
 
-Music:
+Line26 / Music:
 
-	Gabriella Natalini Ribeiro
+Line27 / 	Gabriella Natalini Ribeiro
 
-Academic Advisors:
+Line28 / Academic Advisors:
 
-	Alexandre Santaella Braga
-	Raquel Silva
-	Ricardo Baitz	
-	Willians Monteiro da Silva
+Line29 / 	Alexandre Santaella Braga
+Line30 / 	Raquel Silva
+Line31 / 	Ricardo Baitz	
+Line32 / 	Willians Monteiro da Silva
 
-Text Font:
+Line33 / Text Font:
 
-	Zelda DX, by Brian Kent (kentpw@norwich.net), available at https://www.dafont.com/pt/zelda-dx.font
+Line34 / 	Zelda DX, by Brian Kent (kentpw@norwich.net), available at https://www.dafont.com/pt/zelda-dx.font
 
-Special Thanks:
+Line35 / Special Thanks:
 
-	To our pets: Cloud Strife, Fatecat, Miyuki Narutomaki and Nina
-	To our families
-	To our friends
-	To the academic staff of Fatec São Caetano do Sul
-	To our academic coordinator, Alan Henrique Pardo de Carvalho
-	Andrade Souza Gostautas Gritti
-	César Neves Mosca
-	Edgar Angelini Petrillo
-	Gabriel (Cas) Simon
-	Guilherme Rocha Pedrina
-	Josué Eduardo Menezes Junior
-	Willian dos Santos Pedrosa
+Line36 / 	To our pets: Cloud Strife, Fatecat, Miyuki Narutomaki and Nina
+Line37 / 	To our families
+Line38 / 	To our friends
+Line39 / 	To the academic staff of Fatec São Caetano do Sul
+Line40 / 	To our academic coordinator, Alan Henrique Pardo de Carvalho
+Line41 / 	Andrade Souza Gostautas Gritti
+Line42 / 	César Neves Mosca
+Line43 / 	Edgar Angelini Petrillo
+Line44 / 	Gabriel (Cas) Simon
+Line45 / 	Guilherme Rocha Pedrina
+Line46 / 	Josué Eduardo Menezes Junior
+Line47 / 	Willian dos Santos Pedrosa
 
-	The Aracnebula group recognizes the Armenian Genocide of 1915-1923 and its social and cultural impact until modern days. We express our empathy and support to the victims and their descendants.
+Line48 / 	The Aracnebula group recognizes the Armenian Genocide of 1915-1923 and its social and cultural impact until modern days. We express our empathy and support to the victims and their descendants.
 
