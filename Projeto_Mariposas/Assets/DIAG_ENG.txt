@@ -137,7 +137,9 @@ BoxCoz_0001_end
 BoxQrt_0000_start
 ActorLine / Anoush / 2
 
-MessageLine / 0 / On one side, he snores, all carefree... On the other one, I suffer with intense nightmares and insomnia... Sometimes, it seems like we don't even sleep in the same bed.
+MessageLine / 0 / On one side, he snores, all carefree... On the other one, I suffer with intense nightmares and insomnia...
+
+MessageLine / 0 / Sometimes, it seems like we don't even sleep in the same bed.
 
 BoxQrt_0000_end
 
@@ -278,9 +280,9 @@ MedInt_0004_start
 ActorLine / Anoush / 2
 ActorLine / Sarkis / 3
 
-MessageLine / 0 / Anoush… cough… did you use… cough… that poison… again?
+MessageLine / 1 / Anoush… cough… did you use… cough… that poison… again?
 
-MessageLine / 1 / Maybe it's best if I avoid using this...
+MessageLine / 0 / Maybe it's best if I avoid using this...
 
 MedInt_0004_end
 
@@ -365,57 +367,63 @@ DiscEsc_0000_start
 ActorLine / Anoush / 2
 ActorLine / Sarkis / 3
 
-MessageLine / 0 / Just what I needed, damn it...
+MessageLine / 1 / Just what I needed, damn it...
 
-MessageLine / 1 / What happened?
+MessageLine / 0 / What happened?
 
-MessageLine / 0 / We have a problem with the samples. Apparently, they didn't send us any female specimens, only males.
+MessageLine / 1 / We have a problem with the samples. Apparently, they didn't send us any female specimens, only males.
 
-MessageLine / 1 / What do you mean? There were over 30 samples and not even one female?
+MessageLine / 0 / What do you mean? There were over 30 samples and not even one female?
 
-MessageLine / 0 / I called the lab and they confirmed that there are only male samples.
+MessageLine / 1 / I called the lab and they confirmed that there are only male samples.
 
-MessageLine / 1 / That is too weird. They would have said something before! Maybe they didn't understand your question...
+MessageLine / 0 / That is too weird. They would have said something before! Maybe they didn't understand your question...
 
-MessageLine / 1 / Maybe there are only male samples left because they sent us the only females?
+MessageLine / 0 / Maybe there are only male samples left because they sent us the only females?
 
-MessageLine / 1 / Could it be that they were lost during transportation? But how could all the females just vanish?
+MessageLine / 0 / Could it be that they were lost during transportation? But how could all the females just vanish?
 
-MessageLine / 1 / Could it really be that they were never there to begin with?
+MessageLine / 0 / Could it really be that they were never there to begin with?
 
-MessageLine / 0 / *Sigh*
+MessageLine / 1 / *Sigh*
 
-MessageLine / 0 / Seems like it, Anoush. I meticulously reviewed all of the records and samples and there is no record of female moths. Acording to the records, they have never even got to the lab.
+MessageLine / 1 / Seems like it, Anoush. I meticulously reviewed all of the records and samples and there is no record of female moths.
 
-MessageLine / 1 / Did you check professor Grigorian's notes again? He was researching these moths until last year. Was there anything about females?
+MessageLine / 1 / Acording to the records, they have never even got to the lab.
 
-MessageLine / 0 / I did, I did...
+MessageLine / 0 / Did you check professor Grigorian's notes again? He was researching these moths until last year.
 
-MessageLine / 1 / Do you think it's possible that the lab might have lost some of their records?
+MessageLine / 0 / Was there anything about females?
 
-MessageLine / 0 / Everything is possible! I don't know!
+MessageLine / 1 / I did, I did...
 
-MessageLine / 1 / Well... What do YOU think of this discrepancy?
+MessageLine / 0 / Do you think it's possible that the lab might have lost some of their records?
 
-MessageLine / 0 / Don't know...
+MessageLine / 1 / Everything is possible! I don't know!
 
-MessageLine / 1 / I have a hypothesis. It might be a very blatant sexual dimorphism, similar to that of the humpback anglerfish, Melanocetus johnsonii.
+MessageLine / 0 / Well... What do YOU think of this discrepancy?
 
-MessageLine / 1 / The males are so different from the females that it took years to-
+MessageLine / 1 / Don't know...
 
-MessageLine / 0 / Anoush, I know, I have a doctor's degree in biology, remember?
+MessageLine / 0 / I have a hypothesis. It might be a very blatant sexual dimorphism, similar to that of the humpback anglerfish, Melanocetus johnsonii.
 
-MessageLine / 1 / I was just mentioning for the sake of comparison, sorry...
+MessageLine / 0 / The males are so different from the females that it took years to-
 
-MessageLine / 1 / But... As you know, to this day, they could only obtain less than 10 male samples of that species, so-
+MessageLine / 1 / Anoush, I know, I have a doctor's degree in biology, remember?
 
-MessageLine / 0 / I have already considered this hypothesis, it was the first thing I thought of. We can't be sure yet. It's a complex situation, coming up with theories right now is useless.
+MessageLine / 0 / I was just mentioning for the sake of comparison, sorry...
 
-MessageLine / 1 / Right...
+MessageLine / 0 / But... As you know, to this day, they could only obtain less than 10 male samples of that species, so-
 
-MessageLine / 1 / Well. Don't you want to have dinner, then, and leave that for tomorrow?
+MessageLine / 1 / I have already considered this hypothesis, it was the first thing I thought of. We can't be sure yet.
 
-MessageLine / 0 / No... I'm not hungry... I'll be here a bit longer...
+MessageLine / 1 / It's a complex situation, coming up with theories right now is useless.
+
+MessageLine / 0 / Right...
+
+MessageLine / 0 / Well. Don't you want to have dinner, then, and leave that for tomorrow?
+
+MessageLine / 1 / No... I'm not hungry... I'll be here a bit longer...
 
 DiscEsc_0000_end
 

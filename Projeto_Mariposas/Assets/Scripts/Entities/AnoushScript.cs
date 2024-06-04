@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnoushScript : MonoBehaviour
 {
     private Animator animator;
-    private TopDownMovement PlayerMovement;
+    private TopDownMovement playerMovement;
     private HoldObjectScript HoldObject;
     private Inventory inventory;
     private string curState;
@@ -67,7 +67,7 @@ public class AnoushScript : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        PlayerMovement = GetComponent<TopDownMovement>();
+        playerMovement = GetComponent<TopDownMovement>();
         HoldObject = GetComponent<HoldObjectScript>();
         inventory = GetComponent<Inventory>();
         audioManager = AudioManager.GetAudioInstance();
@@ -80,36 +80,44 @@ public class AnoushScript : MonoBehaviour
 
     public void AnimatePlayer(){
         // Idle animation
-        if(!HoldObject.GetIsHolding() && !PlayerMovement.GetMoved()){
+        if(!HoldObject.GetIsHolding() && !playerMovement.GetMoved()
+            && !inventory.GetHoldingLantern()
+            && !inventory.GetTakingPills()
+            && !inventory.GetUsingSpray()){
             audioManager.Stop("SimpleSteps");
-            if (PlayerMovement.GetLastDir() == Direction.right){
+            if (playerMovement.GetLastDir() == Direction.right){
                 ChangeAnimationState(PLAYER_IDLE_R);
             }
-            else if(PlayerMovement.GetLastDir() == Direction.left){
+            else if(playerMovement.GetLastDir() == Direction.left){
                 ChangeAnimationState(PLAYER_IDLE_L);
             }
 
-            if(PlayerMovement.GetLastDir() == Direction.up){
+            if(playerMovement.GetLastDir() == Direction.up){
                 ChangeAnimationState(PLAYER_IDLE_U);
             }
-            else if(PlayerMovement.GetLastDir() == Direction.down){
+            else if(playerMovement.GetLastDir() == Direction.down){
                 ChangeAnimationState(PLAYER_IDLE_D);
             }
         }
 
         // Walking animation
-        else if(!HoldObject.GetIsHolding() && PlayerMovement.GetMoved()){
-            if(PlayerMovement.GetDir() == Direction.right){
+        else if(!HoldObject.GetIsHolding() 
+                && playerMovement.GetMoved()
+                && !inventory.GetHoldingLantern()
+                && !inventory.GetTakingPills()
+                && !inventory.GetUsingSpray())
+        {
+            if(playerMovement.GetDir() == Direction.right){
                 ChangeAnimationState(PLAYER_WALK_R);
             }
-            else if(PlayerMovement.GetDir() == Direction.left){
+            else if(playerMovement.GetDir() == Direction.left){
                 ChangeAnimationState(PLAYER_WALK_L);
             }
 
-            if(PlayerMovement.GetDir() == Direction.up){
+            if(playerMovement.GetDir() == Direction.up){
                 ChangeAnimationState(PLAYER_WALK_U);
             }
-            else if(PlayerMovement.GetDir() == Direction.down){
+            else if(playerMovement.GetDir() == Direction.down){
                 ChangeAnimationState(PLAYER_WALK_D);
             }
             if (!audioManager.GetAudio("SimpleSteps").source.isPlaying)
@@ -118,54 +126,47 @@ public class AnoushScript : MonoBehaviour
             }
         }
 
-        // Running animation
-        else if(!HoldObject.GetIsHolding() && PlayerMovement.GetMoved() && PlayerMovement.GetRunning()){
-            if(PlayerMovement.GetDir() == Direction.right){
-                ChangeAnimationState(PLAYER_RUN_R);
-            }
-            else if(PlayerMovement.GetDir() == Direction.left){
-                ChangeAnimationState(PLAYER_RUN_L);
-            }
-
-            if(PlayerMovement.GetDir() == Direction.up){
-                ChangeAnimationState(PLAYER_RUN_U);
-            }
-            else if(PlayerMovement.GetDir() == Direction.down){
-                ChangeAnimationState(PLAYER_RUN_D);
-            }
-        }
-
         // Idle with box animation
-        else if(HoldObject.GetIsHolding() && !PlayerMovement.GetMoved()){
+        else if(HoldObject.GetIsHolding() 
+                && !playerMovement.GetMoved()
+                && !inventory.GetHoldingLantern()
+                && !inventory.GetTakingPills()
+                && !inventory.GetUsingSpray())
+        {
             audioManager.Stop("SimpleSteps");
-            if (PlayerMovement.GetLastDir() == Direction.right){
+            if (playerMovement.GetLastDir() == Direction.right){
                 ChangeAnimationState(PLAYER_IDLE_BOX_R);
             }
-            else if(PlayerMovement.GetLastDir() == Direction.left){
+            else if(playerMovement.GetLastDir() == Direction.left){
                 ChangeAnimationState(PLAYER_IDLE_BOX_L);
             }
 
-            if(PlayerMovement.GetLastDir() == Direction.up){
+            if(playerMovement.GetLastDir() == Direction.up){
                 ChangeAnimationState(PLAYER_IDLE_BOX_U);
             }
-            else if(PlayerMovement.GetLastDir() == Direction.down){
+            else if(playerMovement.GetLastDir() == Direction.down){
                 ChangeAnimationState(PLAYER_IDLE_BOX_D);
             }
         }
 
         // Walking with box animation
-        else if(HoldObject.GetIsHolding() && PlayerMovement.GetMoved()){
-            if(PlayerMovement.GetDir() == Direction.right){
+        else if(HoldObject.GetIsHolding()
+                && playerMovement.GetMoved()
+                && !inventory.GetHoldingLantern()
+                && !inventory.GetTakingPills()
+                && !inventory.GetUsingSpray())
+        {
+            if(playerMovement.GetDir() == Direction.right){
                 ChangeAnimationState(PLAYER_WALK_BOX_R);
             }
-            else if(PlayerMovement.GetDir() == Direction.left){
+            else if(playerMovement.GetDir() == Direction.left){
                 ChangeAnimationState(PLAYER_WALK_BOX_L);
             }
 
-            if(PlayerMovement.GetDir() == Direction.up){
+            if(playerMovement.GetDir() == Direction.up){
                 ChangeAnimationState(PLAYER_WALK_BOX_U);
             }
-            else if(PlayerMovement.GetDir() == Direction.down){
+            else if(playerMovement.GetDir() == Direction.down){
                 ChangeAnimationState(PLAYER_WALK_BOX_D);
             }
 
@@ -176,47 +177,55 @@ public class AnoushScript : MonoBehaviour
         }
 
         // Idle with lantern off animation
-        else if (inventory.GetLantern() && inventory.GetHoldingLantern() && !inventory.GetLanternOn()
-                 && !PlayerMovement.GetMoved())
+        else if (!HoldObject.GetIsHolding()
+                && !playerMovement.GetMoved()
+                && inventory.GetHoldingLantern()
+                && !inventory.GetLanternOn()
+                && !inventory.GetTakingPills()
+                && !inventory.GetUsingSpray())
         {
             audioManager.Stop("SimpleSteps");
-            if (PlayerMovement.GetLastDir() == Direction.right)
+            if (playerMovement.GetLastDir() == Direction.right)
             {
                 ChangeAnimationState(PLAYER_IDLE_LANTERNOFF_R);
             }
-            else if (PlayerMovement.GetLastDir() == Direction.left)
+            else if (playerMovement.GetLastDir() == Direction.left)
             {
                 ChangeAnimationState(PLAYER_IDLE_LANTERNOFF_L);
             }
 
-            if (PlayerMovement.GetLastDir() == Direction.up)
+            if (playerMovement.GetLastDir() == Direction.up)
             {
                 ChangeAnimationState(PLAYER_IDLE_LANTERNOFF_U);
             }
-            else if (PlayerMovement.GetLastDir() == Direction.down)
+            else if (playerMovement.GetLastDir() == Direction.down)
             {
                 ChangeAnimationState(PLAYER_IDLE_LANTERNOFF_D);
             }
         }
 
         // Walking with lantern off animation
-        else if (inventory.GetLantern() && inventory.GetHoldingLantern() && !inventory.GetLanternOn()
-                 && PlayerMovement.GetMoved())
+        else if (!HoldObject.GetIsHolding()
+                && playerMovement.GetMoved()
+                && inventory.GetHoldingLantern()
+                && !inventory.GetLanternOn()
+                && !inventory.GetTakingPills()
+                && !inventory.GetUsingSpray())
         {
-            if (PlayerMovement.GetDir() == Direction.right)
+            if (playerMovement.GetDir() == Direction.right)
             {
                 ChangeAnimationState(PLAYER_WALK_LANTERNOFF_R);
             }
-            else if (PlayerMovement.GetDir() == Direction.left)
+            else if (playerMovement.GetDir() == Direction.left)
             {
                 ChangeAnimationState(PLAYER_WALK_LANTERNOFF_L);
             }
 
-            if (PlayerMovement.GetDir() == Direction.up)
+            if (playerMovement.GetDir() == Direction.up)
             {
                 ChangeAnimationState(PLAYER_WALK_LANTERNOFF_U);
             }
-            else if (PlayerMovement.GetDir() == Direction.down)
+            else if (playerMovement.GetDir() == Direction.down)
             {
                 ChangeAnimationState(PLAYER_WALK_LANTERNOFF_D);
             }
@@ -228,47 +237,55 @@ public class AnoushScript : MonoBehaviour
         }
 
         // Idle with lantern on animation
-        else if (inventory.GetLantern() && inventory.GetHoldingLantern() && inventory.GetLanternOn() 
-                 && !PlayerMovement.GetMoved())
+        else if (!HoldObject.GetIsHolding()
+                && !playerMovement.GetMoved()
+                && inventory.GetHoldingLantern()
+                && inventory.GetLanternOn()
+                && !inventory.GetTakingPills()
+                && !inventory.GetUsingSpray())
         {
             audioManager.Stop("SimpleSteps");
-            if (PlayerMovement.GetLastDir() == Direction.right)
+            if (playerMovement.GetLastDir() == Direction.right)
             {
                 ChangeAnimationState(PLAYER_IDLE_LANTERNON_R);
             }
-            else if (PlayerMovement.GetLastDir() == Direction.left)
+            else if (playerMovement.GetLastDir() == Direction.left)
             {
                 ChangeAnimationState(PLAYER_IDLE_LANTERNON_L);
             }
 
-            if (PlayerMovement.GetLastDir() == Direction.up)
+            if (playerMovement.GetLastDir() == Direction.up)
             {
                 ChangeAnimationState(PLAYER_IDLE_LANTERNON_U);
             }
-            else if (PlayerMovement.GetLastDir() == Direction.down)
+            else if (playerMovement.GetLastDir() == Direction.down)
             {
                 ChangeAnimationState(PLAYER_IDLE_LANTERNON_D);
             }
         }
 
         // Walking with lantern on animation
-        else if (inventory.GetLantern() && inventory.GetHoldingLantern() && inventory.GetLanternOn() 
-                 && PlayerMovement.GetMoved())
+        else if (!HoldObject.GetIsHolding()
+                && playerMovement.GetMoved()
+                && inventory.GetHoldingLantern()
+                && inventory.GetLanternOn()
+                && !inventory.GetTakingPills()
+                && !inventory.GetUsingSpray())
         {
-            if (PlayerMovement.GetDir() == Direction.right)
+            if (playerMovement.GetDir() == Direction.right)
             {
                 ChangeAnimationState(PLAYER_WALK_LANTERNON_R);
             }
-            else if (PlayerMovement.GetDir() == Direction.left)
+            else if (playerMovement.GetDir() == Direction.left)
             {
                 ChangeAnimationState(PLAYER_WALK_LANTERNON_L);
             }
 
-            if (PlayerMovement.GetDir() == Direction.up)
+            if (playerMovement.GetDir() == Direction.up)
             {
                 ChangeAnimationState(PLAYER_WALK_LANTERNON_U);
             }
-            else if (PlayerMovement.GetDir() == Direction.down)
+            else if (playerMovement.GetDir() == Direction.down)
             {
                 ChangeAnimationState(PLAYER_WALK_LANTERNON_D);
             }
@@ -280,45 +297,50 @@ public class AnoushScript : MonoBehaviour
         }
 
         // Taking pills
-        if (inventory.GetPills() && inventory.GetTakingPills())
+        else if (!HoldObject.GetIsHolding()
+                && inventory.GetTakingPills()
+                && !inventory.GetUsingSpray())
         {
-            if (PlayerMovement.GetDir() == Direction.right)
+            TopDownMovement.TDcanMove = false;
+            if (playerMovement.GetDir() == Direction.right)
             {
                 ChangeAnimationState(PLAYER_PILLS_R);
             }
-            else if (PlayerMovement.GetDir() == Direction.left)
+            else if (playerMovement.GetDir() == Direction.left)
             {
                 ChangeAnimationState(PLAYER_PILLS_L);
             }
 
-            if (PlayerMovement.GetDir() == Direction.up)
+            if (playerMovement.GetDir() == Direction.up)
             {
                 ChangeAnimationState(PLAYER_PILLS_U);
             }
-            else if (PlayerMovement.GetDir() == Direction.down)
+            else if (playerMovement.GetDir() == Direction.down)
             {
                 ChangeAnimationState(PLAYER_PILLS_D);
             }
         }
 
         // Using Insecticide
-        if (inventory.GetInsecticide() && inventory.getUsingSpray())
+        else if (!HoldObject.GetIsHolding()
+                && !inventory.GetTakingPills()
+                && inventory.GetUsingSpray())
         {
-            Debug.Log("Using spray: " + inventory.getUsingSpray());
-            if (PlayerMovement.GetDir() == Direction.right)
+            TopDownMovement.TDcanMove = false;
+            if (playerMovement.GetLastDir() == Direction.right)
             {
                 ChangeAnimationState(PLAYER_SPRAY_R);
             }
-            else if (PlayerMovement.GetDir() == Direction.left)
+            else if (playerMovement.GetLastDir() == Direction.left)
             {
                 ChangeAnimationState(PLAYER_SPRAY_L);
             }
 
-            if (PlayerMovement.GetDir() == Direction.up)
+            if (playerMovement.GetLastDir() == Direction.up)
             {
                 ChangeAnimationState(PLAYER_SPRAY_U);
             }
-            else if (PlayerMovement.GetDir() == Direction.down)
+            else if (playerMovement.GetLastDir() == Direction.down)
             {
                 ChangeAnimationState(PLAYER_SPRAY_D);
             }

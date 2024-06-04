@@ -27,13 +27,16 @@ public class Inventory : MonoBehaviour
     private bool lanternOn;
     private bool holdingLantern;
 
+    private GameObject deadMoths;
+
     private bool takingPills;
     private bool usingSpray;
+    public bool missionPills;
 
-    private bool hasPills;
-    private bool hasInsecticide;
-    private bool hasHammer;
-    private bool hasLantern;
+    public bool hasPills;
+    public bool hasInsecticide;
+    public bool hasHammer;
+    public bool hasLantern;
     
 
     public static bool onInventory;
@@ -41,7 +44,7 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        missionPills = true;
     }
 
     // Update is called once per frame
@@ -106,29 +109,16 @@ public class Inventory : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
+                
                 if (selectId == 0) // Tomar remédios
                 {
-                    if (takingPills)
-                    {
-                        takingPills = false;
-                    }
-                    else
-                    {
-                        takingPills = true;
-                        CloseInventory();
-                    }
+                    TakePills();
+                    CloseInventory();
                 } 
 
-                if (selectId == 4) // Pegar Lanterna
+                if (selectId == 3) // Pegar Lanterna
                 {
-                    if (holdingLantern)
-                    {
-                        holdingLantern = false;
-                    }
-                    else
-                    {
-                        holdingLantern = true;
-                    }
+                    HoldLantern();
                     CloseInventory();
                 } 
             }
@@ -188,6 +178,35 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void HoldLantern()
+    {
+        if (hasLantern)
+        {
+            if (!holdingLantern)
+            {
+                holdingLantern = true;
+            }
+            else
+            {
+                holdingLantern = false;
+            }
+        }
+    }
+
+    public void TakePills()
+    {
+        if (hasPills)
+        {
+            takingPills = true;
+            if (missionPills)
+            {
+                FindObjectOfType<TakePillsFinish>().PillsTaken();
+                missionPills = false;
+            }
+            
+        }
+    }
+
     public void ColectPills()
     {
         hasPills = true;
@@ -212,57 +231,61 @@ public class Inventory : MonoBehaviour
 
     public bool GetPills()
     {
-        return hasPills;
+        return this.hasPills;
     }
 
     public bool GetInsecticide()
     {
-        return hasInsecticide;
+        return this.hasInsecticide;
     }
 
     public bool GetHammer()
     {
-        return hasHammer;
+        return this.hasHammer;
     }
 
     public bool GetLantern()
     {
-        return hasLantern;
+        return this.hasLantern;
     }
 
     public bool GetHoldingLantern()
     {
-        return holdingLantern;
+        return this.holdingLantern;
     }
 
     public bool GetLanternOn()
     {
-        return lanternOn;
+        return this.lanternOn;
     }
 
     public bool GetTakingPills()
     {
-        return takingPills;
+        return this.takingPills;
     }
 
     public void SetTakingPillsOff()
     {
         this.takingPills = false;
+        TopDownMovement.TDcanMove = true;
     }
 
-    public bool getUsingSpray()
+    public bool GetUsingSpray()
     {
-        return usingSpray;
+        return this.usingSpray;
     }
     public void SetSprayOff()
     {
-        this.takingPills = false;
+        this.usingSpray = false;
+        deadMoths.SetActive(false);
+        TopDownMovement.TDcanMove = true;
     }
-    public void SetSprayOn()
+    public void SetSprayOn(GameObject moth)
     {
         if (hasInsecticide)
         {
-            this.takingPills = true;
+            this.usingSpray = true;
+            this.deadMoths = moth;
         }
 
     }

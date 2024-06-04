@@ -2,24 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxPuzzleFinish : MonoBehaviour
+public class CheckBasement : MonoBehaviour
 {
     public GameObject[] newObjects;
     public GameObject[] oldObjects;
-    [SerializeField] private int boxesLeft;
-    private bool boxPuzzleOver;
-
+    private bool poraoChecked;
+    // Start is called before the first frame update
     void Start()
     {
-        boxPuzzleOver = false;
+        poraoChecked = false;
     }
 
-    public void FinishBoxPuzzle()
+    public void MakeDinner()
     {
-        if (boxPuzzleOver)
+        if (poraoChecked)
         {
-            FindObjectOfType<MissionManager>().SetMissionIndex(1);
-
+            FindObjectOfType<MissionManager>().SetMissionIndex(3);
             for (int i = 0; i < newObjects.Length; i++)
             {
                 newObjects[i].SetActive(true);
@@ -31,13 +29,9 @@ public class BoxPuzzleFinish : MonoBehaviour
         }
     }
 
-    public void DeliverBox()
+    public void SetPoraoCheckTrue()
     {
-        boxesLeft--;
-        if (boxesLeft <= 0)
-        {
-            boxPuzzleOver = true;
-            FinishBoxPuzzle();
-        }
+        this.poraoChecked = true;
+        MakeDinner();
     }
 }

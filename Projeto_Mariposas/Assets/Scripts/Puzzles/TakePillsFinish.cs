@@ -2,24 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxPuzzleFinish : MonoBehaviour
+public class TakePillsFinish : MonoBehaviour
 {
     public GameObject[] newObjects;
     public GameObject[] oldObjects;
-    [SerializeField] private int boxesLeft;
-    private bool boxPuzzleOver;
-
+    public bool pillsTaken;
+    // Start is called before the first frame update
     void Start()
     {
-        boxPuzzleOver = false;
+        pillsTaken = false;
     }
 
-    public void FinishBoxPuzzle()
+    public void FinishPillsQuest()
     {
-        if (boxPuzzleOver)
+        if (pillsTaken)
         {
-            FindObjectOfType<MissionManager>().SetMissionIndex(1);
-
+            FindObjectOfType<MissionManager>().SetMissionIndex(2);
             for (int i = 0; i < newObjects.Length; i++)
             {
                 newObjects[i].SetActive(true);
@@ -31,13 +29,9 @@ public class BoxPuzzleFinish : MonoBehaviour
         }
     }
 
-    public void DeliverBox()
+    public void PillsTaken()
     {
-        boxesLeft--;
-        if (boxesLeft <= 0)
-        {
-            boxPuzzleOver = true;
-            FinishBoxPuzzle();
-        }
+        this.pillsTaken = true;
+        FinishPillsQuest();
     }
 }

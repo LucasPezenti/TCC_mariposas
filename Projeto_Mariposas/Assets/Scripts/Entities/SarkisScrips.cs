@@ -49,6 +49,11 @@ public class SarkisScrips : MonoBehaviour
         // Sarkis on the phone
     }
 
+    public void GetPhone()
+    {
+        ChangeAnimationState(SARKIS_PHONE_D);
+    }
+
     public void ChangeAnimationState(string newState)
     {
         // Stop an animaiton from interrupting itself
