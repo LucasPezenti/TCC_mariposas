@@ -28,6 +28,8 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] private Button languageBtn;
 
+    [SerializeField] private Button aboutNextBtn;
+
     [Header("Back Buttons")]
     [SerializeField] private Button backCreditsBtn;
     [SerializeField] private Button backAboutBtn;
@@ -40,12 +42,15 @@ public class MainMenu : MonoBehaviour
     public GameObject mainScreen;
     public GameObject settingsScreen;
     public GameObject aboutScreen;
+    public GameObject aboutPage1;
+    public GameObject aboutPage2;
     public GameObject creditScreen;
     public GameObject controlsScreenBpt;
     public GameObject controlsScreenEng;
     public GameObject languageScreen;
 
     public Animator creditsAnimator;
+    private int aboutPage = 1;
 
     private void Awake(){
         newGameBtn.onClick.AddListener(StartNewGame);
@@ -55,6 +60,7 @@ public class MainMenu : MonoBehaviour
         controlsBtn.onClick.AddListener(OpenControls);
         languageBtn.onClick.AddListener(OpenLanguageSelection);
         aboutBtn.onClick.AddListener(OpenAboutScreen);
+        aboutNextBtn.onClick.AddListener(NextPageAbout);
 
         backCreditsBtn.onClick.AddListener(BackCredits);
         backAboutBtn.onClick.AddListener(BackAbout);
@@ -108,18 +114,42 @@ public class MainMenu : MonoBehaviour
     public void OpenAboutScreen()
     {
         aboutScreen.SetActive(true);
+        GetComponent<AboutReader>().LoadAboutText();
+        aboutPage1.SetActive(true);
+        aboutNextBtn.gameObject.SetActive(true);
+        aboutPage2.SetActive(false);
+        aboutPage = 1;
         audioManager.Play("ButtonFX01");
     }
 
+    public void NextPageAbout()
+    {
+        if (aboutPage == 1)
+        {
+            aboutPage2.SetActive(true);
+            aboutPage1.SetActive(false);
+            aboutPage++;
+            audioManager.Play("ButtonFX01");
+        }
+        else if(aboutPage == 2)
+        {
+            aboutPage1.SetActive(true);
+            aboutPage2.SetActive(false);
+            aboutPage--;
+            audioManager.Play("ButtonFX01");
+        }
+        
+    }
 
     //  Criar tela de créditos
 
-    public void OpenCredits(){
+    public void OpenCredits(){        
         creditScreen.SetActive(true);
-        FindAnyObjectByType<CreditsMovement>().StartCredits();
+        GetComponent<CreditsReader>().LoadCredits();
+        FindObjectOfType<CreditsMovement>().StartCredits();
         //creditsAnimator.SetTrigger("TriggerCredits");
         audioManager.Play("ButtonFX01");
-
+        audioManager.Play("PrologueMusic");
     }
 
     public void QuitGame(){
@@ -132,6 +162,7 @@ public class MainMenu : MonoBehaviour
     public void BackCredits()
     {
         creditScreen.SetActive(false);
+        audioManager.Stop("PrologueMusic");
         audioManager.Play("ButtonFX01");
     }
 

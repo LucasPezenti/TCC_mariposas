@@ -21,7 +21,7 @@ public class CreditsReader : MonoBehaviour
             string[] lines = System.IO.File.ReadAllLines(gameManager.GetCreditsFilePath());
             foreach (string line in lines)
             {
-                string[] info = line.Split('/');
+                string[] info = line.Split(';');
                 for (int i = 0; i < creditLines.Length; i++)
                 {
                     if (line.Contains(creditLines[i].textID))

@@ -20,7 +20,6 @@ public class LanguageSelector : MonoBehaviour
     {
         gameManager.ChangeLanguage(Languages.BPT);
         FindAnyObjectByType<UIManager>().LoadUI();
-        //FindFirstObjectByType<CreditsReader>().LoadCredits();
         audioManager.Play("ButtonFX01");
     }
 
