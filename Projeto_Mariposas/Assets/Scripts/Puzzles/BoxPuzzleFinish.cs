@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BoxPuzzleFinish : MonoBehaviour
 {
+    public GameObject[] newObjects;
     [SerializeField] private int boxesLeft;
     private bool boxPuzzleOver;
 
@@ -17,6 +18,10 @@ public class BoxPuzzleFinish : MonoBehaviour
         if (boxPuzzleOver)
         {
             FindObjectOfType<MissionManager>().SetMissionIndex(1);
+            for (int i = 0; i < newObjects.Length; i++)
+            {
+                newObjects[i].SetActive(true);
+            }
         }
 
         if (boxesLeft <= 0)

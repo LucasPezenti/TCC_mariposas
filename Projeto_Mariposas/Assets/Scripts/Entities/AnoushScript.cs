@@ -7,6 +7,7 @@ public class AnoushScript : MonoBehaviour
     private Animator animator;
     private TopDownMovement PlayerMovement;
     private HoldObjectScript HoldObject;
+    private Inventory inventory;
     private string curState;
     private AudioManager audioManager;
 
@@ -35,11 +36,40 @@ public class AnoushScript : MonoBehaviour
     const string PLAYER_WALK_BOX_U = "Anoush_WalkBoxU";
     const string PLAYER_WALK_BOX_D = "Anoush_WalkBoxD";
 
+    // Animações Anoush com lanterna
+    const string PLAYER_IDLE_LANTERNON_R = "Anoush_IdleLantOnR";
+    const string PLAYER_IDLE_LANTERNON_L = "Anoush_IdleLantOnL";
+    const string PLAYER_IDLE_LANTERNON_U = "Anoush_IdleLantOnU";
+    const string PLAYER_IDLE_LANTERNON_D = "Anoush_IdleLantOnD";
+    const string PLAYER_WALK_LANTERNON_R = "Anoush_WalkLantOnR";
+    const string PLAYER_WALK_LANTERNON_L = "Anoush_WalkLantOnL";
+    const string PLAYER_WALK_LANTERNON_U = "Anoush_WalkLantOnU";
+    const string PLAYER_WALK_LANTERNON_D = "Anoush_WalkLantOnD";
+    const string PLAYER_IDLE_LANTERNOFF_R = "Anoush_IdleLantOffR";
+    const string PLAYER_IDLE_LANTERNOFF_L = "Anoush_IdleLantOffL";
+    const string PLAYER_IDLE_LANTERNOFF_U = "Anoush_IdleLantOffU";
+    const string PLAYER_IDLE_LANTERNOFF_D = "Anoush_IdleLantOffD";
+    const string PLAYER_WALK_LANTERNOFF_R = "Anoush_WalkLantOffR";
+    const string PLAYER_WALK_LANTERNOFF_L = "Anoush_WalkLantOffL";
+    const string PLAYER_WALK_LANTERNOFF_U = "Anoush_WalkLantOffU";
+    const string PLAYER_WALK_LANTERNOFF_D = "Anoush_WalkLantOffD";
+
+    const string PLAYER_PILLS_R = "Anoush_PillsR";
+    const string PLAYER_PILLS_L = "Anoush_PillsL";
+    const string PLAYER_PILLS_U = "Anoush_PillsU";
+    const string PLAYER_PILLS_D = "Anoush_PillsD";
+
+    const string PLAYER_SPRAY_R = "Anoush_SprayR";
+    const string PLAYER_SPRAY_L = "Anoush_SprayL";
+    const string PLAYER_SPRAY_U = "Anoush_SprayU";
+    const string PLAYER_SPRAY_D = "Anoush_SprayD";
+
     void Start()
     {
         animator = GetComponent<Animator>();
         PlayerMovement = GetComponent<TopDownMovement>();
         HoldObject = GetComponent<HoldObjectScript>();
+        inventory = GetComponent<Inventory>();
         audioManager = AudioManager.GetAudioInstance();
     }
 
@@ -123,7 +153,7 @@ public class AnoushScript : MonoBehaviour
             }
         }
 
-        // Walking animation
+        // Walking with box animation
         else if(HoldObject.GetIsHolding() && PlayerMovement.GetMoved()){
             if(PlayerMovement.GetDir() == Direction.right){
                 ChangeAnimationState(PLAYER_WALK_BOX_R);
@@ -142,6 +172,155 @@ public class AnoushScript : MonoBehaviour
             if (!audioManager.GetAudio("SimpleSteps").source.isPlaying)
             {
                 audioManager.Play("SimpleSteps");
+            }
+        }
+
+        // Idle with lantern off animation
+        else if (inventory.GetLantern() && inventory.GetHoldingLantern() && !inventory.GetLanternOn()
+                 && !PlayerMovement.GetMoved())
+        {
+            audioManager.Stop("SimpleSteps");
+            if (PlayerMovement.GetLastDir() == Direction.right)
+            {
+                ChangeAnimationState(PLAYER_IDLE_LANTERNOFF_R);
+            }
+            else if (PlayerMovement.GetLastDir() == Direction.left)
+            {
+                ChangeAnimationState(PLAYER_IDLE_LANTERNOFF_L);
+            }
+
+            if (PlayerMovement.GetLastDir() == Direction.up)
+            {
+                ChangeAnimationState(PLAYER_IDLE_LANTERNOFF_U);
+            }
+            else if (PlayerMovement.GetLastDir() == Direction.down)
+            {
+                ChangeAnimationState(PLAYER_IDLE_LANTERNOFF_D);
+            }
+        }
+
+        // Walking with lantern off animation
+        else if (inventory.GetLantern() && inventory.GetHoldingLantern() && !inventory.GetLanternOn()
+                 && PlayerMovement.GetMoved())
+        {
+            if (PlayerMovement.GetDir() == Direction.right)
+            {
+                ChangeAnimationState(PLAYER_WALK_LANTERNOFF_R);
+            }
+            else if (PlayerMovement.GetDir() == Direction.left)
+            {
+                ChangeAnimationState(PLAYER_WALK_LANTERNOFF_L);
+            }
+
+            if (PlayerMovement.GetDir() == Direction.up)
+            {
+                ChangeAnimationState(PLAYER_WALK_LANTERNOFF_U);
+            }
+            else if (PlayerMovement.GetDir() == Direction.down)
+            {
+                ChangeAnimationState(PLAYER_WALK_LANTERNOFF_D);
+            }
+
+            if (!audioManager.GetAudio("SimpleSteps").source.isPlaying)
+            {
+                audioManager.Play("SimpleSteps");
+            }
+        }
+
+        // Idle with lantern on animation
+        else if (inventory.GetLantern() && inventory.GetHoldingLantern() && inventory.GetLanternOn() 
+                 && !PlayerMovement.GetMoved())
+        {
+            audioManager.Stop("SimpleSteps");
+            if (PlayerMovement.GetLastDir() == Direction.right)
+            {
+                ChangeAnimationState(PLAYER_IDLE_LANTERNON_R);
+            }
+            else if (PlayerMovement.GetLastDir() == Direction.left)
+            {
+                ChangeAnimationState(PLAYER_IDLE_LANTERNON_L);
+            }
+
+            if (PlayerMovement.GetLastDir() == Direction.up)
+            {
+                ChangeAnimationState(PLAYER_IDLE_LANTERNON_U);
+            }
+            else if (PlayerMovement.GetLastDir() == Direction.down)
+            {
+                ChangeAnimationState(PLAYER_IDLE_LANTERNON_D);
+            }
+        }
+
+        // Walking with lantern on animation
+        else if (inventory.GetLantern() && inventory.GetHoldingLantern() && inventory.GetLanternOn() 
+                 && PlayerMovement.GetMoved())
+        {
+            if (PlayerMovement.GetDir() == Direction.right)
+            {
+                ChangeAnimationState(PLAYER_WALK_LANTERNON_R);
+            }
+            else if (PlayerMovement.GetDir() == Direction.left)
+            {
+                ChangeAnimationState(PLAYER_WALK_LANTERNON_L);
+            }
+
+            if (PlayerMovement.GetDir() == Direction.up)
+            {
+                ChangeAnimationState(PLAYER_WALK_LANTERNON_U);
+            }
+            else if (PlayerMovement.GetDir() == Direction.down)
+            {
+                ChangeAnimationState(PLAYER_WALK_LANTERNON_D);
+            }
+
+            if (!audioManager.GetAudio("SimpleSteps").source.isPlaying)
+            {
+                audioManager.Play("SimpleSteps");
+            }
+        }
+
+        // Taking pills
+        if (inventory.GetPills() && inventory.GetTakingPills())
+        {
+            if (PlayerMovement.GetDir() == Direction.right)
+            {
+                ChangeAnimationState(PLAYER_PILLS_R);
+            }
+            else if (PlayerMovement.GetDir() == Direction.left)
+            {
+                ChangeAnimationState(PLAYER_PILLS_L);
+            }
+
+            if (PlayerMovement.GetDir() == Direction.up)
+            {
+                ChangeAnimationState(PLAYER_PILLS_U);
+            }
+            else if (PlayerMovement.GetDir() == Direction.down)
+            {
+                ChangeAnimationState(PLAYER_PILLS_D);
+            }
+        }
+
+        // Using Insecticide
+        if (inventory.GetInsecticide() && inventory.getUsingSpray())
+        {
+            Debug.Log("Using spray: " + inventory.getUsingSpray());
+            if (PlayerMovement.GetDir() == Direction.right)
+            {
+                ChangeAnimationState(PLAYER_SPRAY_R);
+            }
+            else if (PlayerMovement.GetDir() == Direction.left)
+            {
+                ChangeAnimationState(PLAYER_SPRAY_L);
+            }
+
+            if (PlayerMovement.GetDir() == Direction.up)
+            {
+                ChangeAnimationState(PLAYER_SPRAY_U);
+            }
+            else if (PlayerMovement.GetDir() == Direction.down)
+            {
+                ChangeAnimationState(PLAYER_SPRAY_D);
             }
         }
     }

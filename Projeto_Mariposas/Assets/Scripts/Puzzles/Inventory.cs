@@ -12,6 +12,11 @@ public class Inventory : MonoBehaviour
     public GameObject lanternOffSplash;
     public GameObject lanternOnSplash;
 
+    [Header("Selection Settings")]
+    public GameObject selection;
+    public Transform[] selectionPoints;
+    private int selectId;
+
     [Header("Lantern Settings")]
     public GameObject lanternComand;
     public GameObject lanternOnComandSplash;
@@ -20,6 +25,10 @@ public class Inventory : MonoBehaviour
     public GameObject darkness;
     public bool isDark;
     private bool lanternOn;
+    private bool holdingLantern;
+
+    private bool takingPills;
+    private bool usingSpray;
 
     private bool hasPills;
     private bool hasInsecticide;
@@ -67,10 +76,61 @@ public class Inventory : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
-                if (hasLantern) 
+                if (hasLantern && holdingLantern) 
                 { 
                     SwitchLantern();
                 }
+            }
+        }
+
+        if (onInventory)
+        {
+            if(Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+            {
+                selectId++;
+                if (selectId > 3)
+                {
+                    selectId = 0;
+                }
+                selection.transform.position = selectionPoints[selectId].transform.position;
+            }
+            else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            {
+                selectId--;
+                if (selectId < 0)
+                {
+                    selectId = 3;
+                }
+                selection.transform.position = selectionPoints[selectId].transform.position;
+            }
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (selectId == 0) // Tomar remédios
+                {
+                    if (takingPills)
+                    {
+                        takingPills = false;
+                    }
+                    else
+                    {
+                        takingPills = true;
+                        CloseInventory();
+                    }
+                } 
+
+                if (selectId == 4) // Pegar Lanterna
+                {
+                    if (holdingLantern)
+                    {
+                        holdingLantern = false;
+                    }
+                    else
+                    {
+                        holdingLantern = true;
+                    }
+                    CloseInventory();
+                } 
             }
         }
     }
@@ -168,6 +228,43 @@ public class Inventory : MonoBehaviour
     public bool GetLantern()
     {
         return hasLantern;
+    }
+
+    public bool GetHoldingLantern()
+    {
+        return holdingLantern;
+    }
+
+    public bool GetLanternOn()
+    {
+        return lanternOn;
+    }
+
+    public bool GetTakingPills()
+    {
+        return takingPills;
+    }
+
+    public void SetTakingPillsOff()
+    {
+        this.takingPills = false;
+    }
+
+    public bool getUsingSpray()
+    {
+        return usingSpray;
+    }
+    public void SetSprayOff()
+    {
+        this.takingPills = false;
+    }
+    public void SetSprayOn()
+    {
+        if (hasInsecticide)
+        {
+            this.takingPills = true;
+        }
+
     }
 
 }
