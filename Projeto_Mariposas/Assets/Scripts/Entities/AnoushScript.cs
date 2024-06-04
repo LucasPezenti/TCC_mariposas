@@ -8,6 +8,7 @@ public class AnoushScript : MonoBehaviour
     private TopDownMovement PlayerMovement;
     private HoldObjectScript HoldObject;
     private string curState;
+    private AudioManager audioManager;
 
     // Animações Anoush
     const string PLAYER_IDLE_R = "Anoush_IdleR";
@@ -39,6 +40,7 @@ public class AnoushScript : MonoBehaviour
         animator = GetComponent<Animator>();
         PlayerMovement = GetComponent<TopDownMovement>();
         HoldObject = GetComponent<HoldObjectScript>();
+        audioManager = AudioManager.GetAudioInstance();
     }
 
     void Update()
@@ -49,7 +51,8 @@ public class AnoushScript : MonoBehaviour
     public void AnimatePlayer(){
         // Idle animation
         if(!HoldObject.GetIsHolding() && !PlayerMovement.GetMoved()){
-            if(PlayerMovement.GetLastDir() == Direction.right){
+            audioManager.Stop("SimpleSteps");
+            if (PlayerMovement.GetLastDir() == Direction.right){
                 ChangeAnimationState(PLAYER_IDLE_R);
             }
             else if(PlayerMovement.GetLastDir() == Direction.left){
@@ -79,6 +82,10 @@ public class AnoushScript : MonoBehaviour
             else if(PlayerMovement.GetDir() == Direction.down){
                 ChangeAnimationState(PLAYER_WALK_D);
             }
+            if (!audioManager.GetAudio("SimpleSteps").source.isPlaying)
+            {
+                audioManager.Play("SimpleSteps");
+            }
         }
 
         // Running animation
@@ -100,7 +107,8 @@ public class AnoushScript : MonoBehaviour
 
         // Idle with box animation
         else if(HoldObject.GetIsHolding() && !PlayerMovement.GetMoved()){
-            if(PlayerMovement.GetLastDir() == Direction.right){
+            audioManager.Stop("SimpleSteps");
+            if (PlayerMovement.GetLastDir() == Direction.right){
                 ChangeAnimationState(PLAYER_IDLE_BOX_R);
             }
             else if(PlayerMovement.GetLastDir() == Direction.left){
@@ -129,6 +137,11 @@ public class AnoushScript : MonoBehaviour
             }
             else if(PlayerMovement.GetDir() == Direction.down){
                 ChangeAnimationState(PLAYER_WALK_BOX_D);
+            }
+
+            if (!audioManager.GetAudio("SimpleSteps").source.isPlaying)
+            {
+                audioManager.Play("SimpleSteps");
             }
         }
     }

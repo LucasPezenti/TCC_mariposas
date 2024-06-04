@@ -33,19 +33,22 @@ public class IrinaScript : MonoBehaviour
     }
 
     public void AnimatePlayer(){
+
         //  Irina Waking Up
-        if(IraWakeUP){
+        if (IraWakeUP){
             ChangeAnimationState(IRINA_WAKE_UP);
         }
 
         //  Irina Fall
         else if(IraFall){
+            audioManager.Stop("SimpleSteps");
             ChangeAnimationState(IRINA_FALL);
         }
         
         //  Idle animation
         else if(!PlayerMovement.GetMoved()){
-            if(PlayerMovement.GetLastDir() == Direction.right){
+            audioManager.Stop("SimpleSteps");
+            if (PlayerMovement.GetLastDir() == Direction.right){
                 ChangeAnimationState(PLAYER_IDLE_R);
             }
             else if(PlayerMovement.GetLastDir() == Direction.left){
@@ -61,7 +64,10 @@ public class IrinaScript : MonoBehaviour
             else if(PlayerMovement.GetDir() == Direction.left){
                 ChangeAnimationState(PLAYER_WALK_L);
             }
-            audioManager.Play("Steps_Base");
+            if (!audioManager.GetAudio("SimpleSteps").source.isPlaying)
+            {
+                audioManager.Play("SimpleSteps");
+            }
         }
 
     }

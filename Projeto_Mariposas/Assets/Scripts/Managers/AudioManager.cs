@@ -46,7 +46,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found!");
             return; 
         }
-        s.source.Play();
+        s.source.Play();    
     }
 
     public void Stop(string name)
@@ -58,6 +58,20 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Stop();
+    }
+
+    public void StopAll()
+    {
+        foreach (Sound s in sounds)
+        {
+            s.source.Stop();
+        }
+    }
+
+    public Sound GetAudio(string name)
+    { 
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        return s;
     }
 }
 
@@ -74,7 +88,6 @@ public class Sound
     public float pitch;
 
     public bool loop;
-    public bool isPlaying;
 
     [HideInInspector]
     public AudioSource source;

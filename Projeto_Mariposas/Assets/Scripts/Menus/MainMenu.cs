@@ -70,8 +70,14 @@ public class MainMenu : MonoBehaviour
         backControlsEngBtn.onClick.AddListener(BackControlsEng);
     }
 
+    private void Start()
+    {
+        audioManager.Play("BasementMusic");
+    }
+
     public void StartNewGame(){
         audioManager.Play("ButtonFX01");
+        audioManager.Stop("BasementMusic");
         SceneManager.LoadScene("Prologue");
     }
 
@@ -149,6 +155,7 @@ public class MainMenu : MonoBehaviour
         FindObjectOfType<CreditsMovement>().StartCredits();
         //creditsAnimator.SetTrigger("TriggerCredits");
         audioManager.Play("ButtonFX01");
+        audioManager.Stop("BasementMusic");
         audioManager.Play("PrologueMusic");
     }
 
@@ -163,6 +170,7 @@ public class MainMenu : MonoBehaviour
     {
         creditScreen.SetActive(false);
         audioManager.Stop("PrologueMusic");
+        audioManager.Play("BasementMusic");
         audioManager.Play("ButtonFX01");
     }
 
