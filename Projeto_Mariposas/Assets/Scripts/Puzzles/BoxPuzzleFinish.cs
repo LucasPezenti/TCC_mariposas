@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class BoxPuzzleFinish : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private int boxesLeft;
+    private bool boxPuzzleOver;
+
     void Start()
     {
-        
+        boxPuzzleOver = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (boxPuzzleOver)
+        {
+            FindObjectOfType<MissionManager>().SetMissionIndex(1);
+        }
+
+        if (boxesLeft <= 0)
+        {
+            boxPuzzleOver = true;
+        }
+    }
+
+    public void DeliverBox()
+    {
+        boxesLeft--;
     }
 }

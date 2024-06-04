@@ -35,6 +35,7 @@ public class BoxPuzzleManager : MonoBehaviour
                 {
                     playerBox.GetComponent<Rigidbody2D>().simulated = true;
                 }
+                FindObjectOfType<BoxPuzzleFinish>().DeliverBox();
                 SwitchFurniture();
                 Destroy(playerBox);
                 this.gameObject.SetActive(false);
