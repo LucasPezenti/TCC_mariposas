@@ -42,7 +42,7 @@ public class TopDownMovement : MonoBehaviour
     }
 
     private void MovementInputs(){
-        if(TDcanMove && !DialogueManager.onDialogue){
+        if(TDcanMove && !DialogueManager.onDialogue && !Inventory.onInventory){
             speedX = Input.GetAxisRaw("Horizontal");
             speedY = Input.GetAxisRaw("Vertical");
 

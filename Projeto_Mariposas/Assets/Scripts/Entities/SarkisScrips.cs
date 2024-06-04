@@ -30,13 +30,14 @@ public class SarkisScrips : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
+        audioManager = AudioManager.GetAudioInstance();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        AnimateSarkis();
     }
 
     public void AnimateSarkis()

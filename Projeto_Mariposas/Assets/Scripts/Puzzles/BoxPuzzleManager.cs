@@ -25,7 +25,7 @@ public class BoxPuzzleManager : MonoBehaviour
     public void Unpack()
     {
         playerBox = FindAnyObjectByType<HoldObjectScript>().itemHolding;
-        if (playerBox != null && !DialogueManager.onDialogue)
+        if (playerBox != null && !DialogueManager.onDialogue && !ExamineManager.isExamining)
         {
             if(playerBox.GetComponent<PuzzleBox>().boxID == roomID)
             {

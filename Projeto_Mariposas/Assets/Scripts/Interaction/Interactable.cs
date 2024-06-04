@@ -29,7 +29,7 @@ public class Interactable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(inRange){
+        if(inRange && !DialogueManager.onDialogue && !ExamineManager.isExamining && !Inventory.onInventory){
             Interact();
         }
     }
