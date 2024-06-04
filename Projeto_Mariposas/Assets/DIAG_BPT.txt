@@ -94,7 +94,7 @@ ActorLine / Anoush / 2
 
 MessageLine / 0 / Sinto falta do tempo em que eu recebia pessoas para tomar chá. Nos últimos anos eu me senti muito sozinha.
 
-BoxSala_0002_start
+BoxSala_0002_end
 
 ##
 

@@ -94,7 +94,7 @@ ActorLine / Anoush / 2
 
 MessageLine / 0 / I miss the days when I would have people over for tea. I've been feeling quite lonely in the past few years.
 
-BoxSala_0002_start
+BoxSala_0002_end
 
 ##
 
