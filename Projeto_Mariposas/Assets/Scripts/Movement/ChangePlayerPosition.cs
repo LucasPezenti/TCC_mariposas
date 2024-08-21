@@ -19,6 +19,7 @@ public class ChangePlayerPosition : MonoBehaviour
         if (collision.CompareTag("Teleport"))
         {
             curTeleport = collision.gameObject;
+            ChangeToArea();
         }
     }
 

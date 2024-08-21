@@ -24,8 +24,8 @@ public class Inventory : MonoBehaviour
     public GameObject lightArea;
     public GameObject darkness;
     public bool isDark;
-    private bool lanternOn;
-    private bool holdingLantern;
+    public bool lanternOn;
+    public bool holdingLantern;
 
     private GameObject deadMoths;
 
@@ -189,6 +189,7 @@ public class Inventory : MonoBehaviour
             else
             {
                 holdingLantern = false;
+
             }
         }
     }

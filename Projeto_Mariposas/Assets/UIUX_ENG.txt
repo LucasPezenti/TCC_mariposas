@@ -80,13 +80,6 @@ QuestName_04 / Brute Force
 
 QuestStep_04_00 / Find a tool to open the basement door
 
-
-
-
-
-
-
-
 LetterID_01 / “Dear Mrs. Gasparian, 
 
 LetterID_02 / I hope you had a pleasant trip. I've been following the e-mail exchange between you and my brother, Vassilii Nikolaevich, and couldn't help but notice that you're curious about the history of the property you have rented. Obviously, the fact that this house has been empty for so long would draw your attention, and I apologize for my brother's behavior, as he refuses to saciate your curiosity and keeps changing the subject and making up excuses.
