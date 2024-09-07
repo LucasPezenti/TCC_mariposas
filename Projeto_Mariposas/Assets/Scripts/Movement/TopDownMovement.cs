@@ -5,31 +5,35 @@ using UnityEngine;
 
 public class TopDownMovement : MonoBehaviour
 {
-    private float speed;
-    private float speedX, speedY;
-    private bool moved;
-    private bool running;
-    public static bool TDcanMove;
+    [SerializeField] private float speed;
+    [SerializeField] private float speedX, speedY;
+    [SerializeField] private bool moved;
+    [SerializeField] private bool running;
+    public static bool TDCanMove;
     [SerializeField] private bool canRun;
 
     private Vector2 moveDirection;
     private Rigidbody2D rb;
     private Direction dir, lastDir;
 
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     // Start is called before the first frame update
     void Start()
     {
         speed = 1.4f;
         moved = false;
         running = false;
-        TDcanMove = true;
-        rb = GetComponent<Rigidbody2D>();
+        TDCanMove = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!TDcanMove || DialogueManager.onDialogue){
+        if(!TDCanMove || DialogueManager.onDialogue){
             moved = false;
             moveDirection.x = 0;
             moveDirection.y = 0;
@@ -42,7 +46,7 @@ public class TopDownMovement : MonoBehaviour
     }
 
     private void MovementInputs(){
-        if(TDcanMove && !DialogueManager.onDialogue && !Inventory.onInventory){
+        if(TDCanMove && !DialogueManager.onDialogue && !Inventory.onInventory){
             speedX = Input.GetAxisRaw("Horizontal");
             speedY = Input.GetAxisRaw("Vertical");
 
@@ -114,7 +118,18 @@ public class TopDownMovement : MonoBehaviour
     public bool GetMoved(){
         return this.moved;
     }
+    
+    /*
+    public bool GetCanMove()
+    {
+        return this.TDCanMove;
+    }
 
+    public void SetCanMove(bool canMove)
+    {
+        this.TDCanMove = canMove;
+    }
+    */
     public Vector2 GetMoveDirection(){
         return this.moveDirection;
     }

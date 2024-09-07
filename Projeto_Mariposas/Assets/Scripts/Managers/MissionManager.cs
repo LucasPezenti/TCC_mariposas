@@ -9,6 +9,7 @@ public class MissionManager : MonoBehaviour
     public UIElement[] missionStepsList;
     public int missionIndex;
 
+    [SerializeField] private Animator animator;
     [SerializeField] private Button missionBtn;
     public GameObject missionStepsText;
     private bool stepsActive;
@@ -46,12 +47,14 @@ public class MissionManager : MonoBehaviour
     {
         if (!stepsActive)
         {
-            missionStepsText.SetActive(true);
+            animator.SetTrigger("OpenTab");
+            //missionStepsText.SetActive(true);
             stepsActive = true;
         }
         else
         {
-            missionStepsText.SetActive(false);
+            animator.SetTrigger("CloseTab");
+            //missionStepsText.SetActive(false);
             stepsActive = false;
         }
         audioManager.Play("ButtonFX01");
@@ -61,5 +64,14 @@ public class MissionManager : MonoBehaviour
     {
         missionIndex = index;
         LoadMission();
+    }
+
+    public Animator GetAnimator()
+    {
+        return this.animator;
+    }
+    public void SetAnimOver(bool isOver)
+    {
+        animator.SetBool("AnimIsOver", isOver);
     }
 }

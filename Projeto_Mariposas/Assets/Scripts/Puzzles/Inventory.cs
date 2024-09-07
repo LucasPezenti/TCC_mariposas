@@ -268,7 +268,7 @@ public class Inventory : MonoBehaviour
     public void SetTakingPillsOff()
     {
         this.takingPills = false;
-        TopDownMovement.TDcanMove = true;
+        TopDownMovement.TDCanMove = true;
     }
 
     public bool GetUsingSpray()
@@ -279,7 +279,7 @@ public class Inventory : MonoBehaviour
     {
         this.usingSpray = false;
         deadMoths.SetActive(false);
-        TopDownMovement.TDcanMove = true;
+        TopDownMovement.TDCanMove = true;
     }
     public void SetSprayOn(GameObject moth)
     {

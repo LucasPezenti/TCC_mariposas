@@ -301,7 +301,7 @@ public class AnoushScript : MonoBehaviour
                 && inventory.GetTakingPills()
                 && !inventory.GetUsingSpray())
         {
-            TopDownMovement.TDcanMove = false;
+            TopDownMovement.TDCanMove = false;
             if (playerMovement.GetDir() == Direction.right)
             {
                 ChangeAnimationState(PLAYER_PILLS_R);
@@ -326,7 +326,7 @@ public class AnoushScript : MonoBehaviour
                 && !inventory.GetTakingPills()
                 && inventory.GetUsingSpray())
         {
-            TopDownMovement.TDcanMove = false;
+            TopDownMovement.TDCanMove = false;
             if (playerMovement.GetLastDir() == Direction.right)
             {
                 ChangeAnimationState(PLAYER_SPRAY_R);

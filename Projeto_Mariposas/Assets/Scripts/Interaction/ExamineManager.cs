@@ -26,7 +26,8 @@ public class ExamineManager : MonoBehaviour
         itemImage.sprite = itemDisplay.sprite;
         examineBox.SetActive(true);
         SideScrollMovement.SScanMove = false;
-        TopDownMovement.TDcanMove = false;
+        TopDownMovement.TDCanMove = false;
+
     }
 
     public void CloseItemDisplay()
@@ -34,7 +35,7 @@ public class ExamineManager : MonoBehaviour
         isExamining = false;
         examineBox.SetActive(false);
         SideScrollMovement.SScanMove = true;
-        TopDownMovement.TDcanMove = true;
+        TopDownMovement.TDCanMove = true;
     }
 
     void Update()
