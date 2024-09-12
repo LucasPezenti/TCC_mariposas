@@ -5,16 +5,19 @@ using UnityEngine;
 
 public class TopDownMovement : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float speedX, speedY;
-    [SerializeField] private bool moved;
-    [SerializeField] private bool running;
+    [SerializeField] private float speed { get; set; }
+    [SerializeField] private float speedX { get; set; }
+    [SerializeField] private float speedY { get; set; }
+    [SerializeField] public bool moved { get; set; }
+    [SerializeField] private bool running { get; set; }
+    
     public static bool TDCanMove;
-    [SerializeField] private bool canRun;
+    [SerializeField] private bool canRun { get; set; }
 
     private Vector2 moveDirection;
     private Rigidbody2D rb;
-    private Direction dir, lastDir;
+    [SerializeField] public Direction dir { get; set; }
+    [SerializeField] public Direction lastDir { get; set; }
 
 
     private void Awake()
@@ -66,30 +69,30 @@ public class TopDownMovement : MonoBehaviour
         
         moved = false;
         
-        // Verifica se o player se mexeu
+        // Verify if Player moved
         if(speedX != 0 || speedY != 0){
             moved = true;
         }
 
-        // Player mexeu para a DIREITA
+        // Moved RIGHT
         if(speedX > 0){
             dir = Direction.right;
             lastDir = Direction.right;
         }
 
-        // Player mexeu para a ESQUERDA
+        // Moved LEFT
         else if(speedX < 0){
             dir = Direction.left;
             lastDir = Direction.left;
         }
 
-        // Player mexeu para CIMA
+        // Moved UP
         if(speedY > 0){
             dir = Direction.up;
             lastDir = Direction.up;
         }
 
-        // Player mexeu para BAIXO
+        // Moved DOWN
         else if(speedY < 0){
             dir = Direction.down;
             lastDir = Direction.down;
@@ -102,55 +105,37 @@ public class TopDownMovement : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Dialogue"))
+        {
+            //can start dialogue
+        }
+
+        else if (collision.gameObject.CompareTag("Carry"))
+        {
+            //can pick up object
+        }
+
+        else if (collision.gameObject.CompareTag("Collect"))
+        {
+            //can collect item
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        
+    }
+
     public void StopMoving(){
         speedX = 0;
         speedY = 0;
     }
 
-    public float GetSpeedX(){
-        return this.speedX;
-    }
-
-    public float GetSpeedY(){
-        return this.speedY;
-    }
-
-    public bool GetMoved(){
-        return this.moved;
-    }
-    
-    /*
-    public bool GetCanMove()
-    {
-        return this.TDCanMove;
-    }
-
-    public void SetCanMove(bool canMove)
-    {
-        this.TDCanMove = canMove;
-    }
-    */
     public Vector2 GetMoveDirection(){
         return this.moveDirection;
     }
 
-    public Direction GetDir(){
-        return this.dir;
-    }
-
-    public Direction GetLastDir(){
-        return this.lastDir;
-    }
-
-    public bool GetRunning(){
-        return this.running;
-    }
-
-    public bool GetCanRun(){
-        return this.canRun;
-    }
-
-    public void SetCanRun(bool run){
-        this.canRun = run;
-    }
 }

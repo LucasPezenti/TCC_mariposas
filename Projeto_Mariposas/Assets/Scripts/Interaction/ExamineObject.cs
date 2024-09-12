@@ -8,11 +8,6 @@ public class ExamineObject : MonoBehaviour
     [SerializeField] private GameObject examineScreen;
     private bool isExamining;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

@@ -67,7 +67,7 @@ public class HoldObjectScript : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                FindObjectOfType<ExamineManager>().OpenItemExam(itemHolding.GetComponent<PuzzleBox>().item);
+                ///FindObjectOfType<ExamineManager>().OpenItemExam(itemHolding.GetComponent<PuzzleBox>().item);
             }
 
         }
@@ -86,16 +86,16 @@ public class HoldObjectScript : MonoBehaviour
             pickDirection = PlayerMovement.GetMoveDirection().normalized;
         }
 
-        if (PlayerMovement.GetDir() == Direction.right){
+        if (PlayerMovement.dir == Direction.right){
             holdSpot.transform.localPosition = new Vector2(0.22f, 0.58f);
         }
-        else if(PlayerMovement.GetDir() == Direction.left){
+        else if(PlayerMovement.dir == Direction.left){
             holdSpot.transform.localPosition = new Vector2(-0.22f, 0.58f);
         }
-        if(PlayerMovement.GetDir() == Direction.up){
+        if(PlayerMovement.dir == Direction.up){
             holdSpot.transform.localPosition = new Vector2(0, 0.61f);
         }
-        else if(PlayerMovement.GetDir() == Direction.down){
+        else if(PlayerMovement.dir == Direction.down){
             holdSpot.transform.localPosition = new Vector2(0, 0.53f);       
         }
     }

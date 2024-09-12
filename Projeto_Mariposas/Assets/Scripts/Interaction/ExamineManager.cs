@@ -23,7 +23,7 @@ public class ExamineManager : MonoBehaviour
 
     public void DisplayItem(){
         Item itemDisplay = curItem;
-        itemImage.sprite = itemDisplay.sprite;
+        //itemImage.sprite = itemDisplay.sprite;
         examineBox.SetActive(true);
         SideScrollMovement.SScanMove = false;
         TopDownMovement.TDCanMove = false;

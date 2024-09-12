@@ -2,18 +2,52 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PuzzleBox : MonoBehaviour
+public class PuzzleBox : Item
 {
+    [SerializeField] public Rooms boxRoom { get; set; }
+    [SerializeField] private bool onGround;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Rigidbody2D rb;
 
-    public Item item;
-    public int boxID;
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
+    }
+    public void Start()
+    {
+        onGround = true;
+    }
 
+    public override void Interaction()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    private void PickUpBox(Transform holdSpot)
+    {
+        this.gameObject.transform.position = holdSpot.position;
+        this.gameObject.transform.parent = holdSpot.transform;
+        this.spriteRenderer.enabled = false;
+        this.rb.simulated = false;
+        onGround = false;
+    }
+
+    private void ExamineBox()
+    {
+        if (!onGround)
+        {
+            //Examine
+        }
+    }
 }
 
-[System.Serializable]
-public class Item
+public enum Rooms
 {
-    public Sprite sprite;
-    public string name;
-    public string description;
+    LivingRoom,
+    Office,
+    Bathroom,
+    Kitchen,
+    Bedroom,
+    Babyroom
 }

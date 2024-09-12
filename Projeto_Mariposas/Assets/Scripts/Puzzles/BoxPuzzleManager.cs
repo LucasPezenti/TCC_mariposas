@@ -6,7 +6,7 @@ public class BoxPuzzleManager : MonoBehaviour
 {
     public GameObject[] oldFurniture;
     public GameObject[] newFurniture;
-    [SerializeField] private int roomID;
+    [SerializeField] private Rooms roomID;
     private GameObject playerBox;
     private bool canLeaveBox;
 
@@ -27,7 +27,7 @@ public class BoxPuzzleManager : MonoBehaviour
         playerBox = FindAnyObjectByType<HoldObjectScript>().itemHolding;
         if (playerBox != null && !DialogueManager.onDialogue && !ExamineManager.isExamining)
         {
-            if(playerBox.GetComponent<PuzzleBox>().boxID == roomID)
+            if(playerBox.GetComponent<PuzzleBox>().boxRoom == roomID)
             {
                 playerBox.transform.position = this.transform.position;
                 playerBox.transform.parent = transform;
