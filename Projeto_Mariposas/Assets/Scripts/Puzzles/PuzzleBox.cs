@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PuzzleBox : Item
 {
-    [SerializeField] public Rooms boxRoom { get; set; }
+    [SerializeField] public Rooms boxRoom; //{ get; set; }
     [SerializeField] private bool onGround;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Rigidbody2D rb;

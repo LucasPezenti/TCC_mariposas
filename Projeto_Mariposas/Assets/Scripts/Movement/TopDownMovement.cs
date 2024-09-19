@@ -19,6 +19,8 @@ public class TopDownMovement : MonoBehaviour
     [SerializeField] public Direction dir { get; set; }
     [SerializeField] public Direction lastDir { get; set; }
 
+    [SerializeField] private Rooms curRoom;
+
 
     private void Awake()
     {
@@ -121,6 +123,11 @@ public class TopDownMovement : MonoBehaviour
         else if (collision.gameObject.CompareTag("Collect"))
         {
             //can collect item
+        }
+
+        if (collision.gameObject.CompareTag("Room"))
+        {
+            this.curRoom = collision.GetComponent<Room>().GetRoom();
         }
     }
 

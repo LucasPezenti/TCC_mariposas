@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Item : MonoBehaviour
 {
-    [SerializeField] protected string itemName { get; set; }
+    [SerializeField] public string itemName { get; set; }
 
     public abstract void Interaction();
 }

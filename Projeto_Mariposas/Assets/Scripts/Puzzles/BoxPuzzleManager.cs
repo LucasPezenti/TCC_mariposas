@@ -48,6 +48,7 @@ public class BoxPuzzleManager : MonoBehaviour
         for (int i = 0; i < oldFurniture.Length; i ++)
         {
             oldFurniture[i].SetActive(false);
+            //Destroy(oldFurniture[i]);
         }
 
         for (int i = 0; i < newFurniture.Length; i++)
