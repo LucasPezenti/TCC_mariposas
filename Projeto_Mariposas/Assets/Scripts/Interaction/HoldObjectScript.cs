@@ -14,12 +14,17 @@ public class HoldObjectScript : MonoBehaviour
 
     private bool isHolding;
 
+    private void Awake()
+    {
+        PlayerMovement = GetComponent<TopDownMovement>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        itemHolding = null;
         isHolding = false;
         pickDirection = new Vector2(0,0);
-        PlayerMovement = GetComponent<TopDownMovement>();
     }
 
     // Update is called once per frame
@@ -40,7 +45,7 @@ public class HoldObjectScript : MonoBehaviour
         {
             if (itemHolding == null && Input.GetKeyDown(KeyCode.E))
             {
-                PickUp();
+                //PickUp();
             }
 
             else if (itemHolding != null && Input.GetKeyDown(KeyCode.E))
@@ -100,22 +105,24 @@ public class HoldObjectScript : MonoBehaviour
         }
     }
 
-    public void PickUp(){
-        
+    public void PickUp(GameObject pickUpItem){
+        /*
         Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + pickDirection * .35f, .15f, pickUpMask);
         if (pickUpItem)
         {
-            itemHolding = pickUpItem.gameObject;
-            itemHolding.transform.position = holdSpot.position;
-            itemHolding.transform.parent = holdSpot.transform;
-            itemHolding.GetComponent<SpriteRenderer>().enabled = false;
-            if (itemHolding.GetComponent<Rigidbody2D>())
-            {
-                itemHolding.GetComponent<Rigidbody2D>().simulated = false;
-                //Debug.Log("Item grabbed");
-            }
-            isHolding = true;
+            
         }
+        */
+        itemHolding = pickUpItem.gameObject;
+        itemHolding.transform.position = holdSpot.position;
+        itemHolding.transform.parent = holdSpot.transform;
+        itemHolding.GetComponent<SpriteRenderer>().enabled = false;
+        if (itemHolding.GetComponent<Rigidbody2D>())
+        {
+            itemHolding.GetComponent<Rigidbody2D>().simulated = false;
+            //Debug.Log("Item grabbed");
+        }
+        isHolding = true;
     }
 
     public void Release(){

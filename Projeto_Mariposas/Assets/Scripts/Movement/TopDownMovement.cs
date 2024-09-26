@@ -16,15 +16,27 @@ public class TopDownMovement : MonoBehaviour
 
     private Vector2 moveDirection;
     private Rigidbody2D rb;
+    private HoldObjectScript holdObjectScript;
     [SerializeField] public Direction dir { get; set; }
     [SerializeField] public Direction lastDir { get; set; }
 
+
+    [Header("Environment info")]
     [SerializeField] private Rooms curRoom;
+    [SerializeField] private inRangeOf curInRange;
+    [SerializeField] private GameObject objInRange;
+    //[Header("Dialogue info")]
+    //[SerializeField] private bool onDialogue;
+
+    [Header("Box info")]
+    [SerializeField] private bool hasBox;
+    [SerializeField] private GameObject curBox;
 
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        holdObjectScript = GetComponent<HoldObjectScript>();
     }
     // Start is called before the first frame update
     void Start()
@@ -32,6 +44,13 @@ public class TopDownMovement : MonoBehaviour
         speed = 1.4f;
         moved = false;
         running = false;
+
+        curBox = null;
+        curRoom = Rooms.OUTSIDE;
+        curInRange = inRangeOf.NOTHING;
+
+        hasBox = false;
+
         TDCanMove = true;
     }
 
@@ -63,6 +82,34 @@ public class TopDownMovement : MonoBehaviour
             }
 
             moveDirection = new Vector2(speedX, speedY).normalized;
+        }
+    }
+
+    private void InteractionInputs()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (curInRange == inRangeOf.DIALOGUE)
+            {
+                objInRange.GetComponent<DialogueTrigger>().StartDialogue();
+            }
+
+            else if (curInRange == inRangeOf.BOX)
+            {
+                holdObjectScript.PickUp(objInRange);
+                hasBox = true;
+                curBox = objInRange;
+            }
+
+            else if (curInRange == inRangeOf.POI)
+            {
+
+            }
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Q))
+        {
+
         }
     }
 
@@ -109,31 +156,50 @@ public class TopDownMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Room"))
+        {
+            this.curRoom = collision.GetComponent<Room>().GetRoom();
+            Debug.Log(curRoom);
+        }
+        else
+        {
+            objInRange = collision.gameObject;
+        }
 
         if (collision.gameObject.CompareTag("Dialogue"))
         {
             //can start dialogue
+            curInRange = inRangeOf.DIALOGUE;
         }
-
-        else if (collision.gameObject.CompareTag("Carry"))
+        else if (collision.gameObject.CompareTag("PickUp"))
         {
-            //can pick up object
+            //can carry object
+            curInRange = inRangeOf.BOX;
         }
-
+        /*
         else if (collision.gameObject.CompareTag("Collect"))
         {
             //can collect item
         }
-
-        if (collision.gameObject.CompareTag("Room"))
-        {
-            this.curRoom = collision.GetComponent<Room>().GetRoom();
-        }
+        */
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.CompareTag("Dialogue"))
+        {
+            curInRange = inRangeOf.NOTHING;
+        }
+        else if (collision.gameObject.CompareTag("PickUp"))
+        {
+            curInRange = inRangeOf.NOTHING;
+        }
+
+        if (collision.gameObject.CompareTag("Room"))
+        {
+            this.curRoom = Rooms.OUTSIDE;
+            Debug.Log(curRoom);
+        }
     }
 
     public void StopMoving(){
@@ -145,4 +211,13 @@ public class TopDownMovement : MonoBehaviour
         return this.moveDirection;
     }
 
+}
+
+public enum inRangeOf
+{
+    NOTHING,
+    BOX,
+    DIALOGUE,
+    ITEM,
+    POI //Point of Interest
 }

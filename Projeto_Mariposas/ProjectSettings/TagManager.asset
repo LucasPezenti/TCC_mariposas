@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Teleport
   - CreditsEnd
+  - Room
   layers:
   - Default
   - TransparentFX

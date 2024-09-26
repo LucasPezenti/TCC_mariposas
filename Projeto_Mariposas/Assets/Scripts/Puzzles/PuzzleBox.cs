@@ -41,13 +41,3 @@ public class PuzzleBox : Item
         }
     }
 }
-
-public enum Rooms
-{
-    LivingRoom,
-    Office,
-    Bathroom,
-    Kitchen,
-    Bedroom,
-    Babyroom
-}
