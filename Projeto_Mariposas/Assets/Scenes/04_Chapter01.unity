@@ -553,7 +553,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44654254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.9638947, y: -5.048713, z: -9.999859}
+  m_LocalPosition: {x: 2.1638947, y: -4.548713, z: -9.999859}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1308,7 +1308,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 856050657248650512, guid: ca4b8b526ac6b7c43b4541c7e79ddb78, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 856050657248650512, guid: ca4b8b526ac6b7c43b4541c7e79ddb78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6791,7 +6791,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533148151}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.2, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6882,9 +6882,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1b40026ccc25841a85b2f023eb258f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canRun: 0
   curRoom: 0
   curInRange: 0
   objInRange: {fileID: 0}
+  interactionAlert: {fileID: 1785691686}
   hasBox: 0
   curBox: {fileID: 0}
   boxManager: {fileID: 0}
@@ -33184,7 +33186,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1106775367}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.9638947, y: -5.048713, z: -9.999859}
+  m_LocalPosition: {x: 2.1638947, y: -4.548713, z: -9.999859}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34816,21 +34818,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Events:
     m_Signals:
-    - {fileID: 11400000, guid: 220a5718b4d62a14d97663ae70863334, type: 2}
+    - {fileID: 11400000, guid: 7252defb1051f594da0595fd4af82d67, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: 
-          m_Mode: 1
+        - m_Target: {fileID: 533148157}
+          m_TargetAssemblyTypeName: TopDownMovement, Assembly-CSharp
+          m_MethodName: SetTDCanMove
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1521803148}
+          m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+          m_MethodName: StartDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
           m_CallState: 2
 --- !u!320 &1187391873
 PlayableDirector:
@@ -34875,6 +34889,8 @@ PlayableDirector:
     value: {fileID: 171899075}
   - key: {fileID: 354416974124186827, guid: 4318410133547a940bcd0a1a76e5352f, type: 2}
     value: {fileID: 1224396328}
+  - key: {fileID: 780183296656563595, guid: 4318410133547a940bcd0a1a76e5352f, type: 2}
+    value: {fileID: 1187391872}
   m_ExposedReferences:
     m_References: []
 --- !u!95 &1187391874
@@ -36123,7 +36139,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330438936}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 1, z: 0}
+  m_LocalPosition: {x: -0.3, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -37935,7 +37951,7 @@ MonoBehaviour:
   startDialogueID: CasaInt_0000_start
   endDialogueID: CasaInt_0000_end
   repeat: 0
-  areaTrigger: 1
+  areaTrigger: 0
   interactionObj: {fileID: 1521803145}
 --- !u!1 &1521896824
 GameObject:
@@ -40907,6 +40923,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1785691686 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2689466435699212768, guid: 9da18802ef14615478d6af68e4215f49, type: 3}
+  m_PrefabInstance: {fileID: 2689466436419530486}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a16d56c139c605e4d9caabd2c30b217a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1786329652
 GameObject:
   m_ObjectHideFlags: 0

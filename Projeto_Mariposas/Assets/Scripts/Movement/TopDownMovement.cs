@@ -11,9 +11,8 @@ public class TopDownMovement : MonoBehaviour
     [SerializeField] public bool moved { get; set; }
     [SerializeField] private bool running { get; set; }
     
-    public static bool TDCanMove;
-    [SerializeField] private bool canRun { get; set; }
-
+    [SerializeField] public static bool TDCanMove;
+    [SerializeField] private bool canRun;
     private Vector2 moveDirection;
     private Rigidbody2D rb;
     private HoldObjectScript holdObjectScript;
@@ -27,6 +26,9 @@ public class TopDownMovement : MonoBehaviour
     [SerializeField] private GameObject objInRange;
     //[Header("Dialogue info")]
     //[SerializeField] private bool onDialogue;
+
+    [Header("Interaction info")]
+    [SerializeField] private InteractionAlert interactionAlert;
 
     [Header("Box info")]
     [SerializeField] private bool hasBox;
@@ -56,7 +58,7 @@ public class TopDownMovement : MonoBehaviour
 
         hasBox = false;
 
-        TDCanMove = true;
+        TDCanMove = false;
     }
 
     // Update is called once per frame
@@ -105,6 +107,7 @@ public class TopDownMovement : MonoBehaviour
             {
                 Debug.Log("Pegou");
                 GrabBox(objInRange);
+                interactionAlert.TurnAlertOff();
             }
 
             else if (hasBox && curRoom == curBox.GetBoxRoom()) // Unpack box
@@ -210,6 +213,7 @@ public class TopDownMovement : MonoBehaviour
         {
             //can carry object
             curInRange = inRangeOf.BOX;
+            interactionAlert.TurnAlertOn(false);
             Debug.Log(curInRange);
         }
         /*
@@ -229,6 +233,7 @@ public class TopDownMovement : MonoBehaviour
         else if (collision.gameObject.CompareTag("PickUp"))
         {
             curInRange = inRangeOf.NOTHING;
+            interactionAlert.TurnAlertOff();
         }
 
         if (collision.gameObject.CompareTag("Room"))
@@ -245,8 +250,6 @@ public class TopDownMovement : MonoBehaviour
         hasBox = true;
     }
 
-    // TO DO - Release box
-
     public void StopMoving(){
         speedX = 0;
         speedY = 0;
@@ -260,6 +263,12 @@ public class TopDownMovement : MonoBehaviour
     public bool GetHasBox()
     {
         return this.hasBox;
+    }
+
+    public void SetTDCanMove(bool canMove)
+    {
+        TDCanMove = canMove;
+        Debug.Log("can move = " + TDCanMove);
     }
 }
 

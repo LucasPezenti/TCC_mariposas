@@ -28,66 +28,8 @@ public class HoldObjectScript : MonoBehaviour
         pickDirection = new Vector2(0,0);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (!DialogueManager.onDialogue)
-        {
-            //ProcessInputs();
-        }
-    }
-
     void FixedUpdate(){
         ChangePosition();
-    }
-
-    private void ProcessInputs(){
-        /*
-        if (!ExamineManager.isExamining)
-        {
-             if (itemHolding != null && Input.GetKeyDown(KeyCode.E))
-             {
-                Release();
-             }
-        }
-
-        if (itemHolding != null)
-        {
-
-            if (ExamineManager.isExamining)
-            {
-                ExamineAlert.SetActive(false);
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    FindObjectOfType<ExamineManager>().CloseItemDisplay();
-                }
-            }
-            else
-            {
-                ExamineAlert.SetActive(true);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                //FindObjectOfType<ExamineManager>().OpenItemExam(itemHolding.GetComponent<PuzzleBox>().item);
-            }
-
-        }
-        else
-        {
-            ExamineAlert.SetActive(false);
-        }
-        */
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        
     }
 
     private void ChangePosition(){
@@ -111,12 +53,6 @@ public class HoldObjectScript : MonoBehaviour
     }
 
     public void PickUp(GameObject pickUpItem){
-        /*
-        Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + pickDirection * .35f, .15f, pickUpMask);
-        if (pickUpItem)
-        {    
-        }
-        */
         itemHolding = pickUpItem.gameObject;
         itemHolding.transform.position = holdSpot.position;
         itemHolding.transform.parent = holdSpot.transform;
