@@ -78,7 +78,7 @@ public class MainMenu : MonoBehaviour
     public void StartNewGame(){
         audioManager.Play("ButtonFX01");
         audioManager.Stop("BasementMusic");
-        SceneManager.LoadScene("Prologue");
+        SceneManager.LoadScene("02_Prologue");
     }
 
     // Desenvolver sistema de saves para utilizar a opção "Continuar jogo"

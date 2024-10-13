@@ -74,7 +74,7 @@ public class LanguageMenu : MonoBehaviour
     }
 
     public void ConfirmSelection(){
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("01_MainMenu");
         audioManager.Play("ButtonFX01");
     }
 }
