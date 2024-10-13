@@ -35,40 +35,26 @@ public class ExamineManager : MonoBehaviour
         }
     }
     */
-
-    public void OpenItemExam(Item item){
-        if(!isExamining){
-            curItem = item;
-            isExamining = true;
-            DisplayItem();
-        }
+    private void Start()
+    {
+        isExamining = false;
     }
 
-    public void DisplayItem(){
-        Item itemDisplay = curItem;
-        //itemImage.sprite = itemDisplay.sprite;
+    public void DisplayItem(Sprite itemImage){
+        this.itemImage.sprite = itemImage;
         examineBox.SetActive(true);
         SideScrollMovement.SScanMove = false;
         TopDownMovement.TDCanMove = false;
+        isExamining = true; 
 
     }
 
     public void CloseItemDisplay()
     {
-        isExamining = false;
         examineBox.SetActive(false);
         SideScrollMovement.SScanMove = true;
         TopDownMovement.TDCanMove = true;
+        isExamining = false;
     }
 
-    void Update()
-    {
-        //ProcessInputs();
-    }
-
-    private void ProcessInputs(){
-        if(Input.GetKeyDown(closeKey)){
-            CloseItemDisplay();
-        }
-    }
 }

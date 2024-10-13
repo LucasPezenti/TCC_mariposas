@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PuzzleBox : Item
 {
-    [SerializeField] public Rooms boxRoom; //{ get; set; }
+    [SerializeField] private Rooms boxRoom; //{ get; set; }
     [SerializeField] private bool onGround;
+    [SerializeField] public Sprite boxImage;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Rigidbody2D rb;
 
@@ -24,25 +26,22 @@ public class PuzzleBox : Item
         throw new System.NotImplementedException();
     }
 
-    private void PickUpBox(Transform holdSpot)
+    public Rooms GetBoxRoom()
     {
-        this.gameObject.transform.position = holdSpot.position;
-        this.gameObject.transform.parent = holdSpot.transform;
-        this.spriteRenderer.enabled = false;
-        this.rb.simulated = false;
-        onGround = false;
+        return this.boxRoom;
+    }
+    public bool GetOnGround()
+    {
+        return this.onGround;
     }
 
-    private void DestroyBox()
+    public Sprite GetBoxImage()
     {
-        Destroy(this.gameObject);
+        return this.boxImage;
+    }
+    public void SetOnGround(bool onGround)
+    {
+        this.onGround = onGround;
     }
 
-    private void ExamineBox()
-    {
-        if (!onGround)
-        {
-            //Examine
-        }
-    }
 }

@@ -101,13 +101,13 @@ public class TopDownMovement : MonoBehaviour
                 objInRange.GetComponent<DialogueTrigger>().StartDialogue();
             }
 
-            else if (curInRange == inRangeOf.BOX) // Grab box
+            else if (curInRange == inRangeOf.BOX && !hasBox) // Grab box
             {
                 Debug.Log("Pegou");
                 GrabBox(objInRange);
             }
 
-            else if (hasBox && curRoom == curBox.boxRoom) // Unpack box
+            else if (hasBox && curRoom == curBox.GetBoxRoom()) // Unpack box
             {
                 Debug.Log("Sala correta");
                 boxManager.Unpack(curRoom);
@@ -116,9 +116,10 @@ public class TopDownMovement : MonoBehaviour
                 curBox = null;
             }
 
-            else if (hasBox && curRoom != curBox.boxRoom) // Wrong place
+            else if (hasBox && curRoom != curBox.GetBoxRoom()) // Wrong place
             {
                 // Dialogo de "Lugar errado"
+                Debug.Log("Lugar errado");
             }
 
             else if (curInRange == inRangeOf.POI)
@@ -132,7 +133,7 @@ public class TopDownMovement : MonoBehaviour
             // Turn Examine screen on and off
             if (hasBox && !examineManager.isExamining)
             {
-                examineManager.DisplayItem();
+                examineManager.DisplayItem(curBox.GetBoxImage());
             }
             else if (hasBox && examineManager.isExamining)
             {
@@ -239,12 +240,9 @@ public class TopDownMovement : MonoBehaviour
 
     public void GrabBox(GameObject box)
     {
-        if (!hasBox)
-        {
-            holdObjectScript.PickUp(objInRange);
-            curBox = box.GetComponent<PuzzleBox>();
-            hasBox = true;
-        }
+        holdObjectScript.PickUp(objInRange);
+        curBox = box.GetComponent<PuzzleBox>();
+        hasBox = true;
     }
 
     // TO DO - Release box
