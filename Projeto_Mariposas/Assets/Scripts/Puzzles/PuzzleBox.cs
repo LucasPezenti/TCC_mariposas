@@ -33,6 +33,11 @@ public class PuzzleBox : Item
         onGround = false;
     }
 
+    private void DestroyBox()
+    {
+        Destroy(this.gameObject);
+    }
+
     private void ExamineBox()
     {
         if (!onGround)

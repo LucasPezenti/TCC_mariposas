@@ -10,20 +10,26 @@ public class BoxPuzzleManager : MonoBehaviour
     private GameObject playerBox;
     private bool canLeaveBox;
 
+    [SerializeField] private Room room;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        roomID = room.GetRoom();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Unpack(Rooms boxRoom)
     {
-        
-    }
+        if (boxRoom == roomID)
+        {   
+            // Animação de fade out e adicionar novos objetos
+            SwitchFurniture();
+            // Destruir caixa na mão do player
 
-    public void Unpack()
-    {
+            // Desativar alerta de interação
+        }
+
+        /*
         playerBox = FindAnyObjectByType<HoldObjectScript>().itemHolding;
         if (playerBox != null && !DialogueManager.onDialogue && !ExamineManager.isExamining)
         {
@@ -41,6 +47,7 @@ public class BoxPuzzleManager : MonoBehaviour
                 this.gameObject.SetActive(false);
             }
         }
+        */
     }
 
     public void SwitchFurniture()

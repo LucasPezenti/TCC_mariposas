@@ -64,13 +64,18 @@ public class AnoushScript : MonoBehaviour
     const string PLAYER_SPRAY_U = "Anoush_SprayU";
     const string PLAYER_SPRAY_D = "Anoush_SprayD";
 
-    void Start()
+
+    private void Awake()
     {
         animator = GetComponent<Animator>();
         playerMovement = GetComponent<TopDownMovement>();
         HoldObject = GetComponent<HoldObjectScript>();
         inventory = GetComponent<Inventory>();
         audioManager = AudioManager.GetAudioInstance();
+    }
+    void Start()
+    {
+        
     }
 
     void Update()
@@ -80,7 +85,7 @@ public class AnoushScript : MonoBehaviour
 
     public void AnimatePlayer(){
         // Idle animation
-        if(!HoldObject.GetIsHolding() && !playerMovement.moved
+        if(!playerMovement.GetHasBox() && !playerMovement.moved
             && !inventory.GetHoldingLantern()
             && !inventory.GetTakingPills()
             && !inventory.GetUsingSpray()){
@@ -101,7 +106,7 @@ public class AnoushScript : MonoBehaviour
         }
 
         // Walking animation
-        else if(!HoldObject.GetIsHolding() 
+        else if(!playerMovement.GetHasBox()
                 && playerMovement.moved
                 && !inventory.GetHoldingLantern()
                 && !inventory.GetTakingPills()
@@ -127,7 +132,7 @@ public class AnoushScript : MonoBehaviour
         }
 
         // Idle with box animation
-        else if(HoldObject.GetIsHolding() 
+        else if(playerMovement.GetHasBox()
                 && !playerMovement.moved
                 && !inventory.GetHoldingLantern()
                 && !inventory.GetTakingPills()
@@ -150,7 +155,7 @@ public class AnoushScript : MonoBehaviour
         }
 
         // Walking with box animation
-        else if(HoldObject.GetIsHolding()
+        else if(playerMovement.GetHasBox()
                 && playerMovement.moved
                 && !inventory.GetHoldingLantern()
                 && !inventory.GetTakingPills()
@@ -177,7 +182,7 @@ public class AnoushScript : MonoBehaviour
         }
 
         // Idle with lantern off animation
-        else if (!HoldObject.GetIsHolding()
+        else if (!playerMovement.GetHasBox()
                 && !playerMovement.moved
                 && inventory.GetHoldingLantern()
                 && !inventory.GetLanternOn()
@@ -205,7 +210,7 @@ public class AnoushScript : MonoBehaviour
         }
 
         // Walking with lantern off animation
-        else if (!HoldObject.GetIsHolding()
+        else if (!playerMovement.GetHasBox()
                 && playerMovement.moved
                 && inventory.GetHoldingLantern()
                 && !inventory.GetLanternOn()
@@ -237,7 +242,7 @@ public class AnoushScript : MonoBehaviour
         }
 
         // Idle with lantern on animation
-        else if (!HoldObject.GetIsHolding()
+        else if (!playerMovement.GetHasBox()
                 && !playerMovement.moved
                 && inventory.GetHoldingLantern()
                 && inventory.GetLanternOn()
@@ -265,7 +270,7 @@ public class AnoushScript : MonoBehaviour
         }
 
         // Walking with lantern on animation
-        else if (!HoldObject.GetIsHolding()
+        else if (!playerMovement.GetHasBox()
                 && playerMovement.moved
                 && inventory.GetHoldingLantern()
                 && inventory.GetLanternOn()
@@ -297,7 +302,7 @@ public class AnoushScript : MonoBehaviour
         }
 
         // Taking pills
-        else if (!HoldObject.GetIsHolding()
+        else if (!playerMovement.GetHasBox()
                 && inventory.GetTakingPills()
                 && !inventory.GetUsingSpray())
         {
@@ -322,7 +327,7 @@ public class AnoushScript : MonoBehaviour
         }
 
         // Using Insecticide
-        else if (!HoldObject.GetIsHolding()
+        else if (!playerMovement.GetHasBox()
                 && !inventory.GetTakingPills()
                 && inventory.GetUsingSpray())
         {

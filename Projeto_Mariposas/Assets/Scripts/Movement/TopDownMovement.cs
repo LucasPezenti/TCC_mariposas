@@ -30,13 +30,18 @@ public class TopDownMovement : MonoBehaviour
 
     [Header("Box info")]
     [SerializeField] private bool hasBox;
-    [SerializeField] private GameObject curBox;
+    [SerializeField] private PuzzleBox curBox;
+    [SerializeField] private BoxPuzzleManager boxManager;
+    [SerializeField] private ExamineManager examineManager;
 
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         holdObjectScript = GetComponent<HoldObjectScript>();
+        boxManager = null;
+        curBox = null;
+
     }
     // Start is called before the first frame update
     void Start()
@@ -62,7 +67,8 @@ public class TopDownMovement : MonoBehaviour
             moveDirection.x = 0;
             moveDirection.y = 0;
         }
-        MovementInputs();   
+        MovementInputs();
+        InteractionInputs();
     }
 
     void FixedUpdate(){
@@ -89,16 +95,30 @@ public class TopDownMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (curInRange == inRangeOf.DIALOGUE)
+            Debug.Log("Botao pressionado");
+            if (curInRange == inRangeOf.DIALOGUE) // Show dialogue
             {
                 objInRange.GetComponent<DialogueTrigger>().StartDialogue();
             }
 
-            else if (curInRange == inRangeOf.BOX)
+            else if (curInRange == inRangeOf.BOX) // Grab box
             {
-                holdObjectScript.PickUp(objInRange);
-                hasBox = true;
-                curBox = objInRange;
+                Debug.Log("Pegou");
+                GrabBox(objInRange);
+            }
+
+            else if (hasBox && curRoom == curBox.boxRoom) // Unpack box
+            {
+                Debug.Log("Sala correta");
+                boxManager.Unpack(curRoom);
+                hasBox = false;
+                Destroy(curBox.gameObject);
+                curBox = null;
+            }
+
+            else if (hasBox && curRoom != curBox.boxRoom) // Wrong place
+            {
+                // Dialogo de "Lugar errado"
             }
 
             else if (curInRange == inRangeOf.POI)
@@ -109,7 +129,20 @@ public class TopDownMovement : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.Q))
         {
+            // Turn Examine screen on and off
+            if (hasBox && !examineManager.isExamining)
+            {
+                examineManager.DisplayItem();
+            }
+            else if (hasBox && examineManager.isExamining)
+            {
+                examineManager.CloseItemDisplay();
+            }
+        }
 
+        else if (Input.GetKeyDown(KeyCode.F))
+        {
+            // Turn flashlight on
         }
     }
 
@@ -159,6 +192,7 @@ public class TopDownMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Room"))
         {
             this.curRoom = collision.GetComponent<Room>().GetRoom();
+            this.boxManager = collision.GetComponent<BoxPuzzleManager>();
             Debug.Log(curRoom);
         }
         else
@@ -175,6 +209,7 @@ public class TopDownMovement : MonoBehaviour
         {
             //can carry object
             curInRange = inRangeOf.BOX;
+            Debug.Log(curInRange);
         }
         /*
         else if (collision.gameObject.CompareTag("Collect"))
@@ -202,6 +237,18 @@ public class TopDownMovement : MonoBehaviour
         }
     }
 
+    public void GrabBox(GameObject box)
+    {
+        if (!hasBox)
+        {
+            holdObjectScript.PickUp(objInRange);
+            curBox = box.GetComponent<PuzzleBox>();
+            hasBox = true;
+        }
+    }
+
+    // TO DO - Release box
+
     public void StopMoving(){
         speedX = 0;
         speedY = 0;
@@ -211,6 +258,11 @@ public class TopDownMovement : MonoBehaviour
         return this.moveDirection;
     }
 
+
+    public bool GetHasBox()
+    {
+        return this.hasBox;
+    }
 }
 
 public enum inRangeOf

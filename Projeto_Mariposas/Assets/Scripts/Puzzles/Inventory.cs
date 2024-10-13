@@ -55,7 +55,8 @@ public class Inventory : MonoBehaviour
 
     private void ProcessInputs()
     {
-        if (!DialogueManager.onDialogue && !ExamineManager.isExamining)
+        /*
+        if (!DialogueManager.onDialogue && !ExamineManager.Instance.isExamining)
         {
             if (Input.GetKeyDown(KeyCode.Tab))
             {
@@ -123,6 +124,7 @@ public class Inventory : MonoBehaviour
                 } 
             }
         }
+        */
     }
 
     public void OpenInventory()

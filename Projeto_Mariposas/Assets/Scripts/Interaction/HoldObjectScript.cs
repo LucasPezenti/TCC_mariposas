@@ -12,12 +12,13 @@ public class HoldObjectScript : MonoBehaviour
     public GameObject itemHolding;
     private TopDownMovement PlayerMovement;
 
-    private bool isHolding;
+    [SerializeField] private bool isHolding;
 
     private void Awake()
     {
         PlayerMovement = GetComponent<TopDownMovement>();
     }
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +33,7 @@ public class HoldObjectScript : MonoBehaviour
     {
         if (!DialogueManager.onDialogue)
         {
-            ProcessInputs();
+            //ProcessInputs();
         }
     }
 
@@ -41,17 +42,13 @@ public class HoldObjectScript : MonoBehaviour
     }
 
     private void ProcessInputs(){
+        /*
         if (!ExamineManager.isExamining)
         {
-            if (itemHolding == null && Input.GetKeyDown(KeyCode.E))
-            {
-                //PickUp();
-            }
-
-            else if (itemHolding != null && Input.GetKeyDown(KeyCode.E))
-            {
+             if (itemHolding != null && Input.GetKeyDown(KeyCode.E))
+             {
                 Release();
-            }
+             }
         }
 
         if (itemHolding != null)
@@ -72,7 +69,7 @@ public class HoldObjectScript : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                ///FindObjectOfType<ExamineManager>().OpenItemExam(itemHolding.GetComponent<PuzzleBox>().item);
+                //FindObjectOfType<ExamineManager>().OpenItemExam(itemHolding.GetComponent<PuzzleBox>().item);
             }
 
         }
@@ -80,9 +77,17 @@ public class HoldObjectScript : MonoBehaviour
         {
             ExamineAlert.SetActive(false);
         }
+        */
+    }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
         
+    }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        
     }
 
     private void ChangePosition(){
@@ -98,7 +103,7 @@ public class HoldObjectScript : MonoBehaviour
             holdSpot.transform.localPosition = new Vector2(-0.22f, 0.58f);
         }
         if(PlayerMovement.dir == Direction.up){
-            holdSpot.transform.localPosition = new Vector2(0, 0.61f);
+            holdSpot.transform.localPosition = new Vector2(0, 0.83f);
         }
         else if(PlayerMovement.dir == Direction.down){
             holdSpot.transform.localPosition = new Vector2(0, 0.53f);       
@@ -109,8 +114,7 @@ public class HoldObjectScript : MonoBehaviour
         /*
         Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + pickDirection * .35f, .15f, pickUpMask);
         if (pickUpItem)
-        {
-            
+        {    
         }
         */
         itemHolding = pickUpItem.gameObject;
@@ -122,7 +126,6 @@ public class HoldObjectScript : MonoBehaviour
             itemHolding.GetComponent<Rigidbody2D>().simulated = false;
             //Debug.Log("Item grabbed");
         }
-        isHolding = true;
     }
 
     public void Release(){
@@ -136,7 +139,6 @@ public class HoldObjectScript : MonoBehaviour
                 itemHolding.GetComponent<Rigidbody2D>().simulated = true;
             }
             itemHolding = null;
-            isHolding = false;
             //Debug.Log("Item released");
         }
 
