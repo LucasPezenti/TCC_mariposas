@@ -51,6 +51,8 @@ public class TopDownMovement : MonoBehaviour
         speed = 1.4f;
         moved = false;
         running = false;
+        dir = Direction.up;
+        lastDir = Direction.up;
 
         curBox = null;
         curRoom = Rooms.OUTSIDE;

@@ -7,10 +7,9 @@ public class BoxPuzzleManager : MonoBehaviour
     public GameObject[] oldFurniture;
     public GameObject[] newFurniture;
     [SerializeField] private Rooms roomID;
-    private GameObject playerBox;
-    private bool canLeaveBox;
-
     [SerializeField] private Room room;
+    
+    [SerializeField] private BoxPuzzleFinish boxPuzzleFinish;
 
     // Start is called before the first frame update
     void Start()
@@ -21,33 +20,18 @@ public class BoxPuzzleManager : MonoBehaviour
     public void Unpack(Rooms boxRoom)
     {
         if (boxRoom == roomID)
-        {   
+        {
             // Animação de fade out e adicionar novos objetos
-            SwitchFurniture();
+
+            SwitchFurniture(); // Troca moveis ativos
+            boxPuzzleFinish.DeliverBox(); // Marcar parte da missão concluida
+
             // Destruir caixa na mão do player
 
             // Desativar alerta de interação
         }
 
-        /*
-        playerBox = FindAnyObjectByType<HoldObjectScript>().itemHolding;
-        if (playerBox != null && !DialogueManager.onDialogue && !ExamineManager.isExamining)
-        {
-            if(playerBox.GetComponent<PuzzleBox>().boxRoom == roomID)
-            {
-                playerBox.transform.position = this.transform.position;
-                playerBox.transform.parent = transform;
-                if (playerBox.GetComponent<Rigidbody2D>())
-                {
-                    playerBox.GetComponent<Rigidbody2D>().simulated = true;
-                }
-                FindObjectOfType<BoxPuzzleFinish>().DeliverBox();
-                SwitchFurniture();
-                Destroy(playerBox);
-                this.gameObject.SetActive(false);
-            }
-        }
-        */
+        
     }
 
     public void SwitchFurniture()

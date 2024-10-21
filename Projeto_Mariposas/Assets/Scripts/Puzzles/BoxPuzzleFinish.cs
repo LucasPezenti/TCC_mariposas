@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class BoxPuzzleFinish : MonoBehaviour
 {
-    public GameObject[] newObjects;
-    public GameObject[] oldObjects;
+    [SerializeField] private GameObject[] newObjects;
+    [SerializeField] private GameObject[] oldObjects;
     [SerializeField] private int boxesLeft;
-    private bool boxPuzzleOver;
+    [SerializeField] private bool boxPuzzleOver;
+
+    [SerializeField] private MissionManager missionManager;
 
     void Start()
     {
@@ -18,7 +20,7 @@ public class BoxPuzzleFinish : MonoBehaviour
     {
         if (boxPuzzleOver)
         {
-            FindObjectOfType<MissionManager>().SetMissionIndex(1);
+            missionManager.SetMissionIndex(1);
 
             for (int i = 0; i < newObjects.Length; i++)
             {

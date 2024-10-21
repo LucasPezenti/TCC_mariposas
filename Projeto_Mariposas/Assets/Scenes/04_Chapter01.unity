@@ -4802,6 +4802,7 @@ MonoBehaviour:
   - {fileID: 1834096772}
   roomID: 6
   room: {fileID: 341156393}
+  boxPuzzleFinish: {fileID: 1517579578}
 --- !u!114 &341156393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33312,6 +33313,7 @@ MonoBehaviour:
   - {fileID: 565210555}
   roomID: 2
   room: {fileID: 1107623845}
+  boxPuzzleFinish: {fileID: 1517579578}
 --- !u!114 &1107623845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35801,6 +35803,7 @@ MonoBehaviour:
   - {fileID: 959538773}
   roomID: 1
   room: {fileID: 1299595506}
+  boxPuzzleFinish: {fileID: 1517579578}
 --- !u!61 &1299595505
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37121,6 +37124,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &1442527801 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3535218477347385691, guid: 3dd2d303ba50d7f4781943329fb16172, type: 3}
+  m_PrefabInstance: {fileID: 2203817372951316272}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fcf938adc1a60449b210736033bd88a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1445198258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37877,6 +37891,8 @@ MonoBehaviour:
   oldObjects:
   - {fileID: 1330438936}
   boxesLeft: 6
+  boxPuzzleOver: 0
+  missionManager: {fileID: 1442527801}
 --- !u!1 &1521803145
 GameObject:
   m_ObjectHideFlags: 0
@@ -38116,6 +38132,7 @@ MonoBehaviour:
   - {fileID: 2039618022}
   roomID: 5
   room: {fileID: 1542779614}
+  boxPuzzleFinish: {fileID: 1517579578}
 --- !u!114 &1542779614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41530,6 +41547,7 @@ MonoBehaviour:
   - {fileID: 661617288}
   roomID: 4
   room: {fileID: 1851976017}
+  boxPuzzleFinish: {fileID: 1517579578}
 --- !u!114 &1851976017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43810,6 +43828,7 @@ MonoBehaviour:
   - {fileID: 1130582474}
   roomID: 3
   room: {fileID: 2049341564}
+  boxPuzzleFinish: {fileID: 1517579578}
 --- !u!114 &2049341564
 MonoBehaviour:
   m_ObjectHideFlags: 0

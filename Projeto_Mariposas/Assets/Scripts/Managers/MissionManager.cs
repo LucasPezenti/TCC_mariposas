@@ -5,15 +5,16 @@ using UnityEngine.UI;
 
 public class MissionManager : MonoBehaviour
 {
+    [Header("Missions")]
     public UIElement[] missionList;
     public UIElement[] missionStepsList;
     public int missionIndex;
 
-    [SerializeField] private Animator animator;
+    [Header("UI variables")]
     [SerializeField] private Button missionBtn;
-    public GameObject missionStepsText;
-    private bool stepsActive;
-
+    [SerializeField] private MissionDropdown missionDropdown;
+    [SerializeField] private bool isDropdownActive;
+    
     private AudioManager audioManager;
 
     private void Awake()
@@ -22,9 +23,9 @@ public class MissionManager : MonoBehaviour
     }
 
     private void Start()
-    {
-        stepsActive = false;
-        missionBtn.onClick.AddListener(ShowMissionSteps);
+    { 
+        missionBtn.onClick.AddListener(SwitchDropdown);
+        isDropdownActive = false;
         LoadMission();
     }
 
@@ -48,35 +49,23 @@ public class MissionManager : MonoBehaviour
         }
     }
 
-    public void ShowMissionSteps()
+    private void SwitchDropdown()
     {
-        if (!stepsActive)
+        if (!isDropdownActive)
         {
-            animator.SetTrigger("OpenTab");
-            //missionStepsText.SetActive(true);
-            stepsActive = true;
+            missionDropdown.OpenDropdown();
+            isDropdownActive = true;
         }
         else
         {
-            animator.SetTrigger("CloseTab");
-            //missionStepsText.SetActive(false);
-            stepsActive = false;
+            missionDropdown.CloseDropdown();
+            isDropdownActive = false;
         }
-        //laudioManager.Play("ButtonFX01");
     }
 
     public void SetMissionIndex(int index)
     {
         missionIndex = index;
         LoadMission();
-    }
-
-    public Animator GetAnimator()
-    {
-        return this.animator;
-    }
-    public void SetAnimOver(bool isOver)
-    {
-        animator.SetBool("AnimIsOver", isOver);
     }
 }

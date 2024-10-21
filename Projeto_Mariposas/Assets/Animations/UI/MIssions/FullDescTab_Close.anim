@@ -168,8 +168,8 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.55
-    functionName: get_activeSprite
+  - time: 0
+    functionName: HideMissionText
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
