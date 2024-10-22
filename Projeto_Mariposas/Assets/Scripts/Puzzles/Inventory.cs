@@ -4,46 +4,50 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    [Header("Inventory Splashs")]
-    public GameObject inventoryObj;
-    public GameObject pillsSplash;
-    public GameObject insecticideSplash;
-    public GameObject hammerSplash;
-    public GameObject lanternOffSplash;
-    public GameObject lanternOnSplash;
+    [Header("Inventory Settings")]
+    [SerializeField] private bool isOpen;
 
     [Header("Selection Settings")]
-    public GameObject selection;
-    public Transform[] selectionPoints;
-    private int selectId;
+    [SerializeField] private GameObject selection;
+    [SerializeField] private Transform[] selectionPoints;
+    [SerializeField] private int selectId;
+
+    [Header("Item Splashs")]
+    [SerializeField] private GameObject inventoryObj;
+    [SerializeField] private GameObject pillsSplash;
+    [SerializeField] private GameObject insecticideSplash;
+    [SerializeField] private GameObject hammerSplash;
+    [SerializeField] private GameObject lanternOffSplash;
+    [SerializeField] private GameObject lanternOnSplash;
+
+    [Header("Item check")]
+    [SerializeField] private bool hasPills;
+    [SerializeField] private bool hasInsecticide;
+    [SerializeField] private bool hasHammer;
+    [SerializeField] private bool hasLantern;
+
+    [Header("Triggers")]
+    [SerializeField] private bool takingPills;
+    [SerializeField] private bool usingSpray;
+    [SerializeField] private bool missionPills;
+    [SerializeField] private GameObject deadMoths;
 
     [Header("Lantern Settings")]
-    public GameObject lanternComand;
-    public GameObject lanternOnComandSplash;
-    public GameObject lanternOffComandSplash;
-    public GameObject lightArea;
-    public GameObject darkness;
-    public bool isDark;
-    public bool lanternOn;
-    public bool holdingLantern;
+    [SerializeField] private GameObject lanternComand;
+    [SerializeField] private GameObject lanternOnComandSplash;
+    [SerializeField] private GameObject lanternOffComandSplash;
+    [SerializeField] private GameObject lightArea;
+    [SerializeField] private GameObject darkness;
+    [SerializeField] private bool isDark;
+    [SerializeField] private bool lanternOn;
+    [SerializeField] private bool holdingLantern;
 
-    private GameObject deadMoths;
-
-    private bool takingPills;
-    private bool usingSpray;
-    public bool missionPills;
-
-    public bool hasPills;
-    public bool hasInsecticide;
-    public bool hasHammer;
-    public bool hasLantern;
-    
-
-    public static bool onInventory;
+    //public static bool onInventory;
 
     // Start is called before the first frame update
     void Start()
     {
+        isOpen = false;
         missionPills = true;
     }
 
@@ -55,9 +59,10 @@ public class Inventory : MonoBehaviour
 
     private void ProcessInputs()
     {
-        /*
-        if (!DialogueManager.onDialogue && !ExamineManager.Instance.isExamining)
+        
+        if (!DialogueManager.onDialogue)
         {
+        /*
             if (Input.GetKeyDown(KeyCode.Tab))
             {
                 if (!onInventory)
@@ -69,10 +74,11 @@ public class Inventory : MonoBehaviour
                     CloseInventory();
                 }
             }
-
-            if (Input.GetKeyDown(KeyCode.Space))
+        */
+            if (Input.GetKeyDown(KeyCode.Space) || 
+                Input.GetKeyDown(KeyCode.Escape))
             {
-                if (onInventory)
+                if (isOpen)
                 {
                     CloseInventory();
                 }
@@ -87,7 +93,7 @@ public class Inventory : MonoBehaviour
             }
         }
 
-        if (onInventory)
+        if (isOpen)
         {
             if(Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             {
@@ -124,12 +130,12 @@ public class Inventory : MonoBehaviour
                 } 
             }
         }
-        */
+        
     }
 
     public void OpenInventory()
     {
-        onInventory = true;
+        isOpen = true;
         inventoryObj.SetActive(true);
         if (hasPills) { pillsSplash.SetActive(true); }
         if (hasInsecticide) { insecticideSplash.SetActive(true); }
@@ -150,7 +156,7 @@ public class Inventory : MonoBehaviour
     }
     public void CloseInventory()
     {
-        onInventory = false;
+        isOpen = false;
         inventoryObj.SetActive(false);
     }
 

@@ -36,11 +36,15 @@ public class TopDownMovement : MonoBehaviour
     [SerializeField] private BoxPuzzleManager boxManager;
     [SerializeField] private ExamineManager examineManager;
 
+    [Header("Inventory Info")]
+    [SerializeField] private Inventory inventory;
+
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         holdObjectScript = GetComponent<HoldObjectScript>();
+        inventory = GetComponent<Inventory>();
         boxManager = null;
         curBox = null;
 
@@ -80,7 +84,7 @@ public class TopDownMovement : MonoBehaviour
     }
 
     private void MovementInputs(){
-        if(TDCanMove && !DialogueManager.onDialogue && !Inventory.onInventory){
+        if(TDCanMove && !DialogueManager.onDialogue){
             speedX = Input.GetAxisRaw("Horizontal");
             speedY = Input.GetAxisRaw("Vertical");
 
@@ -99,7 +103,6 @@ public class TopDownMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Botao pressionado");
             if (curInRange == inRangeOf.DIALOGUE) // Show dialogue
             {
                 objInRange.GetComponent<DialogueTrigger>().StartDialogue();
@@ -146,9 +149,14 @@ public class TopDownMovement : MonoBehaviour
             }
         }
 
-        else if (Input.GetKeyDown(KeyCode.F))
+        else if (Input.GetKeyDown(KeyCode.F)) // Turn flashlight on
         {
-            // Turn flashlight on
+            
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Tab)) // Open inventory
+        {
+            inventory.OpenInventory();
         }
     }
 
