@@ -38,6 +38,7 @@ public class TopDownMovement : MonoBehaviour
 
     [Header("Inventory Info")]
     [SerializeField] private Inventory inventory;
+    [SerializeField] private bool onInventory;
 
 
     private void Awake()
@@ -64,19 +65,24 @@ public class TopDownMovement : MonoBehaviour
 
         hasBox = false;
 
+        onInventory = false;
+
         TDCanMove = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!TDCanMove || DialogueManager.onDialogue){
+        if(!TDCanMove || DialogueManager.onDialogue || onInventory){
             moved = false;
             moveDirection.x = 0;
             moveDirection.y = 0;
         }
         MovementInputs();
-        InteractionInputs();
+        if (!DialogueManager.onDialogue)
+        {
+            InteractionInputs();
+        }
     }
 
     void FixedUpdate(){
@@ -103,6 +109,7 @@ public class TopDownMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            Debug.Log("E pressed");
             if (curInRange == inRangeOf.DIALOGUE) // Show dialogue
             {
                 objInRange.GetComponent<DialogueTrigger>().StartDialogue();
@@ -138,8 +145,9 @@ public class TopDownMovement : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.Q))
         {
+            Debug.Log("Q pressed");
             // Turn Examine screen on and off
-            if (hasBox && !examineManager.isExamining)
+            if (hasBox && !examineManager.isExamining && !onInventory)
             {
                 examineManager.DisplayItem(curBox.GetBoxImage());
             }
@@ -151,12 +159,24 @@ public class TopDownMovement : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.F)) // Turn flashlight on
         {
-            
+            Debug.Log("is examining = " + examineManager.isExamining);
+            Debug.Log("on inventory = " + onInventory);
         }
 
         else if (Input.GetKeyDown(KeyCode.Tab)) // Open inventory
         {
-            inventory.OpenInventory();
+            Debug.Log("TAB pressed");
+            if (!onInventory && !examineManager.isExamining) 
+            { 
+                inventory.OpenInventory();
+                onInventory = true;
+            }
+
+            else 
+            { 
+                inventory.CloseInventory();
+                onInventory = false;
+            }
         }
     }
 

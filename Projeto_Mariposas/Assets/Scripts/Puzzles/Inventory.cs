@@ -62,27 +62,6 @@ public class Inventory : MonoBehaviour
         
         if (!DialogueManager.onDialogue)
         {
-        /*
-            if (Input.GetKeyDown(KeyCode.Tab))
-            {
-                if (!onInventory)
-                {
-                    OpenInventory();
-                }
-                else
-                {
-                    CloseInventory();
-                }
-            }
-        */
-            if (Input.GetKeyDown(KeyCode.Space) || 
-                Input.GetKeyDown(KeyCode.Escape))
-            {
-                if (isOpen)
-                {
-                    CloseInventory();
-                }
-            }
 
             if (Input.GetKeyDown(KeyCode.F))
             {
