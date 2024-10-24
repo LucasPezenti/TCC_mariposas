@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    [SerializeField] private TopDownMovement topDownMovement;
+
     [Header("Inventory Settings")]
     [SerializeField] private bool isOpen;
 
@@ -44,6 +46,11 @@ public class Inventory : MonoBehaviour
 
     //public static bool onInventory;
 
+    private void Awake()
+    {
+        topDownMovement = GetComponent<TopDownMovement>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,19 +66,6 @@ public class Inventory : MonoBehaviour
 
     private void ProcessInputs()
     {
-        
-        if (!DialogueManager.onDialogue)
-        {
-
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                if (hasLantern && holdingLantern) 
-                { 
-                    SwitchLantern();
-                }
-            }
-        }
-
         if (isOpen)
         {
             if(Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
@@ -100,12 +94,14 @@ public class Inventory : MonoBehaviour
                 {
                     TakePills();
                     CloseInventory();
+                    topDownMovement.SetOnInventory(false);
                 } 
 
                 if (selectId == 3) // Pegar Lanterna
                 {
                     HoldLantern();
                     CloseInventory();
+                    topDownMovement.SetOnInventory(false);
                 } 
             }
         }

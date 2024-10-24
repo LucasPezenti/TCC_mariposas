@@ -90,7 +90,7 @@ public class TopDownMovement : MonoBehaviour
     }
 
     private void MovementInputs(){
-        if(TDCanMove && !DialogueManager.onDialogue){
+        if(TDCanMove && !DialogueManager.onDialogue && !onInventory){
             speedX = Input.GetAxisRaw("Horizontal");
             speedY = Input.GetAxisRaw("Vertical");
 
@@ -295,10 +295,21 @@ public class TopDownMovement : MonoBehaviour
         return this.hasBox;
     }
 
+    public bool GetOnInventory()
+    {
+        return this.onInventory;
+    }
+
     public void SetTDCanMove(bool canMove)
     {
         TDCanMove = canMove;
         Debug.Log("can move = " + TDCanMove);
+    }
+
+    public void SetOnInventory(bool onInventory)
+    {
+        this.onInventory = onInventory;
+        Debug.Log("on inventory = " + this.onInventory);
     }
 }
 
