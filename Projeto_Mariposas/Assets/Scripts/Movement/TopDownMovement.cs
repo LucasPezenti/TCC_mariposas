@@ -159,8 +159,7 @@ public class TopDownMovement : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.F)) // Turn flashlight on
         {
-            Debug.Log("is examining = " + examineManager.isExamining);
-            Debug.Log("on inventory = " + onInventory);
+            Debug.Log("can move = " + TDCanMove);
         }
 
         else if (Input.GetKeyDown(KeyCode.Tab)) // Open inventory

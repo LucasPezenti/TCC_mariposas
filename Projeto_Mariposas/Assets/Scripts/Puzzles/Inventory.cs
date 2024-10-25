@@ -90,14 +90,14 @@ public class Inventory : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 
-                if (selectId == 0) // Tomar remédios
+                if (selectId == 0 && hasPills) // Tomar remédios
                 {
                     TakePills();
                     CloseInventory();
                     topDownMovement.SetOnInventory(false);
                 } 
 
-                if (selectId == 3) // Pegar Lanterna
+                if (selectId == 3 && hasLantern) // Pegar Lanterna
                 {
                     HoldLantern();
                     CloseInventory();
@@ -113,8 +113,11 @@ public class Inventory : MonoBehaviour
         isOpen = true;
         inventoryObj.SetActive(true);
         if (hasPills) { pillsSplash.SetActive(true); }
+        
         if (hasInsecticide) { insecticideSplash.SetActive(true); }
+        
         if (hasHammer) { hammerSplash.SetActive(true); }
+        
         if (hasLantern)
         {
             if (lanternOn)
@@ -129,6 +132,7 @@ public class Inventory : MonoBehaviour
             }
         }
     }
+
     public void CloseInventory()
     {
         isOpen = false;
@@ -172,7 +176,6 @@ public class Inventory : MonoBehaviour
             else
             {
                 holdingLantern = false;
-
             }
         }
     }

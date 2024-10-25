@@ -1204,21 +1204,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Events:
     m_Signals:
-    - {fileID: 11400000, guid: 220a5718b4d62a14d97663ae70863334, type: 2}
+    - {fileID: 11400000, guid: d6fea8269361b784babd1a6f40fe718b, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: 
-          m_Mode: 1
+        - m_Target: {fileID: 516382588}
+          m_TargetAssemblyTypeName: TopDownMovement, Assembly-CSharp
+          m_MethodName: SetTDCanMove
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1380464597}
+          m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+          m_MethodName: StartDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
           m_CallState: 2
 --- !u!320 &150583133
 PlayableDirector:
@@ -1265,6 +1277,8 @@ PlayableDirector:
     value: {fileID: 592544773}
   - key: {fileID: 9122433785298990365, guid: 51e4320004650304c9fd17f66a941321, type: 2}
     value: {fileID: 104799934}
+  - key: {fileID: -7785105504876629653, guid: 51e4320004650304c9fd17f66a941321, type: 2}
+    value: {fileID: 150583132}
   m_ExposedReferences:
     m_References: []
 --- !u!95 &150583134
@@ -8816,18 +8830,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae954be4978918340b463a83d8c55edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryObj: {fileID: 130608411}
-  pillsSplash: {fileID: 1541964689}
-  insecticideSplash: {fileID: 884701516}
-  hammerSplash: {fileID: 187342237}
-  lanternOffSplash: {fileID: 686835361}
-  lanternOnSplash: {fileID: 1800039598}
+  topDownMovement: {fileID: 0}
+  isOpen: 0
   selection: {fileID: 458476269}
   selectionPoints:
   - {fileID: 1658196976}
   - {fileID: 1780114368}
   - {fileID: 859682889}
   - {fileID: 261728817}
+  selectId: 0
+  inventoryObj: {fileID: 130608411}
+  pillsSplash: {fileID: 1541964689}
+  insecticideSplash: {fileID: 884701516}
+  hammerSplash: {fileID: 187342237}
+  lanternOffSplash: {fileID: 686835361}
+  lanternOnSplash: {fileID: 1800039598}
+  hasPills: 1
+  hasInsecticide: 1
+  hasHammer: 0
+  hasLantern: 0
+  takingPills: 0
+  usingSpray: 0
+  missionPills: 0
+  deadMoths: {fileID: 0}
   lanternComand: {fileID: 153629432}
   lanternOnComandSplash: {fileID: 201714108}
   lanternOffComandSplash: {fileID: 151277267}
@@ -8836,11 +8861,6 @@ MonoBehaviour:
   isDark: 0
   lanternOn: 0
   holdingLantern: 0
-  missionPills: 0
-  hasPills: 1
-  hasInsecticide: 1
-  hasHammer: 0
-  hasLantern: 0
 --- !u!61 &516382583
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8939,6 +8959,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   itemHolding: {fileID: 0}
+  isHolding: 0
 --- !u!114 &516382588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8951,12 +8972,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1b40026ccc25841a85b2f023eb258f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  speedX: 0
-  speedY: 0
-  moved: 0
-  running: 0
   canRun: 0
+  curRoom: 0
+  curInRange: 0
+  objInRange: {fileID: 0}
+  interactionAlert: {fileID: 0}
+  hasBox: 0
+  curBox: {fileID: 0}
+  boxManager: {fileID: 0}
+  examineManager: {fileID: 0}
+  inventory: {fileID: 0}
+  onInventory: 0
 --- !u!114 &516382589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16532,6 +16558,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3566326838458501550, guid: 1cd5e5e6d216452409a95076f353f7a6, type: 3}
   m_PrefabInstance: {fileID: 1380464595}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1380464597 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6627830698767986209, guid: 1cd5e5e6d216452409a95076f353f7a6, type: 3}
+  m_PrefabInstance: {fileID: 1380464595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeaf2c4b0abd2c94fbcec36452bc5ae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1414830205
 GameObject:
   m_ObjectHideFlags: 0

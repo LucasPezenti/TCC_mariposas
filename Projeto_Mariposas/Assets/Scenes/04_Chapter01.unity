@@ -6892,6 +6892,8 @@ MonoBehaviour:
   curBox: {fileID: 0}
   boxManager: {fileID: 0}
   examineManager: {fileID: 575196059}
+  inventory: {fileID: 0}
+  onInventory: 0
 --- !u!114 &533148158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6999,18 +7001,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae954be4978918340b463a83d8c55edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryObj: {fileID: 1169734763}
-  pillsSplash: {fileID: 140323388}
-  insecticideSplash: {fileID: 1721500405}
-  hammerSplash: {fileID: 2057691308}
-  lanternOffSplash: {fileID: 1742619269}
-  lanternOnSplash: {fileID: 2106493990}
+  topDownMovement: {fileID: 0}
+  isOpen: 0
   selection: {fileID: 1559749852}
   selectionPoints:
   - {fileID: 424958022}
   - {fileID: 1164328579}
   - {fileID: 1065780966}
   - {fileID: 690850155}
+  selectId: 0
+  inventoryObj: {fileID: 1169734763}
+  pillsSplash: {fileID: 140323388}
+  insecticideSplash: {fileID: 1721500405}
+  hammerSplash: {fileID: 2057691308}
+  lanternOffSplash: {fileID: 1742619269}
+  lanternOnSplash: {fileID: 2106493990}
+  hasPills: 0
+  hasInsecticide: 0
+  hasHammer: 0
+  hasLantern: 0
+  takingPills: 0
+  usingSpray: 0
+  missionPills: 0
+  deadMoths: {fileID: 0}
   lanternComand: {fileID: 1662550838}
   lanternOnComandSplash: {fileID: 2099645035}
   lanternOffComandSplash: {fileID: 1612585572}
@@ -7019,11 +7032,6 @@ MonoBehaviour:
   isDark: 0
   lanternOn: 0
   holdingLantern: 0
-  missionPills: 0
-  hasPills: 0
-  hasInsecticide: 0
-  hasHammer: 0
-  hasLantern: 0
 --- !u!1 &533998833
 GameObject:
   m_ObjectHideFlags: 3
@@ -31804,7 +31812,7 @@ GameObject:
   - component: {fileID: 1032744776}
   - component: {fileID: 1032744778}
   - component: {fileID: 1032744777}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stairs - DOWN
   m_TagString: Teleport
   m_Icon: {fileID: 0}
@@ -32139,7 +32147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1039868710}
   - component: {fileID: 1039868711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HoldPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32776,7 +32784,7 @@ GameObject:
   - component: {fileID: 1075722081}
   - component: {fileID: 1075722082}
   - component: {fileID: 1075722080}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stairs - UP
   m_TagString: Teleport
   m_Icon: {fileID: 0}
