@@ -68,14 +68,14 @@ public class SideScrollMovement : MonoBehaviour
 
         if(speedX > 0){
             moved = true;
-            dir = Direction.right;
-            lastDir = Direction.right;
+            dir = Direction.RIGHT;
+            lastDir = Direction.RIGHT;
         }
 
         else if(speedX < 0){
             moved = true;
-            dir = Direction.left;
-            lastDir = Direction.left;
+            dir = Direction.LEFT;
+            lastDir = Direction.LEFT;
         }
 
         if(running){

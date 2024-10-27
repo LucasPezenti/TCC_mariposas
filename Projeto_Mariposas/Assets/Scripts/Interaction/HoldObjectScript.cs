@@ -38,16 +38,16 @@ public class HoldObjectScript : MonoBehaviour
             pickDirection = PlayerMovement.GetMoveDirection().normalized;
         }
 
-        if (PlayerMovement.dir == Direction.right){
+        if (PlayerMovement.dir == Direction.RIGHT){
             holdSpot.transform.localPosition = new Vector2(0.22f, 0.58f);
         }
-        else if(PlayerMovement.dir == Direction.left){
+        else if(PlayerMovement.dir == Direction.LEFT){
             holdSpot.transform.localPosition = new Vector2(-0.22f, 0.58f);
         }
-        if(PlayerMovement.dir == Direction.up){
+        if(PlayerMovement.dir == Direction.UP){
             holdSpot.transform.localPosition = new Vector2(0, 0.83f);
         }
-        else if(PlayerMovement.dir == Direction.down){
+        else if(PlayerMovement.dir == Direction.DOWN){
             holdSpot.transform.localPosition = new Vector2(0, 0.53f);       
         }
     }

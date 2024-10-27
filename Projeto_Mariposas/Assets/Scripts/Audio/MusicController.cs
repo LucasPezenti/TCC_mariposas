@@ -10,11 +10,6 @@ public class MusicController : MonoBehaviour
     public string triggerName;
     public bool stopAudios;
 
-    private void Awake()
-    {
-        
-    }
-
     void Start()
     {
         audioManager = AudioManager.GetAudioInstance();

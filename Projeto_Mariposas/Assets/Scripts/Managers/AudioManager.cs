@@ -42,10 +42,12 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         mute = false;
+        /*
         foreach (Sound s in sounds)
         {
             s.source.volume = 0.5f;
         }
+        */
     }
 
     public void Play(string name)
@@ -78,6 +80,29 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void SwitchMute()
+    {
+        if (mute)
+        {
+            foreach (Sound s in sounds)
+            {
+                if(s.type == SoundType.MUSIC) { s.source.volume = 0.5f; }
+
+                else if(s.type == SoundType.SFX) { s.source.volume = 0.15f; }
+            }
+            mute = false;
+        }
+
+        else
+        {
+            foreach (Sound s in sounds)
+            {
+                s.source.volume = 0f;
+            }
+            mute = true;
+        }
+    }
+
     public void TurnAudioOff()
     {
         foreach (Sound s in sounds)
@@ -91,7 +116,9 @@ public class AudioManager : MonoBehaviour
     {
         foreach (Sound s in sounds)
         {
-            s.source.volume = 0.5f;
+            if (s.type == SoundType.MUSIC) { s.source.volume = 0.5f; }
+
+            else if (s.type == SoundType.SFX) { s.source.volume = 0.15f; }
         }
         mute = false;
     }
@@ -119,6 +146,7 @@ public class Sound
 
     public string name;
     public AudioClip clip;
+    public SoundType type;
 
     [Range(0f, 1f)]
     public float volume;
@@ -130,3 +158,4 @@ public class Sound
     [HideInInspector]
     public AudioSource source;
 }
+

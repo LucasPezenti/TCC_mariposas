@@ -56,8 +56,6 @@ public class TopDownMovement : MonoBehaviour
         speed = 1.4f;
         moved = false;
         running = false;
-        dir = Direction.up;
-        lastDir = Direction.up;
 
         curBox = null;
         curRoom = Rooms.OUTSIDE;
@@ -191,26 +189,26 @@ public class TopDownMovement : MonoBehaviour
 
         // Moved RIGHT
         if(speedX > 0){
-            dir = Direction.right;
-            lastDir = Direction.right;
+            dir = Direction.RIGHT;
+            lastDir = Direction.RIGHT;
         }
 
         // Moved LEFT
         else if(speedX < 0){
-            dir = Direction.left;
-            lastDir = Direction.left;
+            dir = Direction.LEFT;
+            lastDir = Direction.LEFT;
         }
 
         // Moved UP
         if(speedY > 0){
-            dir = Direction.up;
-            lastDir = Direction.up;
+            dir = Direction.UP;
+            lastDir = Direction.UP;
         }
 
         // Moved DOWN
         else if(speedY < 0){
-            dir = Direction.down;
-            lastDir = Direction.down;
+            dir = Direction.DOWN;
+            lastDir = Direction.DOWN;
         }
         
         if(running){
@@ -311,10 +309,37 @@ public class TopDownMovement : MonoBehaviour
         Debug.Log("on inventory = " + this.onInventory);
     }
 
-    public void SetDirection(Direction direction)
+    public void SetDirection(int direction)
     {
-        this.dir = direction;
-        this.lastDir = direction;
+        if (direction == 2)
+        {
+            this.dir = Direction.DOWN;
+            this.lastDir = Direction.DOWN;
+        }
+
+        else if (direction == 4)
+        {
+            this.dir = Direction.LEFT;
+            this.lastDir = Direction.LEFT;
+        }
+
+        else if(direction == 6)
+        {
+            this.dir = Direction.RIGHT;
+            this.lastDir = Direction.RIGHT;
+        }
+
+        else if(direction == 8)
+        {
+            this.dir = Direction.UP;
+            this.lastDir = Direction.UP;
+        }
+
+        else
+        {
+            this.dir = Direction.DOWN;
+            this.lastDir = Direction.DOWN;
+        }
     }
 }
 

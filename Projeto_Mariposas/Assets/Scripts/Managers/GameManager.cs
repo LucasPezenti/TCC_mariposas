@@ -152,9 +152,14 @@ public enum Languages{
 }
 
 public enum Direction {
-    right,
-    left,
-    up,
-    down
+    RIGHT,
+    LEFT,
+    UP,
+    DOWN
 
+}
+
+public enum SoundType { 
+    MUSIC,
+    SFX
 }

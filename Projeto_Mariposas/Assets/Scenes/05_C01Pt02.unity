@@ -1205,6 +1205,7 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: d6fea8269361b784babd1a6f40fe718b, type: 2}
+    - {fileID: 11400000, guid: 41f01344cc8d6ee409b46f79bc831bdd, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -1231,6 +1232,20 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 1
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 516382588}
+          m_TargetAssemblyTypeName: TopDownMovement, Assembly-CSharp
+          m_MethodName: SetDirection
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 6
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
           m_CallState: 2
 --- !u!320 &150583133
 PlayableDirector:

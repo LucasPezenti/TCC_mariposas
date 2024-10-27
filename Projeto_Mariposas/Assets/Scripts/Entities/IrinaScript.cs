@@ -48,20 +48,20 @@ public class IrinaScript : MonoBehaviour
         //  Idle animation
         else if(!PlayerMovement.GetMoved()){
             audioManager.Stop("SimpleSteps");
-            if (PlayerMovement.GetLastDir() == Direction.right){
+            if (PlayerMovement.GetLastDir() == Direction.RIGHT){
                 ChangeAnimationState(PLAYER_IDLE_R);
             }
-            else if(PlayerMovement.GetLastDir() == Direction.left){
+            else if(PlayerMovement.GetLastDir() == Direction.LEFT){
                 ChangeAnimationState(PLAYER_IDLE_L);
             }
         }
 
         // Walking animation
         else if(PlayerMovement.GetMoved()){
-            if(PlayerMovement.GetDir() == Direction.right){
+            if(PlayerMovement.GetDir() == Direction.RIGHT){
                 ChangeAnimationState(PLAYER_WALK_R);
             }
-            else if(PlayerMovement.GetDir() == Direction.left){
+            else if(PlayerMovement.GetDir() == Direction.LEFT){
                 ChangeAnimationState(PLAYER_WALK_L);
             }
             if (!audioManager.GetAudio("SimpleSteps").source.isPlaying)

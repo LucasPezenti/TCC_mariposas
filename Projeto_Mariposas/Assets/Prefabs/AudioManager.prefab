@@ -77,13 +77,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: ShortSteps
     clip: {fileID: 8300000, guid: 9ca42d3d7d1c3ed498d344c3c73181c8, type: 3}
-    volume: 0.5
+    volume: 0.15
     pitch: 2
     loop: 0
     source: {fileID: 0}
   - name: SimpleSteps
     clip: {fileID: 8300000, guid: 4d5da2265286e2546a98381ff24f2d9f, type: 3}
-    volume: 0.5
+    volume: 0.15
     pitch: 2
     loop: 0
     source: {fileID: 0}

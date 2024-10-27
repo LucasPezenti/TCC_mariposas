@@ -91,17 +91,17 @@ public class AnoushScript : MonoBehaviour
             && !inventory.GetTakingPills()
             && !inventory.GetUsingSpray()){
             audioManager.Stop("SimpleSteps");
-            if (playerMovement.lastDir == Direction.right){
+            if (playerMovement.lastDir == Direction.RIGHT){
                 ChangeAnimationState(PLAYER_IDLE_R);
             }
-            else if(playerMovement.lastDir == Direction.left){
+            else if(playerMovement.lastDir == Direction.LEFT){
                 ChangeAnimationState(PLAYER_IDLE_L);
             }
 
-            if(playerMovement.lastDir == Direction.up){
+            if(playerMovement.lastDir == Direction.UP){
                 ChangeAnimationState(PLAYER_IDLE_U);
             }
-            else if(playerMovement.lastDir == Direction.down){
+            else if(playerMovement.lastDir == Direction.DOWN){
                 ChangeAnimationState(PLAYER_IDLE_D);
             }
         }
@@ -113,17 +113,17 @@ public class AnoushScript : MonoBehaviour
                 && !inventory.GetTakingPills()
                 && !inventory.GetUsingSpray())
         {
-            if(playerMovement.dir == Direction.right){
+            if(playerMovement.dir == Direction.RIGHT){
                 ChangeAnimationState(PLAYER_WALK_R);
             }
-            else if(playerMovement.dir == Direction.left){
+            else if(playerMovement.dir == Direction.LEFT){
                 ChangeAnimationState(PLAYER_WALK_L);
             }
 
-            if(playerMovement.dir == Direction.up){
+            if(playerMovement.dir == Direction.UP){
                 ChangeAnimationState(PLAYER_WALK_U);
             }
-            else if(playerMovement.dir == Direction.down){
+            else if(playerMovement.dir == Direction.DOWN){
                 ChangeAnimationState(PLAYER_WALK_D);
             }
             if (!audioManager.GetAudio("SimpleSteps").source.isPlaying)
@@ -140,17 +140,17 @@ public class AnoushScript : MonoBehaviour
                 && !inventory.GetUsingSpray())
         {
             audioManager.Stop("SimpleSteps");
-            if (playerMovement.lastDir == Direction.right){
+            if (playerMovement.lastDir == Direction.RIGHT){
                 ChangeAnimationState(PLAYER_IDLE_BOX_R);
             }
-            else if(playerMovement.lastDir == Direction.left){
+            else if(playerMovement.lastDir == Direction.LEFT){
                 ChangeAnimationState(PLAYER_IDLE_BOX_L);
             }
 
-            if(playerMovement.lastDir == Direction.up){
+            if(playerMovement.lastDir == Direction.UP){
                 ChangeAnimationState(PLAYER_IDLE_BOX_U);
             }
-            else if(playerMovement.lastDir == Direction.down){
+            else if(playerMovement.lastDir == Direction.DOWN){
                 ChangeAnimationState(PLAYER_IDLE_BOX_D);
             }
         }
@@ -162,17 +162,17 @@ public class AnoushScript : MonoBehaviour
                 && !inventory.GetTakingPills()
                 && !inventory.GetUsingSpray())
         {
-            if(playerMovement.dir == Direction.right){
+            if(playerMovement.dir == Direction.RIGHT){
                 ChangeAnimationState(PLAYER_WALK_BOX_R);
             }
-            else if(playerMovement.dir == Direction.left){
+            else if(playerMovement.dir == Direction.LEFT){
                 ChangeAnimationState(PLAYER_WALK_BOX_L);
             }
 
-            if(playerMovement.dir == Direction.up){
+            if(playerMovement.dir == Direction.UP){
                 ChangeAnimationState(PLAYER_WALK_BOX_U);
             }
-            else if(playerMovement.dir == Direction.down){
+            else if(playerMovement.dir == Direction.DOWN){
                 ChangeAnimationState(PLAYER_WALK_BOX_D);
             }
 
@@ -191,20 +191,20 @@ public class AnoushScript : MonoBehaviour
                 && !inventory.GetUsingSpray())
         {
             audioManager.Stop("SimpleSteps");
-            if (playerMovement.dir == Direction.right)
+            if (playerMovement.dir == Direction.RIGHT)
             {
                 ChangeAnimationState(PLAYER_IDLE_LANTERNOFF_R);
             }
-            else if (playerMovement.dir == Direction.left)
+            else if (playerMovement.dir == Direction.LEFT)
             {
                 ChangeAnimationState(PLAYER_IDLE_LANTERNOFF_L);
             }
 
-            if (playerMovement.dir == Direction.up)
+            if (playerMovement.dir == Direction.UP)
             {
                 ChangeAnimationState(PLAYER_IDLE_LANTERNOFF_U);
             }
-            else if (playerMovement.dir == Direction.down)
+            else if (playerMovement.dir == Direction.DOWN)
             {
                 ChangeAnimationState(PLAYER_IDLE_LANTERNOFF_D);
             }
@@ -218,20 +218,20 @@ public class AnoushScript : MonoBehaviour
                 && !inventory.GetTakingPills()
                 && !inventory.GetUsingSpray())
         {
-            if (playerMovement.dir == Direction.right)
+            if (playerMovement.dir == Direction.RIGHT)
             {
                 ChangeAnimationState(PLAYER_WALK_LANTERNOFF_R);
             }
-            else if (playerMovement.dir == Direction.left)
+            else if (playerMovement.dir == Direction.LEFT)
             {
                 ChangeAnimationState(PLAYER_WALK_LANTERNOFF_L);
             }
 
-            if (playerMovement.dir == Direction.up)
+            if (playerMovement.dir == Direction.UP)
             {
                 ChangeAnimationState(PLAYER_WALK_LANTERNOFF_U);
             }
-            else if (playerMovement.dir == Direction.down)
+            else if (playerMovement.dir == Direction.DOWN)
             {
                 ChangeAnimationState(PLAYER_WALK_LANTERNOFF_D);
             }
@@ -251,20 +251,20 @@ public class AnoushScript : MonoBehaviour
                 && !inventory.GetUsingSpray())
         {
             audioManager.Stop("SimpleSteps");
-            if (playerMovement.lastDir == Direction.right)
+            if (playerMovement.lastDir == Direction.RIGHT)
             {
                 ChangeAnimationState(PLAYER_IDLE_LANTERNON_R);
             }
-            else if (playerMovement.lastDir == Direction.left)
+            else if (playerMovement.lastDir == Direction.LEFT)
             {
                 ChangeAnimationState(PLAYER_IDLE_LANTERNON_L);
             }
 
-            if (playerMovement.lastDir == Direction.up)
+            if (playerMovement.lastDir == Direction.UP)
             {
                 ChangeAnimationState(PLAYER_IDLE_LANTERNON_U);
             }
-            else if (playerMovement.lastDir == Direction.down)
+            else if (playerMovement.lastDir == Direction.DOWN)
             {
                 ChangeAnimationState(PLAYER_IDLE_LANTERNON_D);
             }
@@ -278,20 +278,20 @@ public class AnoushScript : MonoBehaviour
                 && !inventory.GetTakingPills()
                 && !inventory.GetUsingSpray())
         {
-            if (playerMovement.dir == Direction.right)
+            if (playerMovement.dir == Direction.RIGHT)
             {
                 ChangeAnimationState(PLAYER_WALK_LANTERNON_R);
             }
-            else if (playerMovement.dir == Direction.left)
+            else if (playerMovement.dir == Direction.LEFT)
             {
                 ChangeAnimationState(PLAYER_WALK_LANTERNON_L);
             }
 
-            if (playerMovement.dir == Direction.up)
+            if (playerMovement.dir == Direction.UP)
             {
                 ChangeAnimationState(PLAYER_WALK_LANTERNON_U);
             }
-            else if (playerMovement.dir == Direction.down)
+            else if (playerMovement.dir == Direction.DOWN)
             {
                 ChangeAnimationState(PLAYER_WALK_LANTERNON_D);
             }
@@ -308,20 +308,20 @@ public class AnoushScript : MonoBehaviour
                 && !inventory.GetUsingSpray())
         {
             TopDownMovement.TDCanMove = false;
-            if (playerMovement.dir == Direction.right)
+            if (playerMovement.dir == Direction.RIGHT)
             {
                 ChangeAnimationState(PLAYER_PILLS_R);
             }
-            else if (playerMovement.dir == Direction.left)
+            else if (playerMovement.dir == Direction.LEFT)
             {
                 ChangeAnimationState(PLAYER_PILLS_L);
             }
 
-            if (playerMovement.dir == Direction.up)
+            if (playerMovement.dir == Direction.UP)
             {
                 ChangeAnimationState(PLAYER_PILLS_U);
             }
-            else if (playerMovement.dir == Direction.down)
+            else if (playerMovement.dir == Direction.DOWN)
             {
                 ChangeAnimationState(PLAYER_PILLS_D);
             }
@@ -333,20 +333,20 @@ public class AnoushScript : MonoBehaviour
                 && inventory.GetUsingSpray())
         {
             TopDownMovement.TDCanMove = false;
-            if (playerMovement.lastDir == Direction.right)
+            if (playerMovement.lastDir == Direction.RIGHT)
             {
                 ChangeAnimationState(PLAYER_SPRAY_R);
             }
-            else if (playerMovement.lastDir == Direction.left)
+            else if (playerMovement.lastDir == Direction.LEFT)
             {
                 ChangeAnimationState(PLAYER_SPRAY_L);
             }
 
-            if (playerMovement.lastDir == Direction.up)
+            if (playerMovement.lastDir == Direction.UP)
             {
                 ChangeAnimationState(PLAYER_SPRAY_U);
             }
-            else if (playerMovement.lastDir == Direction.down)
+            else if (playerMovement.lastDir == Direction.DOWN)
             {
                 ChangeAnimationState(PLAYER_SPRAY_D);
             }
