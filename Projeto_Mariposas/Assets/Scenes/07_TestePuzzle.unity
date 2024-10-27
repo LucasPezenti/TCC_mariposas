@@ -2763,6 +2763,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 851618656}
     m_Modifications:
+    - target: {fileID: 2689466435432691548, guid: 9da18802ef14615478d6af68e4215f49, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2689466435432691550, guid: 9da18802ef14615478d6af68e4215f49, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2814,6 +2818,10 @@ PrefabInstance:
     - target: {fileID: 2689466435699212771, guid: 9da18802ef14615478d6af68e4215f49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689466436212986083, guid: 9da18802ef14615478d6af68e4215f49, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9da18802ef14615478d6af68e4215f49, type: 3}
@@ -3500,18 +3508,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae954be4978918340b463a83d8c55edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryObj: {fileID: 1188452583}
-  pillsSplash: {fileID: 1967191661}
-  insecticideSplash: {fileID: 331293692}
-  hammerSplash: {fileID: 327591869}
-  lanternOffSplash: {fileID: 180737711}
-  lanternOnSplash: {fileID: 781757199}
+  topDownMovement: {fileID: 0}
+  isOpen: 0
   selection: {fileID: 2135533045}
   selectionPoints:
   - {fileID: 285885451}
   - {fileID: 115101257}
   - {fileID: 2024651637}
   - {fileID: 357799417}
+  selectId: 0
+  inventoryObj: {fileID: 1188452583}
+  pillsSplash: {fileID: 1967191661}
+  insecticideSplash: {fileID: 331293692}
+  hammerSplash: {fileID: 327591869}
+  lanternOffSplash: {fileID: 180737711}
+  lanternOnSplash: {fileID: 781757199}
+  hasPills: 1
+  hasInsecticide: 1
+  hasHammer: 1
+  hasLantern: 1
+  takingPills: 0
+  usingSpray: 0
+  missionPills: 0
+  deadMoths: {fileID: 0}
   lanternComand: {fileID: 1931518907}
   lanternOnComandSplash: {fileID: 1283003147}
   lanternOffComandSplash: {fileID: 2125297446}
@@ -3520,11 +3539,6 @@ MonoBehaviour:
   isDark: 1
   lanternOn: 1
   holdingLantern: 1
-  missionPills: 0
-  hasPills: 1
-  hasInsecticide: 1
-  hasHammer: 1
-  hasLantern: 1
 --- !u!114 &851618662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3543,6 +3557,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   itemHolding: {fileID: 0}
+  isHolding: 0
 --- !u!114 &851618663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3556,6 +3571,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canRun: 0
+  curRoom: 0
+  curInRange: 0
+  objInRange: {fileID: 0}
+  interactionAlert: {fileID: 0}
+  hasBox: 0
+  curBox: {fileID: 0}
+  boxManager: {fileID: 0}
+  examineManager: {fileID: 0}
+  inventory: {fileID: 0}
+  onInventory: 0
 --- !u!114 &851618664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4695,21 +4720,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Events:
     m_Signals:
-    - {fileID: 11400000, guid: 220a5718b4d62a14d97663ae70863334, type: 2}
+    - {fileID: 11400000, guid: 7252defb1051f594da0595fd4af82d67, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: 
-          m_Mode: 1
+        - m_Target: {fileID: 851618663}
+          m_TargetAssemblyTypeName: TopDownMovement, Assembly-CSharp
+          m_MethodName: SetTDCanMove
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
 --- !u!320 &1312138500
 PlayableDirector:
@@ -4760,6 +4785,8 @@ PlayableDirector:
     value: {fileID: 1410381221}
   - key: {fileID: -8160715193779401532, guid: e44a4cd50f1567447a259e23d3c21480, type: 2}
     value: {fileID: 796971722}
+  - key: {fileID: 7772387793149455339, guid: e44a4cd50f1567447a259e23d3c21480, type: 2}
+    value: {fileID: 1312138499}
   m_ExposedReferences:
     m_References: []
 --- !u!95 &1312138501
@@ -13599,7 +13626,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 47ef79a617b3610478b804c1060f9909, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

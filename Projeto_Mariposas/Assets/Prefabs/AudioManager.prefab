@@ -47,25 +47,25 @@ MonoBehaviour:
   sounds:
   - name: PrologueMusic
     clip: {fileID: 8300000, guid: d46b3b73e8f4e3b4b9b1dc4a3ac4b37b, type: 3}
-    volume: 0.8
+    volume: 0.5
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: WindAudio
     clip: {fileID: 8300000, guid: f8ff7b7411e60d748b0fa6c41e4fdcd2, type: 3}
-    volume: 0.8
+    volume: 0.5
     pitch: 2
     loop: 1
     source: {fileID: 0}
   - name: Fase01Music
     clip: {fileID: 8300000, guid: 78c9e8f6daaed354ba2638042068b4e8, type: 3}
-    volume: 0.8
+    volume: 0.5
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: BasementMusic
     clip: {fileID: 8300000, guid: 45605f4cb95e7aa4aad6407473feb754, type: 3}
-    volume: 0.8
+    volume: 0.5
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -77,7 +77,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: ShortSteps
     clip: {fileID: 8300000, guid: 9ca42d3d7d1c3ed498d344c3c73181c8, type: 3}
-    volume: 0.8
+    volume: 0.5
     pitch: 2
     loop: 0
     source: {fileID: 0}

@@ -45,6 +45,7 @@ public class AnoushScript : MonoBehaviour
     const string PLAYER_WALK_LANTERNON_L = "Anoush_WalkLantOnL";
     const string PLAYER_WALK_LANTERNON_U = "Anoush_WalkLantOnU";
     const string PLAYER_WALK_LANTERNON_D = "Anoush_WalkLantOnD";
+    
     const string PLAYER_IDLE_LANTERNOFF_R = "Anoush_IdleLantOffR";
     const string PLAYER_IDLE_LANTERNOFF_L = "Anoush_IdleLantOffL";
     const string PLAYER_IDLE_LANTERNOFF_U = "Anoush_IdleLantOffU";
@@ -71,11 +72,11 @@ public class AnoushScript : MonoBehaviour
         playerMovement = GetComponent<TopDownMovement>();
         HoldObject = GetComponent<HoldObjectScript>();
         inventory = GetComponent<Inventory>();
-        audioManager = AudioManager.GetAudioInstance();
+        
     }
     void Start()
     {
-        
+        audioManager = AudioManager.GetAudioInstance();
     }
 
     void Update()

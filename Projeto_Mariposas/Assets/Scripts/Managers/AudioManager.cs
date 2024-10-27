@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
+    private bool mute;
 
     public static AudioManager audioInstance;
 
@@ -38,6 +39,15 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        mute = false;
+        foreach (Sound s in sounds)
+        {
+            s.source.volume = 0.5f;
+        }
+    }
+
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -46,7 +56,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound: " + name + " not found!");
             return; 
         }
-        s.source.Play();    
+        if (!mute) { s.source.Play(); }
     }
 
     public void Stop(string name)
@@ -68,10 +78,38 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void TurnAudioOff()
+    {
+        foreach (Sound s in sounds)
+        {
+            s.source.volume = 0f;
+        }
+        mute = true;
+    }
+
+    public void TurnAudioOn()
+    {
+        foreach (Sound s in sounds)
+        {
+            s.source.volume = 0.5f;
+        }
+        mute = false;
+    }
+
     public Sound GetAudio(string name)
     { 
         Sound s = Array.Find(sounds, sound => sound.name == name);
         return s;
+    }
+
+    public bool GetMute()
+    {
+        return this.mute;
+    }
+
+    public void SetMute(bool mute)
+    {
+        this.mute = mute;
     }
 }
 

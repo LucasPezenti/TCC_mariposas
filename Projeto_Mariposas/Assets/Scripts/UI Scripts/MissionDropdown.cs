@@ -4,20 +4,26 @@ using UnityEngine;
 
 public class MissionDropdown : MonoBehaviour
 {
+    private AudioManager audioManager;
 
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject missionText;
 
+    private void Start()
+    {
+        audioManager = AudioManager.GetAudioInstance();
+    }
+
     public void OpenDropdown()
     {
         animator.SetTrigger("OpenTab");
-        //audioManager.Play("ButtonFX01");
+        audioManager.Play("ButtonFX01");
     }
 
     public void CloseDropdown()
     {
         animator.SetTrigger("CloseTab");
-        //audioManager.Play("ButtonFX01");
+        audioManager.Play("ButtonFX01");
     }
 
     public void ShowMissionText()

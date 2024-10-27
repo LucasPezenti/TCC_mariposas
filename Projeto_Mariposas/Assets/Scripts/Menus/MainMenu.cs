@@ -53,6 +53,8 @@ public class MainMenu : MonoBehaviour
     private int aboutPage = 1;
 
     private void Awake(){
+        audioManager = AudioManager.GetAudioInstance();
+
         newGameBtn.onClick.AddListener(StartNewGame);
         settingsBtn.onClick.AddListener(OpenSettings);
         creditsBtn.onClick.AddListener(OpenCredits);

@@ -310,6 +310,12 @@ public class TopDownMovement : MonoBehaviour
         this.onInventory = onInventory;
         Debug.Log("on inventory = " + this.onInventory);
     }
+
+    public void SetDirection(Direction direction)
+    {
+        this.dir = direction;
+        this.lastDir = direction;
+    }
 }
 
 public enum inRangeOf
