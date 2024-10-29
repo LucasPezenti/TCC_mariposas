@@ -162,7 +162,8 @@ public class TopDownMovement : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.Tab)) // Open inventory
         {
-            Debug.Log("TAB pressed");
+            Debug.Log("TAB pressed" + onInventory);
+            Debug.Log(examineManager.isExamining);
             if (!onInventory && !examineManager.isExamining) 
             { 
                 inventory.OpenInventory();

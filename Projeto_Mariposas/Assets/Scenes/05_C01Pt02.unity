@@ -8845,7 +8845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae954be4978918340b463a83d8c55edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topDownMovement: {fileID: 0}
+  topDownMovement: {fileID: 516382588}
   isOpen: 0
   selection: {fileID: 458476269}
   selectionPoints:
@@ -8991,12 +8991,12 @@ MonoBehaviour:
   curRoom: 0
   curInRange: 0
   objInRange: {fileID: 0}
-  interactionAlert: {fileID: 0}
+  interactionAlert: {fileID: 1972199155}
   hasBox: 0
   curBox: {fileID: 0}
   boxManager: {fileID: 0}
-  examineManager: {fileID: 0}
-  inventory: {fileID: 0}
+  examineManager: {fileID: 719428863}
+  inventory: {fileID: 516382582}
   onInventory: 0
 --- !u!114 &516382589
 MonoBehaviour:
@@ -10914,6 +10914,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &719428863 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3836794231855625046, guid: a783b301d1055544aaf8c28ae35dbf2a, type: 3}
+  m_PrefabInstance: {fileID: 719428857}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e86502132165c74c8df1ddb0df84989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &727491051
@@ -34913,6 +34924,17 @@ Transform:
   m_Father: {fileID: 2129473627}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1972199155 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2689466435699212768, guid: 9da18802ef14615478d6af68e4215f49, type: 3}
+  m_PrefabInstance: {fileID: 1596733832}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a16d56c139c605e4d9caabd2c30b217a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1985866795
 GameObject:
   m_ObjectHideFlags: 0

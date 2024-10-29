@@ -23097,7 +23097,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1346513935}
   m_Layer: 0
-  m_Name: Evironment
+  m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23489,7 +23489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae954be4978918340b463a83d8c55edf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topDownMovement: {fileID: 0}
+  topDownMovement: {fileID: 1374016050}
   isOpen: 0
   selection: {fileID: 547322978}
   selectionPoints:
@@ -23559,8 +23559,8 @@ MonoBehaviour:
   hasBox: 0
   curBox: {fileID: 0}
   boxManager: {fileID: 0}
-  examineManager: {fileID: 0}
-  inventory: {fileID: 0}
+  examineManager: {fileID: 1847871784}
+  inventory: {fileID: 1374016048}
   onInventory: 0
 --- !u!114 &1374016051
 MonoBehaviour:
@@ -30262,6 +30262,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aeaf2c4b0abd2c94fbcec36452bc5ae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1847871784 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3836794231855625046, guid: a783b301d1055544aaf8c28ae35dbf2a, type: 3}
+  m_PrefabInstance: {fileID: 784475131}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e86502132165c74c8df1ddb0df84989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1851357140
