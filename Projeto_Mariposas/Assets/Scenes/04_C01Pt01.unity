@@ -1299,6 +1299,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &119892546 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6078109748212475731, guid: 3dd2d303ba50d7f4781943329fb16172, type: 3}
+  m_PrefabInstance: {fileID: 2203817372951316272}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &126806700
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44834,19 +44845,19 @@ PrefabInstance:
     - target: {fileID: 3535218477347385691, guid: 3dd2d303ba50d7f4781943329fb16172, type: 3}
       propertyPath: missionList.Array.data[0].textToDisplay
       value: 
-      objectReference: {fileID: 1725371508}
+      objectReference: {fileID: 119892546}
     - target: {fileID: 3535218477347385691, guid: 3dd2d303ba50d7f4781943329fb16172, type: 3}
       propertyPath: missionList.Array.data[1].textToDisplay
       value: 
-      objectReference: {fileID: 1725371508}
+      objectReference: {fileID: 119892546}
     - target: {fileID: 3535218477347385691, guid: 3dd2d303ba50d7f4781943329fb16172, type: 3}
       propertyPath: missionList.Array.data[2].textToDisplay
       value: 
-      objectReference: {fileID: 1725371508}
+      objectReference: {fileID: 119892546}
     - target: {fileID: 3535218477347385691, guid: 3dd2d303ba50d7f4781943329fb16172, type: 3}
       propertyPath: missionList.Array.data[3].textToDisplay
       value: 
-      objectReference: {fileID: 1725371508}
+      objectReference: {fileID: 119892546}
     - target: {fileID: 3535218477347385691, guid: 3dd2d303ba50d7f4781943329fb16172, type: 3}
       propertyPath: missionStepsList.Array.data[0].textToDisplay
       value: 

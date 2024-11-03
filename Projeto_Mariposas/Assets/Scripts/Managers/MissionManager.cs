@@ -1,20 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MissionManager : MonoBehaviour
 {
     [Header("Missions")]
-    public UIElement[] missionList;
-    public UIElement[] missionStepsList;
-    public int missionIndex;
+    [SerializeField] private UIElement[] missionList;
+    [SerializeField] private UIElement[] missionStepsList;
+    [SerializeField] private int missionIndex;
 
-    [Header("UI variables")]
+    [Header("Button Settings")]
     [SerializeField] private Button missionBtn;
+    [SerializeField] private Animator buttonAnimator;
+    [SerializeField] private bool isButtonPressed;
+
+    [Header("Dropdown Settings")]
     [SerializeField] private MissionDropdown missionDropdown;
     [SerializeField] private bool isDropdownActive;
-    
+
     private AudioManager audioManager;
 
     private void Awake()
@@ -47,10 +52,14 @@ public class MissionManager : MonoBehaviour
                 }
             }
         }
+        buttonAnimator.SetTrigger("NewMission");
+        
+        Debug.Log("Nova missao");
     }
 
     private void SwitchDropdown()
     {
+        //buttonAnimator.SetBool("NewMission", false);
         if (!isDropdownActive)
         {
             missionDropdown.OpenDropdown();

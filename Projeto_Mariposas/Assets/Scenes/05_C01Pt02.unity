@@ -10272,7 +10272,7 @@ PrefabInstance:
     - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
       propertyPath: elements.Array.data[3].textToDisplay
       value: 
-      objectReference: {fileID: 1076371740}
+      objectReference: {fileID: 0}
     - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
       propertyPath: elements.Array.data[4].textToDisplay
       value: 
@@ -10292,7 +10292,7 @@ PrefabInstance:
     - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
       propertyPath: UIelements.Array.data[3].textToDisplay
       value: 
-      objectReference: {fileID: 1076371740}
+      objectReference: {fileID: 0}
     - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
       propertyPath: UIelements.Array.data[4].textToDisplay
       value: 
@@ -13732,7 +13732,7 @@ PrefabInstance:
     - target: {fileID: 3535218477347385691, guid: 3dd2d303ba50d7f4781943329fb16172, type: 3}
       propertyPath: missionList.Array.data[1].textToDisplay
       value: 
-      objectReference: {fileID: 1076371740}
+      objectReference: {fileID: 0}
     - target: {fileID: 3535218477347385691, guid: 3dd2d303ba50d7f4781943329fb16172, type: 3}
       propertyPath: missionStepsList.Array.data[0].textToDisplay
       value: 
@@ -13761,7 +13761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &1076371740 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2203817371436454724, guid: 3dd2d303ba50d7f4781943329fb16172, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6078109748212475731, guid: 3dd2d303ba50d7f4781943329fb16172, type: 3}
   m_PrefabInstance: {fileID: 1076371737}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

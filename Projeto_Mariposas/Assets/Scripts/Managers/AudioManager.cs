@@ -1,11 +1,13 @@
 using UnityEngine.Audio;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
-    private bool mute;
+    [SerializeField] private bool mute;
+    [SerializeField] private Button muteButton;
 
     public static AudioManager audioInstance;
 
@@ -37,6 +39,8 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
+
+        //muteButton.onClick.AddListener(SwitchMute);
     }
 
     private void Start()
@@ -86,7 +90,7 @@ public class AudioManager : MonoBehaviour
         {
             foreach (Sound s in sounds)
             {
-                if(s.type == SoundType.MUSIC) { s.source.volume = 0.5f; }
+                if(s.type == SoundType.MUSIC) { s.source.volume = 0.3f; }
 
                 else if(s.type == SoundType.SFX) { s.source.volume = 0.15f; }
             }
@@ -116,7 +120,7 @@ public class AudioManager : MonoBehaviour
     {
         foreach (Sound s in sounds)
         {
-            if (s.type == SoundType.MUSIC) { s.source.volume = 0.5f; }
+            if (s.type == SoundType.MUSIC) { s.source.volume = 0.3f; }
 
             else if (s.type == SoundType.SFX) { s.source.volume = 0.15f; }
         }
