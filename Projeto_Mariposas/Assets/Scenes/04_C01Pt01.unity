@@ -6808,8 +6808,6 @@ Transform:
   m_Children:
   - {fileID: 1039868710}
   - {fileID: 892284693}
-  - {fileID: 1056784731}
-  - {fileID: 1933928460}
   m_Father: {fileID: 1176417157}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7037,8 +7035,8 @@ MonoBehaviour:
   lanternComand: {fileID: 1662550838}
   lanternOnComandSplash: {fileID: 2099645035}
   lanternOffComandSplash: {fileID: 1612585572}
-  lightArea: {fileID: 1056784730}
-  darkness: {fileID: 1933928459}
+  lightArea: {fileID: 0}
+  darkness: {fileID: 0}
   isDark: 0
   lanternOn: 0
   holdingLantern: 0
@@ -30476,7 +30474,7 @@ PrefabInstance:
     - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
       propertyPath: elements.Array.data[3].textToDisplay
       value: 
-      objectReference: {fileID: 1725371508}
+      objectReference: {fileID: 0}
     - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
       propertyPath: elements.Array.data[4].textToDisplay
       value: 
@@ -30496,7 +30494,7 @@ PrefabInstance:
     - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
       propertyPath: UIelements.Array.data[3].textToDisplay
       value: 
-      objectReference: {fileID: 1725371508}
+      objectReference: {fileID: 0}
     - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
       propertyPath: UIelements.Array.data[4].textToDisplay
       value: 
@@ -31699,37 +31697,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
---- !u!1 &1056784730
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1056784731}
-  m_Layer: 0
-  m_Name: lightArea
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1056784731
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1056784730}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 533148152}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1060105715
 GameObject:
   m_ObjectHideFlags: 0
@@ -39696,17 +39663,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1721500405}
   m_CullTransparentMesh: 1
---- !u!114 &1725371508 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2203817371436454724, guid: 3dd2d303ba50d7f4781943329fb16172, type: 3}
-  m_PrefabInstance: {fileID: 2203817372951316272}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1726647488
 GameObject:
   m_ObjectHideFlags: 0
@@ -42025,37 +41981,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.107400656, y: 0.12057829}
   m_EdgeRadius: 0
---- !u!1 &1933928459
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1933928460}
-  m_Layer: 0
-  m_Name: darkness
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1933928460
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1933928459}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 533148152}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1942203490
 GameObject:
   m_ObjectHideFlags: 0

@@ -107,7 +107,6 @@ public class TopDownMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("E pressed");
             if (curInRange == inRangeOf.DIALOGUE) // Show dialogue
             {
                 objInRange.GetComponent<DialogueTrigger>().StartDialogue();
@@ -135,15 +134,16 @@ public class TopDownMovement : MonoBehaviour
                 Debug.Log("Lugar errado");
             }
 
-            else if (curInRange == inRangeOf.POI)
+            else if (curInRange == inRangeOf.LIGHTSWITCH)
             {
-
+                objInRange.GetComponent<LightSwitch>().SwitchLights();
+                Debug.Log("Interruptor pressionado");
             }
         }
 
         else if (Input.GetKeyDown(KeyCode.Q))
         {
-            Debug.Log("Q pressed");
+            
             // Turn Examine screen on and off
             if (hasBox && !examineManager.isExamining && !onInventory)
             {
@@ -162,8 +162,6 @@ public class TopDownMovement : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.Tab)) // Open inventory
         {
-            Debug.Log("TAB pressed" + onInventory);
-            Debug.Log(examineManager.isExamining);
             if (!onInventory && !examineManager.isExamining) 
             { 
                 inventory.OpenInventory();
@@ -242,14 +240,15 @@ public class TopDownMovement : MonoBehaviour
             //can carry object
             curInRange = inRangeOf.BOX;
             interactionAlert.TurnAlertOn(false);
-            Debug.Log(curInRange);
         }
-        /*
-        else if (collision.gameObject.CompareTag("Collect"))
+        
+        else if (collision.gameObject.CompareTag("LightSwitch"))
         {
-            //can collect item
+            //can turn lights on and off (basement)
+            curInRange = inRangeOf.LIGHTSWITCH;
+            interactionAlert.TurnAlertOn(false);
         }
-        */
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -263,12 +262,19 @@ public class TopDownMovement : MonoBehaviour
             curInRange = inRangeOf.NOTHING;
             interactionAlert.TurnAlertOff();
         }
+        else if (collision.gameObject.CompareTag("LightSwitch"))
+        {
+            //can turn lights on and off (basement)
+            curInRange = inRangeOf.NOTHING;
+            interactionAlert.TurnAlertOff();
+        }
 
         if (collision.gameObject.CompareTag("Room"))
         {
             this.curRoom = Rooms.OUTSIDE;
             Debug.Log(curRoom);
         }
+
     }
 
     public void GrabBox(GameObject box)
@@ -350,5 +356,5 @@ public enum inRangeOf
     BOX,
     DIALOGUE,
     ITEM,
-    POI //Point of Interest
+    LIGHTSWITCH
 }

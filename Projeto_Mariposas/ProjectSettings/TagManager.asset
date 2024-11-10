@@ -9,6 +9,7 @@ TagManager:
   - Room
   - PickUp
   - Dialogue
+  - LightSwitch
   layers:
   - Default
   - TransparentFX
