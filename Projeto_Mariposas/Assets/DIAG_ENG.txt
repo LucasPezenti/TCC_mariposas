@@ -71,6 +71,24 @@ CasaInt_0001_end
 
 # Puzzle das caixas começa #
 
+BoxWrong_0000_start
+ActorLine / Anoush / 2
+
+MessageLine / 0 / I can't leave this box here.
+
+BoxWrong_0000_end
+
+##
+
+BoxOrder_0000_start
+ActorLine / Anoush / 2
+
+MessageLine / 0 / I don't know where this is from. I'll try to take the other boxes in first.
+
+BoxOrder_0000_end
+
+##
+
 BoxSala_0000_start
 ActorLine / Anoush / 2
 

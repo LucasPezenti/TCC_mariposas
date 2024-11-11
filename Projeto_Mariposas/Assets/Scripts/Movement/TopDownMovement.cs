@@ -21,11 +21,10 @@ public class TopDownMovement : MonoBehaviour
 
 
     [Header("Environment info")]
+    [SerializeField] private Room roomInstance;
     [SerializeField] private Rooms curRoom;
     [SerializeField] private inRangeOf curInRange;
     [SerializeField] private GameObject objInRange;
-    //[Header("Dialogue info")]
-    //[SerializeField] private bool onDialogue;
 
     [Header("Interaction info")]
     [SerializeField] private InteractionAlert interactionAlert;
@@ -35,6 +34,7 @@ public class TopDownMovement : MonoBehaviour
     [SerializeField] private PuzzleBox curBox;
     [SerializeField] private BoxPuzzleManager boxManager;
     [SerializeField] private ExamineManager examineManager;
+    [SerializeField] private DialogueTrigger wrongBoxTrigger;
 
     [Header("Inventory Info")]
     [SerializeField] private Inventory inventory;
@@ -46,6 +46,7 @@ public class TopDownMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         holdObjectScript = GetComponent<HoldObjectScript>();
         inventory = GetComponent<Inventory>();
+        wrongBoxTrigger = GetComponent<DialogueTrigger>();
         boxManager = null;
         curBox = null;
 
@@ -123,6 +124,8 @@ public class TopDownMovement : MonoBehaviour
             {
                 Debug.Log("Sala correta");
                 boxManager.Unpack(curRoom);
+                roomInstance.SetDone(true);
+                interactionAlert.TurnAlertOff();
                 hasBox = false;
                 Destroy(curBox.gameObject);
                 curBox = null;
@@ -131,6 +134,8 @@ public class TopDownMovement : MonoBehaviour
             else if (hasBox && curRoom != curBox.GetBoxRoom()) // Wrong place
             {
                 // Dialogo de "Lugar errado"
+                interactionAlert.TurnAlertOff();
+                wrongBoxTrigger.StartDialogue();
                 Debug.Log("Lugar errado");
             }
 
@@ -157,6 +162,7 @@ public class TopDownMovement : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.F)) // Turn flashlight on
         {
+            inventory.SwitchLantern();
             Debug.Log("can move = " + TDCanMove);
         }
 
@@ -222,8 +228,13 @@ public class TopDownMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Room"))
         {
             this.curRoom = collision.GetComponent<Room>().GetRoom();
+            this.roomInstance = collision.GetComponent<Room>();
             this.boxManager = collision.GetComponent<BoxPuzzleManager>();
             Debug.Log(curRoom);
+            if (hasBox && !roomInstance.GetDone()) 
+            { 
+                interactionAlert.TurnAlertOn(false); 
+            }
         }
         else
         {
@@ -272,6 +283,8 @@ public class TopDownMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Room"))
         {
             this.curRoom = Rooms.OUTSIDE;
+            roomInstance = null;
+            interactionAlert.TurnAlertOff();
             Debug.Log(curRoom);
         }
 

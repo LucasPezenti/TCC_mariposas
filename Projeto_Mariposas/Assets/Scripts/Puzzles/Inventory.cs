@@ -76,6 +76,7 @@ public class Inventory : MonoBehaviour
                     selectId = 0;
                 }
                 selection.transform.position = selectionPoints[selectId].transform.position;
+                selection.transform.rotation = selectionPoints[selectId].transform.rotation;
             }
             else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
@@ -85,6 +86,7 @@ public class Inventory : MonoBehaviour
                     selectId = 3;
                 }
                 selection.transform.position = selectionPoints[selectId].transform.position;
+                selection.transform.rotation = selectionPoints[selectId].transform.rotation;
             }
 
             if (Input.GetKeyDown(KeyCode.E))

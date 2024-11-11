@@ -15165,7 +15165,7 @@ PrefabInstance:
     - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
       propertyPath: elements.Array.data[3].textToDisplay
       value: 
-      objectReference: {fileID: 1924611026}
+      objectReference: {fileID: 0}
     - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
       propertyPath: elements.Array.data[4].textToDisplay
       value: 
@@ -15185,7 +15185,7 @@ PrefabInstance:
     - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
       propertyPath: UIelements.Array.data[3].textToDisplay
       value: 
-      objectReference: {fileID: 1924611026}
+      objectReference: {fileID: 0}
     - target: {fileID: 1159530328328305401, guid: 85d0adf091727f04e8c41b7d83b571dd, type: 3}
       propertyPath: UIelements.Array.data[4].textToDisplay
       value: 
@@ -30860,11 +30860,11 @@ PrefabInstance:
     - target: {fileID: 3535218477347385691, guid: 3dd2d303ba50d7f4781943329fb16172, type: 3}
       propertyPath: missionList.Array.data[0].textToDisplay
       value: 
-      objectReference: {fileID: 1924611026}
+      objectReference: {fileID: 2098474275}
     - target: {fileID: 3535218477347385691, guid: 3dd2d303ba50d7f4781943329fb16172, type: 3}
       propertyPath: missionList.Array.data[1].textToDisplay
       value: 
-      objectReference: {fileID: 1924611026}
+      objectReference: {fileID: 2098474275}
     - target: {fileID: 3535218477347385691, guid: 3dd2d303ba50d7f4781943329fb16172, type: 3}
       propertyPath: missionStepsList.Array.data[0].textToDisplay
       value: 
@@ -30883,17 +30883,6 @@ RectTransform:
 --- !u!114 &1924611025 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2203817372264086847, guid: 3dd2d303ba50d7f4781943329fb16172, type: 3}
-  m_PrefabInstance: {fileID: 1924611023}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1924611026 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2203817371436454724, guid: 3dd2d303ba50d7f4781943329fb16172, type: 3}
   m_PrefabInstance: {fileID: 1924611023}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -36810,6 +36799,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &2098474275 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6078109748212475731, guid: 3dd2d303ba50d7f4781943329fb16172, type: 3}
+  m_PrefabInstance: {fileID: 1924611023}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2101722113
 GameObject:
   m_ObjectHideFlags: 0

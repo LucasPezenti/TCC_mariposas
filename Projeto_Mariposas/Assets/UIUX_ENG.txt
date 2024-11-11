@@ -42,6 +42,32 @@ Transition_00 / Russia, 1890
 
 Transition_01 / 2024
 
+Transition_02 / Later that night
+
+** TUTORIAIS **
+
+Tutorial_00 / Press (A) or (D) to move
+
+Tutorial_01 / Press (Space) to advance the dialogue
+
+Tutorial_02 / Press (E) to interact
+
+Tutorial_03 / Press (W), (A), (S), or (D) to move
+
+Tutorial_04 / Click on the button to see more details
+
+Tutorial_05 / Press (Q) to examine box
+
+Tutorial_06 / Press (Q) or (Space) to go back
+
+Tutorial_07 / Press (TAB) to open the inventory
+
+Tutorial_08 / Press (W) or (S) to navigate through the inventory
+
+Tutorial_09 / Press (E) to use the selected item
+
+Tutorial_10 / Press (Space) to close the inventory 
+
 ** AÇÔES DENTRO DO JOGO **
 
 Action_InteractID / (E) Interact

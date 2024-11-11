@@ -71,6 +71,24 @@ CasaInt_0001_end
 
 # Puzzle das caixas começa #
 
+BoxWrong_0000_start
+ActorLine / Anoush / 2
+
+MessageLine / 0 / Não posso deixar essa caixa aqui.
+
+BoxWrong_0000_end
+
+##
+
+BoxOrder_0000_start
+ActorLine / Anoush / 2
+
+MessageLine / 0 / Não sei para onde levar essa caixa. Melhor levar as outras primeiro.
+
+BoxOrder_0000_end
+
+##
+
 BoxSala_0000_start
 ActorLine / Anoush / 2
 
@@ -551,5 +569,14 @@ ActorLine / Anoush / 2
 MessageLine / 0 / Uma carta...? Que estranho...
 
 AbrePor_0009_end
+
+##
+
+MothsPor_0010_start
+ActorLine / Anoush / 2
+
+MessageLine / 0 / São tantas mariposas que eu nem consigo passar!
+
+MothsPor_0010_end
 
 ##
