@@ -41,15 +41,15 @@ public class LightSwitch : MonoBehaviour
                 lights[i].TurnLightOn();
             }
         }
-        if (isOn)
+        if (!isOn)
         {
             spriteRenderer.sprite = switchSprite[1];
-            isOn = false;
+            isOn = true;
         }
         else
         {
             spriteRenderer.sprite = switchSprite[0];
-            isOn = true;
+            isOn = false;
         }
     }
 }

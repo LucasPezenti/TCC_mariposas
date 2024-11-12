@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 12585
+  controlID: 8520
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 12668
+  controlID: 8638
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 12553
+  controlID: 8526
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -679,9 +679,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -3.1234922, y: -0.5937398, z: 0.0023749503}
+    m_Target: {x: 9.160832, y: -3.0499394, z: -0.08995831}
     speed: 2
-    m_Value: {x: -3.1234922, y: -0.5937398, z: 0.0023749503}
+    m_Value: {x: 9.3560295, y: -3.110221, z: -0.08724564}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -732,9 +732,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 9.762536
+    m_Target: 6.2994194
     speed: 2
-    m_Value: 9.762536
+    m_Value: 6.0281525
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1042,7 +1042,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 24788
+  m_LastSelectedObjectID: -13294
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1113,9 +1113,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: d4600000
-      m_LastClickedID: 24788
-      m_ExpandedIDs: 0efbffffa6610000c2610000de61000056620000606300006e630000e46300002c640000
+      m_SelectedIDs: 1cd60000
+      m_LastClickedID: 54812
+      m_ExpandedIDs: 56c5ffff18ceffffced1ffff0efbffffa8610000c461000052620000d4620000fe6200005c63000022cc00008ece0000dad4000084d5000006d600002ad700005ad70000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1217,22 +1217,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Shader
+    - Assets/Scripts/Interaction
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Shader
+  - Assets/Scripts/Interaction
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "C:\\Users\\lucas\\OneDrive\\\xC1rea de Trabalho\\FATEC\\Projeto_TCC\\TCC_mariposas\\Projeto_Mariposas"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 115}
-    m_SelectedIDs: 829a0000
-    m_LastClickedID: 39554
-    m_ExpandedIDs: 000000001a7000001c7000001e7000002070000022700000247000002670000052700000
+    scrollPos: {x: 0, y: 239}
+    m_SelectedIDs: 62700000
+    m_LastClickedID: 28770
+    m_ExpandedIDs: 00000000287000002a7000002c7000002e7000003070000032700000347000004a70000052700000048600008c870000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1260,7 +1260,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 254.6}
     m_SelectedIDs: f4e2ffff
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001a7000001c7000001e70000020700000227000002470000026700000
+    m_ExpandedIDs: 00000000287000002a7000002c7000002e700000307000003270000034700000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1287,8 +1287,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: e8b90000aa8700009e7e0000186400000c63000090930000b8690000ec6e0000286b0000ec720000346f0000e27a0000586f0000a07600009a6c00002a6f0000b6a7ffff2888000006770000ac690000ae6900009a6a0000186b0000a66b0000dc730000ca6b0000cc6b0000083b0100de750000746b000000000000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: e8b90000aa8700009e7e0000186400000c63000090930000b8690000ec6e0000286b0000ec720000346f0000e27a0000586f0000a07600009a6c00002a6f0000b6a7ffff2888000006770000ac690000ae6900009a6a0000186b0000a66b0000dc730000ca6b0000cc6b0000083b0100de750000746b000000000000d06500006c6b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
